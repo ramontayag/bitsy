@@ -13,4 +13,4 @@ The first address that is available will be the `forwarder` with specific charac
 - Ability to collect a tax on the payment (perhaps your site collects a fee), and forward the tax to the tax address
 - Send the rest to the "owner" (perhaps a merchant on your website)
 
-There could be other types in the future, but this all I (Ramon Tayag) needs for now.
+There could be other types in the future, but this all I (Ramon Tayag) need for now.
