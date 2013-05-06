@@ -13,5 +13,5 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-.rvmrc
+.ruby-version
 *.sw[po]
