@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
-gem 'rails-api', '0.0.3'
+gem 'rails', '3.2.13'
+gem 'rails-api', '0.1.0'
 gem 'sidekiq', '2.7.5'
 gem 'sqlite3', '1.3.7'
 gem 'unicorn', '4.6.2'
@@ -18,4 +18,6 @@ group :development, :test do
   gem 'rspec-rails', '2.13.0'
   gem 'capybara', '2.0.2'
   gem 'database_cleaner', '0.9.1'
+  gem 'vcr', '2.4.0'
+  gem 'webmock', '1.11.0'
 end
