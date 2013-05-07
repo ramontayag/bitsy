@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TransactionsSyncer, vcr: true do
+describe TransactionsSyncer do
 
   describe '#sync' do
     context 'when the transaction already exists' do

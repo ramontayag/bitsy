@@ -5,8 +5,6 @@ class PaymentDepot < ActiveRecord::Base
   TAX_ADDRESS = App.tax_address
 
   alias_attribute :balance, :balance_cache
-  after_initialize :set_bitcoin_address
-  after_initialize :set_balance_cache
   delegate :balance, to: :bit_wallet_account
   scope :with_balance, -> { where('balance_cache > 0.0') }
 
