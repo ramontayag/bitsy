@@ -5,7 +5,7 @@ http_interactions:
     uri: http://admin1:123@localhost:19001/
     body:
       encoding: US-ASCII
-      string: ! '{"method":"getnewaddress","params":["1367909507-91950f2ba838d5149d7b45b939def3b98c747187331e1ce15d58e270c4fee62d"],"id":"jsonrpc"}'
+      string: ! '{"method":"getnewaddress","params":["1367911500-371c01ae754fceb99f71ce40575ea520fc7e91f5f9230d8a1f3db8fea8c38522"],"id":"jsonrpc"}'
     headers:
       Accept:
       - ! '*/*; q=0.5, application/xml'
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 07 May 2013 06:51:47 +0000
+      - Tue, 07 May 2013 07:25:00 +0000
       Connection:
       - keep-alive
       Content-Length:
@@ -36,13 +36,13 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Tue, 07 May 2013 06:51:47 GMT
+  recorded_at: Tue, 07 May 2013 07:25:00 GMT
 - request:
     method: post
     uri: http://admin1:123@localhost:19001/
     body:
       encoding: US-ASCII
-      string: ! '{"method":"getbalance","params":["1367909507-91950f2ba838d5149d7b45b939def3b98c747187331e1ce15d58e270c4fee62d",0],"id":"jsonrpc"}'
+      string: ! '{"method":"getbalance","params":["1367911500-371c01ae754fceb99f71ce40575ea520fc7e91f5f9230d8a1f3db8fea8c38522",0],"id":"jsonrpc"}'
     headers:
       Accept:
       - ! '*/*; q=0.5, application/xml'
@@ -58,7 +58,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 07 May 2013 06:51:47 +0000
+      - Tue, 07 May 2013 07:25:00 +0000
       Connection:
       - keep-alive
       Content-Length:
@@ -73,5 +73,5 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Tue, 07 May 2013 06:51:47 GMT
+  recorded_at: Tue, 07 May 2013 07:25:00 GMT
 recorded_with: VCR 2.4.0
