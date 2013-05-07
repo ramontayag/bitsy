@@ -8,9 +8,7 @@ class TransactionsSyncer
 
   def sync
     bit_wallet_transactions.each do |tx|
-      payment_transaction = PaymentTransaction.
-        where(payment_transaction_args_for(tx)).first
-      if payment_transaction
+      if payment_transaction = payment_transaction_for(tx)
         TransactionUpdater.update payment_transaction, tx
       else
         TransactionCreator.create tx
@@ -19,6 +17,10 @@ class TransactionsSyncer
   end
 
   private
+
+  def payment_transaction_for(tx)
+    PaymentTransaction.where(payment_transaction_args_for(tx)).first
+  end
 
   def payment_transaction_args_for(tx)
     {
