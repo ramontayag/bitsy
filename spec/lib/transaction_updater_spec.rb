@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TransactionUpdater do
+describe TransactionUpdater, vcr: true do
 
   describe '#update' do
     it 'should update the payment transaction' do

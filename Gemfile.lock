@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:sinisterchipmunk/bitcoin-client.git
+  revision: dcd70a686162fad41e5bd4bddc0ee67565227ec6
+  ref: dcd70a686162fad41e5bd4bddc0ee67565227ec6
+  specs:
+    bitcoin-client (0.0.1)
+      rest-client (~> 1.6.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -29,7 +37,14 @@ GEM
       i18n (= 0.6.1)
       multi_json (~> 1.0)
     addressable (2.3.4)
+    app (1.0.3)
     arel (3.0.2)
+    bit_wallet (0.4.0)
+      activesupport (~> 3.0)
+      bitcoin-client
+    bitcoin_testnet (0.4.0)
+      activesupport (~> 3.0)
+      wait (~> 0.5.1)
     builder (3.0.4)
     capistrano (2.14.2)
       highline
@@ -56,6 +71,11 @@ GEM
     diff-lcs (1.2.4)
     erubis (2.7.0)
     facter (1.7.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     ffi (1.8.1)
     highline (1.6.18)
     hike (1.2.2)
@@ -116,6 +136,8 @@ GEM
     redis (3.0.4)
     redis-namespace (1.3.0)
       redis (~> 3.0.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -158,7 +180,8 @@ GEM
       rack
       raindrops (~> 0.7)
     vcr (2.4.0)
-    webmock (1.11.0)
+    wait (0.5.1)
+    webmock (1.9.3)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
     websocket (1.0.7)
@@ -169,9 +192,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  app (= 1.0.3)
+  bit_wallet (= 0.4.0)
+  bitcoin-client!
+  bitcoin_testnet (= 0.4.0)
   capistrano (= 2.14.2)
   capybara (= 2.0.2)
   database_cleaner (= 0.9.1)
+  factory_girl_rails (= 4.2.1)
   pry (= 0.9.12)
   rails (= 3.2.13)
   rails-api (= 0.1.0)
@@ -180,4 +208,4 @@ DEPENDENCIES
   sqlite3 (= 1.3.7)
   unicorn (= 4.6.2)
   vcr (= 2.4.0)
-  webmock (= 1.11.0)
+  webmock (= 1.9.3)

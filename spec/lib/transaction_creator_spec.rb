@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TransactionCreator do
+describe TransactionCreator, vcr: true do
 
   describe '#create' do
     context 'when transaction was successfully created' do
