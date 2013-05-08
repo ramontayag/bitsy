@@ -2,15 +2,26 @@ require 'spec_helper'
 
 describe PaymentDepot do
 
-  describe '#initial_tax_rate=' do
-    context 'when setting to a value that not between 0 and 1' do
-      it 'should raise an ArgumentError' do
-        payment_depot = build_stubbed(:payment_depot, min_payment: 1)
-        error_message =  '`initial_tax_rate` must be a value between 0.0 and 1.0'
-        expect { payment_depot.initial_tax_rate = 1.5 }.to raise_error(ArgumentError, error_message)
-        expect { payment_depot.initial_tax_rate = 0.1 }.to_not raise_error(ArgumentError, error_message)
-        expect { payment_depot.initial_tax_rate = -1.5 }.to raise_error(ArgumentError, error_message)
-      end
+  describe 'initial_tax_rate validity' do
+    subject do
+      build_stubbed(:payment_depot,
+                    min_payment: 1,
+                    initial_tax_rate: initial_tax_rate)
+    end
+
+    context 'initial_tax_rate is below 0' do
+      let(:initial_tax_rate) { -1.5 }
+      subject { should be_invalid }
+    end
+
+    context 'initial_owner_rate is within 0 and 1' do
+      let(:initial_tax_rate) { 0.5 }
+      subject { should be_valid }
+    end
+
+    context 'initial_owner_rate is above 1' do
+      let(:initial_tax_rate) { 1.1 }
+      subject { should be_invalid }
     end
   end
 

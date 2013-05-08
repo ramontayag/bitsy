@@ -7,6 +7,13 @@ class PaymentDepot < ActiveRecord::Base
   alias_attribute :balance, :balance_cache
   delegate :balance, to: :bit_wallet_account
   scope :with_balance, -> { where('balance_cache > 0.0') }
+  validate(
+    :initial_tax_rate,
+    inclusion: {
+      in: [0.0..1.0],
+      message: 'must be a value within 0.0 and 1.0'
+    }
+  )
 
   # def self.create_with_bitcoin_address
   #   payment_depot = self.create
@@ -15,14 +22,6 @@ class PaymentDepot < ActiveRecord::Base
 
   def initial_owner_rate
     self.min_payment * (1 - self.initial_tax_rate)
-  end
-
-  def initial_tax_rate=(rate)
-    if rate < 0.0 || rate > 1.0
-      fail ArgumentError.
-        new('`initial_tax_rate` must be a value between 0.0 and 1.0')
-    end
-    super
   end
 
   def balance_tax_amount
