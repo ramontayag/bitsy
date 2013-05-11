@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:sinisterchipmunk/bitcoin-client.git
+  revision: dcd70a686162fad41e5bd4bddc0ee67565227ec6
+  ref: dcd70a686162fad41e5bd4bddc0ee67565227ec6
+  specs:
+    bitcoin-client (0.0.1)
+      rest-client (~> 1.6.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -28,7 +36,15 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.3.3)
+    app (1.0.3)
     arel (3.0.2)
+    bit_wallet (0.4.0)
+      activesupport (~> 3.0)
+      bitcoin-client
+    bitcoin_testnet (0.4.0)
+      activesupport (~> 3.0)
+      wait (~> 0.5.1)
     builder (3.0.4)
     capistrano (2.14.2)
       highline
@@ -48,12 +64,21 @@ GEM
       timers (>= 1.0.0)
     childprocess (0.3.8)
       ffi (~> 1.0, >= 1.0.11)
+    clockwork (0.5.0)
+      tzinfo (~> 0.3.35)
     coderay (1.0.9)
     connection_pool (1.0.0)
+    crack (0.3.2)
+    daemons (1.1.9)
     database_cleaner (0.9.1)
     diff-lcs (1.2.1)
     erubis (2.7.0)
     facter (1.6.17)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     ffi (1.4.0)
     highline (1.6.15)
     hike (1.2.1)
@@ -111,9 +136,11 @@ GEM
     rake (10.0.3)
     rdoc (3.12.2)
       json (~> 1.4)
-    redis (3.0.2)
+    redis (3.0.3)
     redis-namespace (1.2.1)
       redis (~> 3.0.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec-core (2.13.0)
     rspec-expectations (2.13.0)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -131,7 +158,7 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
-    sidekiq (2.7.5)
+    sidekiq (2.8.0)
       celluloid (~> 0.12.0)
       connection_pool (~> 1.0)
       multi_json (~> 1)
@@ -155,6 +182,11 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    vcr (2.4.0)
+    wait (0.5.1)
+    webmock (1.9.3)
+      addressable (>= 2.2.7)
+      crack (>= 0.3.2)
     websocket (1.0.7)
     xpath (1.0.0)
       nokogiri (~> 1.3)
@@ -163,13 +195,22 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  app (= 1.0.3)
+  bit_wallet (= 0.4.0)
+  bitcoin-client!
+  bitcoin_testnet (= 0.4.0)
   capistrano (= 2.14.2)
   capybara (= 2.0.2)
+  clockwork (= 0.5.0)
+  daemons (= 1.1.9)
   database_cleaner (= 0.9.1)
+  factory_girl_rails
   pry (= 0.9.12)
   rails (= 3.2.12)
   rails-api (= 0.0.3)
   rspec-rails (= 2.13.0)
-  sidekiq (= 2.7.5)
+  sidekiq (= 2.8.0)
   sqlite3 (= 1.3.7)
   unicorn (= 4.6.2)
+  vcr (= 2.4.0)
+  webmock

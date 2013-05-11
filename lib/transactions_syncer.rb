@@ -9,7 +9,7 @@ class TransactionsSyncer
   def sync
     bit_wallet_transactions.each do |tx|
       payment_transaction_args = {transaction_id: tx.id,
-                                  receiving_address: tx.address,
+                                  receiving_address: tx.address_str,
                                   amount: tx.amount,
                                   occurred_at: tx.occurred_at,
                                   received_at: tx.received_at}

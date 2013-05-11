@@ -12,8 +12,17 @@ class App < Configurable # :nodoc:
                                    password: App.bitcoind_password,
                                    port: App.bitcoind_port)
 
+  config.bitcoin_master_account_name = ''
+  config.bitcoin_master_account = -> {
+    puts "Instantiating the master account"
+    config.bit_wallet.accounts.new(config.bitcoin_master_account_name)
+  }
+
   # This is the transaction fee that bitcoind will set.
   # TODO: find a way to programatically get this so Bitsy will be more robust to
   # to changes in the fee in the future.
   config.transaction_fee = 0.0005
+  config.transaction_fee_threshold_multiplier = 200
+  config.forward_threshold = config.transaction_fee * transaction_fee_threshold_multiplier
+  config.safe_confirmation_threshold = 6
 end

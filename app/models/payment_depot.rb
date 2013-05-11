@@ -5,15 +5,10 @@ class PaymentDepot < ActiveRecord::Base
   TAX_ADDRESS = App.tax_address
 
   alias_attribute :balance, :balance_cache
-  after_initialize :set_bitcoin_address
-  after_initialize :set_balance_cache
+  before_create :set_bitcoin_address
+  after_create :set_balance_cache
   delegate :balance, to: :bit_wallet_account
   scope :with_balance, -> { where('balance_cache > 0.0') }
-
-  # def self.create_with_bitcoin_address
-  #   payment_depot = self.create
-  #   payment_depot.set_bitcoin_address
-  # end
 
   def initial_owner_rate
     self.min_payment * (1 - self.initial_tax_rate)
@@ -83,6 +78,10 @@ class PaymentDepot < ActiveRecord::Base
     self.balance > 0
   end
 
+  def bitcoin_account_name
+    self.id.to_s
+  end
+
   private
 
   def set_bitcoin_address
@@ -105,8 +104,7 @@ class PaymentDepot < ActiveRecord::Base
 
   def bit_wallet_account
     return @bit_wallet_account if @bit_wallet_account
-    account_name = "#{Time.now.to_i}-#{SecureRandom.hex(32)}"
-    @bit_wallet_account = bit_wallet.accounts.new(account_name)
+    @bit_wallet_account = bit_wallet.accounts.new(self.bitcoin_account_name)
   end
 
   def bit_wallet
