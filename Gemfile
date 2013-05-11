@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
-gem 'rails-api', '0.0.3'
+gem 'rails', '3.2.13'
+gem 'rails-api', '0.1.0'
+
 gem 'app', '1.0.3'
 gem 'sidekiq', '2.8.0'
 gem 'sqlite3', '1.3.7'
@@ -25,13 +26,13 @@ gem 'daemons', '1.1.9'
 # gem 'jbuilder'
 
 group :development, :test do
-  gem 'factory_girl_rails'
   gem 'capistrano', '2.14.2'
   gem 'pry', '0.9.12'
   gem 'rspec-rails', '2.13.0'
   gem 'capybara', '2.0.2'
   gem 'database_cleaner', '0.9.1'
   gem 'vcr', '2.4.0'
-  gem 'webmock'
+  gem 'webmock', '1.9.3'
   gem 'bitcoin_testnet', '0.4.0'
+  gem 'factory_girl_rails', '4.2.1'
 end

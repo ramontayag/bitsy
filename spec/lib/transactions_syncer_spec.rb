@@ -4,7 +4,7 @@ describe TransactionsSyncer do
 
   describe '#sync' do
     context 'when the transaction already exists' do
-      it 'should delegate thw work the the transaction updater' do
+      it 'should delegate the work the the transaction updater' do
         bw_transaction = build(:bit_wallet_transaction,
                                id: 'txid',
                                address_str: 'rumplestiltskin',

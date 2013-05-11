@@ -14,5 +14,5 @@ db/*.sqlite3-journal
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-.rvmrc
+.ruby-version
 *.sw[po]

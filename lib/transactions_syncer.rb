@@ -8,14 +8,7 @@ class TransactionsSyncer
 
   def sync
     bit_wallet_transactions.each do |tx|
-      payment_transaction_args = {transaction_id: tx.id,
-                                  receiving_address: tx.address_str,
-                                  amount: tx.amount,
-                                  occurred_at: tx.occurred_at,
-                                  received_at: tx.received_at}
-      payment_transaction = PaymentTransaction.
-        where(payment_transaction_args).first
-      if payment_transaction
+      if payment_transaction = payment_transaction_for(tx)
         TransactionUpdater.update payment_transaction, tx
       else
         TransactionCreator.create tx
@@ -24,6 +17,20 @@ class TransactionsSyncer
   end
 
   private
+
+  def payment_transaction_for(tx)
+    PaymentTransaction.where(payment_transaction_args_for(tx)).first
+  end
+
+  def payment_transaction_args_for(tx)
+    {
+      transaction_id: tx.id,
+      receiving_address: tx.address,
+      amount: tx.amount,
+      occurred_at: tx.occurred_at,
+      received_at: tx.received_at
+    }
+  end
 
   def bit_wallet_transactions
     @bit_wallet.recent_transactions

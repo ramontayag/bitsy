@@ -4,7 +4,7 @@ describe PaymentDepot do
 
   describe '#initial_tax_rate=' do
     context 'when setting to a value that not between 0 and 1' do
-      it 'should raise an ArgumentError', vcr: true do
+      it 'should raise an ArgumentError' do
         payment_depot = build_stubbed(:payment_depot, min_payment: 1)
         error_message =  '`initial_tax_rate` must be a value between 0.0 and 1.0'
         expect { payment_depot.initial_tax_rate = 1.5 }.to raise_error(ArgumentError, error_message)
@@ -15,7 +15,7 @@ describe PaymentDepot do
   end
 
   describe '#balance' do
-    it 'should always update the #balance_cache field', vcr: true do
+    it 'should always update the #balance_cache field' do
       payment_depot = build(:payment_depot)
       payment_depot.stub(:bit_wallet_account_balance).and_return(2.2)
       payment_depot.balance.should == 2.2
@@ -28,7 +28,7 @@ describe PaymentDepot do
   end
 
   describe '#initial_owner_rate' do
-    it 'should be the min_payment less than initial tax fee', vcr: true do
+    it 'should be the min_payment less than initial tax fee' do
       payment_depot = build_stubbed(:payment_depot,
                                     min_payment: 1,
                                     initial_tax_rate: 0.4)
@@ -37,7 +37,7 @@ describe PaymentDepot do
   end
 
   describe '#total_received_amount' do
-    it 'should return the total amount received', vcr: true do
+    it 'should return the total amount received' do
       tx1 = build_stubbed(:payment_transaction, amount: 1.2)
       tx2 = build_stubbed(:payment_transaction, amount: -1.1)
       tx3 = build_stubbed(:payment_transaction, amount: 0.5)
@@ -51,7 +51,7 @@ describe PaymentDepot do
   end
 
   describe '#total_tax_sent' do
-    it 'should return the total amount sent to the tax address', vcr: true do
+    it 'should return the total amount sent to the tax address' do
       payment_depot = build_stubbed(:payment_depot)
       txs = double
       txs.stub(:sum).with(:amount).and_return(-3.7)
@@ -61,7 +61,7 @@ describe PaymentDepot do
   end
 
   describe '#total_owner_sent' do
-    it 'should return the total amount sent to the owner address', vcr: true do
+    it 'should return the total amount sent to the owner address' do
       payment_depot = build_stubbed(:payment_depot)
       txs = double
       txs.stub(:sum).with(:amount).and_return(-5.5)
