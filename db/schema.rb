@@ -14,14 +14,14 @@
 ActiveRecord::Schema.define(:version => 20130228101117) do
 
   create_table "payment_depots", :force => true do |t|
-    t.decimal  "min_payment",      :null => false
-    t.decimal  "initial_tax_rate", :null => false
-    t.decimal  "added_tax_rate",   :null => false
-    t.decimal  "balance_cache",    :null => false
+    t.decimal  "min_payment",                       :null => false
+    t.decimal  "initial_tax_rate",                  :null => false
+    t.decimal  "added_tax_rate",                    :null => false
+    t.decimal  "balance_cache",    :default => 0.0, :null => false
     t.string   "owner_address"
-    t.string   "address",          :null => false
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.string   "address",                           :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
   create_table "payment_transactions", :force => true do |t|
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20130228101117) do
     t.decimal  "amount",                    :null => false
     t.string   "receiving_address",         :null => false
     t.string   "payment_type",              :null => false
+    t.integer  "confirmations",             :null => false
     t.string   "transaction_id",            :null => false
     t.string   "forwarding_transaction_id"
     t.datetime "occurred_at",               :null => false

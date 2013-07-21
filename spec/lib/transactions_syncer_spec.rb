@@ -7,7 +7,7 @@ describe TransactionsSyncer do
       it 'should delegate the work the the transaction updater' do
         bw_transaction = build(:bit_wallet_transaction,
                                id: 'txid',
-                               address: 'rumplestiltskin',
+                               address_str: 'rumplestiltskin',
                                amount: 2.13,
                                occurred_at: Time.at(1365328873),
                                received_at: Time.at(1365328875))

@@ -1,0 +1,3925 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"listaccounts","params":[1],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '53'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '8996'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":{"":8790.00000000,"1362317208-0ee3e7855370921e1f7f9a695a817d76a572f572887f1f4400c9cf782f98b910":0.00000000,"1362317209-46403b10552cdb44e708a214e6938deee3c6dd50a5dce69f3f3d51f3390c9a22":0.00000000,"1362317209-50d7a7a39d54eb2666c1f6922077ab4a37e34bfc58be2f53b75a1a7f3d2e49af":0.00000000,"1362317209-57a0120ab471b5f094ad3e96402f1d8ad756459fa31a3935a968aec943485303":0.00000000,"1362317209-5a9f6493ebaf8ccfb28f52d6c44806e3ebf52620b930f92cd095f32c85b12472":0.00000000,"1362317210-b896fc2a5d4556e1b86af27be8dfe59c8286f08cbd774b6dc74ab3c39a62749f":0.00000000,"1362317258-33d282c6a8dbe063aa298d62ee6e9840d2da81e0da398a699e976c3c1a1bdf34":0.00000000,"1362317258-6de2cacbe00f7336e2e6a248afc10f07cfa8d6e2c46eaaa8bfb489fefae90570":0.00000000,"1362317259-6531965789abca0ab7a3ae11179562999c970ffd7730638e52767d7218714cb8":0.00000000,"1362317259-789a2b3fb08366e4a8ac1aef84c3e3a0380f0c35c6c5fd34af3e308eb6c0ccd1":0.00000000,"1362317259-80ee94c2381d4d405328ca138fd71375caadb7766dab8079957302e277da3f1f":0.00000000,"1362317259-a73da7c6414ffd99031ee24a8a8c732771aaa0a3b37b9d3b052b56c1b19bbeef":0.00000000,"1362317259-b173871e810f76c92fe08683be2829ac2f17bbf2ff0f74246ee8ab75c8b47cd9":0.00000000,"1362317259-b5ee45f7668f545f796bd198d7263b4c541ea99cdc75008fca6de2c6bd0468b8":0.00000000,"1362317259-e2270127cdffdafb4c805ce677269a2c37d9b0e8ac972fb8d74c8515dcb3f112":0.00000000,"1362317364-21ad67778cf8ad297f20007ee1193327152253cfc2f5644bc1389677b7068295":0.00000000,"1362317364-2cdd0d11216df115dd53d86e32fc14668bedc727c8cae07458228994d38a8454":0.00000000,"1362317364-8697df25d25621cb5242d15813be97dcc8ce86be386925d3588161d705681ac5":0.00000000,"1362317364-db9d21d8d6c901bb5ffd82d9b43e6efb554b8c4e5bc4ad17fc6a629d8ddfa696":0.00000000,"1362317365-19b5c546e53e4d26465498b8507efd096d2e62bab6f16ef4975177fab0dec95f":0.00000000,"1362317365-43b244ade673e789d55aabd7108dc605a9d3b65d969976e95170f1761958c6aa":0.00000000,"1362317365-871c5a2e6f5e52fe23583bd94601e66ead33a7873f00f26cc6f21dcd3e68286d":0.00000000,"1362317365-93dbc7bd7d1328f2290f8e92a175b1e109e48f79fc6d8399fc3f047bf50abe57":0.00000000,"1362317365-e172ec0abacc1c69400038bdac47f831732653017822126660c2dab94ba0b752":0.00000000,"1362317482-2801e63f640d2546ace32d96006a5bd688cad81ca1a4440caeb415ba429c60c3":0.00000000,"1362317482-d8117a7ce5cd33b8018a2e897145d5986be7bb20a775c4731f7ce071fe2a92a7":0.00000000,"1362317482-e2ad43c0b90f1608dbf923071d922bbd0236c782f76a6097ae732166151fe662":0.00000000,"1362317482-e45ef76b3634c8041a2d32fe9c236ffa27036c6f6a68a64c74b3359176a4d1a2":0.00000000,"1362317483-0162f826c6ad8878e6497d7e011d194c2ca0f78bfab01ef0418723699a6e0158":0.00000000,"1362317483-5de990fb6c915d604dc70bfbf9e0849fc1ddc7ca3d527bef18d49630ca4eb330":0.00000000,"1362317483-85fd5060869b96dd2fbb113c385f54d4e320df0453138b0c5e58ba3343a966e3":0.00000000,"1362317483-9d53fcfad901ced44fd9d653e522d85b5d6f3df86c2aa236f138c89bebd75d2e":0.00000000,"1362317483-d74e72d78adeee1d933d6c1491be28c509d1dff6242c71cd437af33b008f046c":0.00000000,"1362317554-b5bb29882679518c295b8aae22a19131fa4e34650e3bebd7c7926fa5390a199a":0.00000000,"1362317555-40d1fccfaaad639d5faf88ad120788c002421c51ff24a0e90a345e2dfe5ad3fa":0.00000000,"1362317555-6a10797220c2d8efc31eac507b05de0329199612004dd3b75d7f01d7e85e6959":0.00000000,"1362317555-73846ac8b73c0b3e85c6f77cefb5f791c0f8660a1fefe2700ea6964d118727a8":0.00000000,"1362317555-921c50713a354b17d0e757eccf2d1e7e216867b53c2925c5844d9a44fd285ea2":0.00000000,"1362317555-93700888d1c940867e793bee1329214187bdd158183e63ddfd8c25f75186691e":0.00000000,"1362317555-e6391e68c22560d91016c8e4ca7a636b1a99e707dc775a9c205ed543bb3d4ba9":0.00000000,"1362317555-f0702b8314a0fa6bb0c4e9f3aa35a108a4e240a182f95455b7cfc950427efef5":0.00000000,"1362317555-f443a8ee06ed2379d20d3632dd910cc1416c83e676af0296a5750cae1c2e4193":0.00000000,"1362317585-5c2735071bc3c5737d80fb9bfdda705cd4eea0311605bb271d7ec79cf714bb7f":0.00000000,"1362317586-31f5480dca76050c244da8b72e88e1f8d86ed6d0ac8c2d7c3d5d048f844e439b":0.00000000,"1362317586-9b105c68d880c3043f3b6624cd2cc381742cc0da876066c3030d00db54ad1915":0.00000000,"1362317587-2fe9e2e41a5aa9d6678fb91cefd68b1865e14de62727a8e8a33122d2fe484265":0.00000000,"1362317587-3fd1d80d15fd9b1b60934c27df4fab7add4ad96bdea8c0eb18bdd3d1eae764e0":0.00000000,"1362317587-8d95b3b3084d35e268b507980a0fa845d7910f4a528aac41fada3863e864edfb":0.00000000,"1362317587-9b19524c193f51b5ef918c807a943a10efaf78955a5cbe1971772cf6d0a00759":0.00000000,"1362317587-a8c3191eece19081121d6fed8a6f46545c057902490cc3cee1349f3108b85712":0.00000000,"1362317587-aacf387433d7b4b56e4f33b2900357f15cfd10fabf6668404f0b42d4a41d0a52":0.00000000,"1362317639-1b43aaa38a6764ac5867bc4cead1d4342ffb7a1402763207b96b95d919ebf390":0.00000000,"1362317640-386dd2892fb0b0e0ceb946ed495f120d6e2b71490842b82f5324214196745f50":0.00000000,"1362317640-4f7c3524d67a1cfd2fb5e899c6477c3e457c912366c940d42f4142f78165292a":0.00000000,"1362317640-5f2dae48df0a1cf216c2cd90fe777e13407fd67a1a93549dffc641d2c330877b":0.00000000,"1362317640-76c62278abb512342f3083f6dc83233adce89f840a5bd641ba2e28d39c19e108":0.00000000,"1362317640-80e15080275b8e7796cc7ad01e7f48d78db3b5881ed0aaa8b2dc868b5fb98d05":0.00000000,"1362317640-fd9ca629596b56f021f6f8e96ff2444c511ffe2fa303166b804ddcfcae3b6055":0.00000000,"1362317641-01c1a61d9968cdd6a28db17084870f2176ca28347c6b54afdd9adb953b78f901":0.00000000,"1362317641-57b4b36fdce3790e9e27d1f1635a370b1062a465d82c36c356af5ed755a9f23b":0.00000000,"1362317935-f5b183aafaf1617389d72e818c5d7840a66fd0bd95f9aaaa4482f16a65f08771":0.00000000,"1362317936-504d759ac26f758830ce26ad2ac1952f81cd5ade7631ce75e22983392617e2c1":0.00000000,"1362317937-2e2a35c94fe0fc502d3bf40fb49c1b7ac733a3c6946c31b2d08969176cd2f3b9":0.00000000,"1362317937-39579e2e8047f9b7ceb562567dfbefba4b3a31306e66326007f0af8b31bca728":0.00000000,"1362317937-44c9c9f9b81b76afb5b8fe4d2072a86cf310b40cf18fd03eac53e68175727ea7":0.00000000,"1362317937-5a8ef942fc95dcbea90ab854a7e32e1360c512e095e02d8609b1cf806d3883cc":0.00000000,"1362317937-6693cb13f9fd7c09a7f85dcfcbc3c1f6ad09d068ab4ff4711ac685d2d63b8708":0.00000000,"1362317937-743eb65aab0771a75576d68d6c7a88521b2bec0a7b7deb26576d4db9cce39232":0.00000000,"1362317937-f98357846ea6225cb3ab73f1fd1375ff57f1cdd6a38af828b77e503b6b5aad68":0.00000000,"1362318139-e3d101440871670422c949ccb3a407709580d68b57f2575ed5dda1338ce67a78":0.00000000,"1362318140-0f2ad50e85d4ebc9d1ee9ba6e060b4ef4d9a8fa02d7894f9ec6a99823bb97df5":0.00000000,"1362318140-2a1be6142bc0b41061eacd8b389a949c10204b0a7a484fbc37fe9121a3e55546":0.00000000,"1362318140-5756c9e03a5abdb06c17d69f2dd11f3a791cc5eabea69035577129f06a238410":0.00000000,"1362318140-5780c77d657fa3da51aafdf0c7b9ddd322f9dc46dbb2cd76a02bd996489e6f0f":0.00000000,"1362318140-82ba4dfc565f524a469a05d2cdfaea571b01587c8f4b53ec7a818cd494c85d17":0.00000000,"1362318140-ad5bd612ef4de993d476a51263621b3ac83881ec13794f4f532762bea43e77af":0.00000000,"1362318140-e34d95a9d30c4e7fa2fb6b32e74d86d3f2d383322077cd600cdcf9c3cdb03e93":0.00000000,"1362318140-f31819ccb87ab06c28ab6cb8590721f51b70e3b91260f583e7ca24f66b45cdf2":0.00000000,"1362318358-a2be6d37400912b9d79be352ae0e491108934be2d435857f95d2edcf9de0f8fd":0.00000000,"1362318503-96507bfed12b31c2f15ca5a378e48e1cfeb794d0ec5d1df4ea980df06a49df6f":0.00000000,"1362318504-7a7ab8cb378ef8994893b3ac4b3b1efc5f31b344aafa416950015c2dbab162c2":0.00000000,"1362318504-d8e4ed5e59cc19bd554f0757ab86c58fe47d49d25473a37238c3532a5b48511a":0.00000000,"1362318505-0f78baa2a06c263da97b565b1c96992b447164d6bb5c32c59b7d8972814a911d":0.00000000,"1362318505-943a1e53444e05f7b81878b3131781ebb8264171cf4b5f9142d210edc323dc67":0.00000000,"1362318505-db4495614d2705842f6f19ad7bf9363145856c89e700c85e27d8df75d7a512e4":0.00000000,"1362318505-f286a41cf444070596d0a1c45590e3a707133f9548961df805f25da1fefe51bf":0.00000000,"1362318505-f4b229d3da617499dff6c41a2c674829a5f9b5265e44da2d5947c2ff8f98ad70":0.00000000,"1362318589-10089b5722a67fbb75b854b955fe2914b6f74add6af9ca9643cd694a5ef29e7e":0.00000000,"1362318700-a9a96dec030156a20d9e61ac5e990efb016142c0046385acb5dd43adb962fac7":0.00000000,"1362318701-0169d8e6e8fd9a8b32af576e079980f0bc51f23c0514914f59190e457b6188c9":0.00000000,"1362318701-34f8753ab275674a8df78d9087d2930f376424fb33489bcd0024bcc2fddb578d":0.00000000,"1362318701-63faf4601859d35f2b3ba78aa4fc8af7bbdf4947b61b3cd9835856ceddc691f5":0.00000000,"1362318701-825cc7cb5b2e56e6d54edcab0e3e3b04ca24ba98af002ab7c956a9dbd5ffec5e":0.00000000,"1362318701-8bb892697d55ba815262616cc5af31f05cb1fc4d2e51c420fbc3399344c44f9c":0.00000000,"1362318701-9b799903f58d54e092dd0b6c628eb580ea12814c88f35533cb1d539c67d10a2b":0.00000000,"1362318701-fe9424deea7f3e8f67bb1a4c1e25f5be26ff86d4829d526a8636995049b3feac":0.00000000,"1362318702-c1999361a8e9921153d785f232d244f303bb90f68cb2c925a03b57b0c18931db":0.00000000,"1362318975-d92005475135b083ec0772b9efcdd9e0ddca1a9ce0561058f1edad34c268c6d4":0.00000000,"1362318978-40fc5e9eb8f5f1c21c990152adeef4001deb95e9b92ec825c763b37b65c73373":0.00000000,"1362318979-1154ff9c5430977eb65419ebd7b709ccac2adc6c7a8f6c4eea9d60640851b1ce":0.00000000,"buyer":0.00000000,"taxer":0.00000000},"error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":[""],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '55'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mxQ5mc7hCXGHsdgLE2mZ45dBiHMeokxEGg","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317208-0ee3e7855370921e1f7f9a695a817d76a572f572887f1f4400c9cf782f98b910"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mx6BSBB9yGbfqnnTbEeboba2uM8ZaQWGVr","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317209-46403b10552cdb44e708a214e6938deee3c6dd50a5dce69f3f3d51f3390c9a22"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mjsP53rqYFi5L1G7sbqcEmPHPnY8oWpnDS","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317209-50d7a7a39d54eb2666c1f6922077ab4a37e34bfc58be2f53b75a1a7f3d2e49af"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mxu3RYK4gLSbEZ8x2Ut5e8nn8VVDA3Zj2H","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317209-57a0120ab471b5f094ad3e96402f1d8ad756459fa31a3935a968aec943485303"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n488ppqxUppWZmAeNjp3XbnehDZZWemeN7","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317209-5a9f6493ebaf8ccfb28f52d6c44806e3ebf52620b930f92cd095f32c85b12472"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mnbNrGnV2EuM3Ac4BAKzaowRxuYgoQAp7g","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317210-b896fc2a5d4556e1b86af27be8dfe59c8286f08cbd774b6dc74ab3c39a62749f"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"moCjWMawQw9JELuey7aahZiV6mNf2xYnLc","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317258-33d282c6a8dbe063aa298d62ee6e9840d2da81e0da398a699e976c3c1a1bdf34"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mn6QVMrPkpPzUZEDJXt2rDRab4e7Uibw8p","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317258-6de2cacbe00f7336e2e6a248afc10f07cfa8d6e2c46eaaa8bfb489fefae90570"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n45yamQbtgUCmvVFQpdLxB24HLUpocDdjw","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317259-6531965789abca0ab7a3ae11179562999c970ffd7730638e52767d7218714cb8"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n2gX3zAEzb8b5P59agzHeJSGToqPDvWe3m","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317259-789a2b3fb08366e4a8ac1aef84c3e3a0380f0c35c6c5fd34af3e308eb6c0ccd1"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"ms6PurHENE5bp6iuNaaHqQBxi89AVsoinm","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317259-80ee94c2381d4d405328ca138fd71375caadb7766dab8079957302e277da3f1f"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mw9Cy9LTvmeVSNPf26k4hi2Pvc7J7Zx4bq","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317259-a73da7c6414ffd99031ee24a8a8c732771aaa0a3b37b9d3b052b56c1b19bbeef"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mm4gSiACSppUrf61CvDgnhnQM2ELtWSBkH","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317259-b173871e810f76c92fe08683be2829ac2f17bbf2ff0f74246ee8ab75c8b47cd9"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mgkE6X5eCrBD4x94JUBZ5Bjgwqg8ekGLrk","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317259-b5ee45f7668f545f796bd198d7263b4c541ea99cdc75008fca6de2c6bd0468b8"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mpGa7FQAPrSVLSWBUCFX9bfxUHvcvoD4yW","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317259-e2270127cdffdafb4c805ce677269a2c37d9b0e8ac972fb8d74c8515dcb3f112"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"moPnrY1qjynYz7TL4nivRuTZfTnNQ7icrC","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317364-21ad67778cf8ad297f20007ee1193327152253cfc2f5644bc1389677b7068295"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mifUrGxvU9imVPGKZDZ4tYKSPnt92f8qSS","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317364-2cdd0d11216df115dd53d86e32fc14668bedc727c8cae07458228994d38a8454"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mohjhamjEWL4uV6mkXb9PVEsZP1d6HmcRw","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317364-8697df25d25621cb5242d15813be97dcc8ce86be386925d3588161d705681ac5"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mqqZvHa9RcH2xdcuv8JQh7E8ifoukWbR37","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317364-db9d21d8d6c901bb5ffd82d9b43e6efb554b8c4e5bc4ad17fc6a629d8ddfa696"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mqCHmr9JUWevcAT87yGcy8PSSsKCDQXUZy","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317365-19b5c546e53e4d26465498b8507efd096d2e62bab6f16ef4975177fab0dec95f"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mvw3Yu5JX5CaqnLdkZce3q1V2qRFppsT7K","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317365-43b244ade673e789d55aabd7108dc605a9d3b65d969976e95170f1761958c6aa"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mm9foTGk37Xe2xx6Vwvm4UsUksEkyg2xTY","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317365-871c5a2e6f5e52fe23583bd94601e66ead33a7873f00f26cc6f21dcd3e68286d"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mvLL48C5aZn5ntxKs9iba7RfpYAYZSLoj4","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317365-93dbc7bd7d1328f2290f8e92a175b1e109e48f79fc6d8399fc3f047bf50abe57"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"myC47EeoXiGsfh9DuyA61GfSbiSTee4vFc","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317365-e172ec0abacc1c69400038bdac47f831732653017822126660c2dab94ba0b752"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mo4qxCWBKcwgLTo4wmjS52cRN1usKsALoE","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317482-2801e63f640d2546ace32d96006a5bd688cad81ca1a4440caeb415ba429c60c3"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mhUFKFeNZqxDEtwASt41f88yhRn47tPbGB","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317482-d8117a7ce5cd33b8018a2e897145d5986be7bb20a775c4731f7ce071fe2a92a7"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"myGvWnjVZqB7DxzmiEa4i7EJnkk1Fuq7Nd","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317482-e2ad43c0b90f1608dbf923071d922bbd0236c782f76a6097ae732166151fe662"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n1JS34wQawbESxiUxbox8jwDPsKcVBEP6K","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317482-e45ef76b3634c8041a2d32fe9c236ffa27036c6f6a68a64c74b3359176a4d1a2"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mxXUQT2d41rqfpeEbjpvX1VMGtruuFXawB","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317483-0162f826c6ad8878e6497d7e011d194c2ca0f78bfab01ef0418723699a6e0158"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mtpoNQTAAJNWn2xZtvz4rGzA49nek17fU5","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317483-5de990fb6c915d604dc70bfbf9e0849fc1ddc7ca3d527bef18d49630ca4eb330"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mfngum6GBiXbcFupEDVYa9tnRS8AGp4hqd","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317483-85fd5060869b96dd2fbb113c385f54d4e320df0453138b0c5e58ba3343a966e3"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mznTJsRsqGWEyjiTnHxtTgerAtHfBntrjJ","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317483-9d53fcfad901ced44fd9d653e522d85b5d6f3df86c2aa236f138c89bebd75d2e"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mye1wMKp1cLEpwbZAVuRTDo42yFSmicwFe","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317483-d74e72d78adeee1d933d6c1491be28c509d1dff6242c71cd437af33b008f046c"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mktkjctWJ5A6QhayUEgs8zvAoqXcAKJmz4","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317554-b5bb29882679518c295b8aae22a19131fa4e34650e3bebd7c7926fa5390a199a"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mwgWghstRQht6FhhLWsQaVHnRXfm4BpaY7","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317555-40d1fccfaaad639d5faf88ad120788c002421c51ff24a0e90a345e2dfe5ad3fa"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n38QY1s9QeBmsPurAjLdHztZZrwN7KVo3h","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317555-6a10797220c2d8efc31eac507b05de0329199612004dd3b75d7f01d7e85e6959"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n3L4QSjYn1mJJ4PBFqoscmWw8EiP1qMbG4","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317555-73846ac8b73c0b3e85c6f77cefb5f791c0f8660a1fefe2700ea6964d118727a8"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n3kaMRNe34WwXkVYdoooxHDpJitkMMBJYn","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317555-921c50713a354b17d0e757eccf2d1e7e216867b53c2925c5844d9a44fd285ea2"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"msZnDtibcqfwCS7J7V5TWn4sCo1GrsmoPP","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317555-93700888d1c940867e793bee1329214187bdd158183e63ddfd8c25f75186691e"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"my7qk8SEMsqXeQJQCCjBKpFEk4Sr1AiCU7","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317555-e6391e68c22560d91016c8e4ca7a636b1a99e707dc775a9c205ed543bb3d4ba9"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n27KPaGjwdicH7ZY9xACtXDkX4Cv1s5bKM","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:13 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317555-f0702b8314a0fa6bb0c4e9f3aa35a108a4e240a182f95455b7cfc950427efef5"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:13 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mfuyfUmx1tntNJwjMWvA1XZufM46rKQk3w","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317555-f443a8ee06ed2379d20d3632dd910cc1416c83e676af0296a5750cae1c2e4193"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mokbfVjMbEZZV42vCbtGqeBS6wT1cqpeVR","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317585-5c2735071bc3c5737d80fb9bfdda705cd4eea0311605bb271d7ec79cf714bb7f"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n1HZHBcRaiTZJCSd95uWCsWQMoQM7NF81U","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317586-31f5480dca76050c244da8b72e88e1f8d86ed6d0ac8c2d7c3d5d048f844e439b"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n13efgUbxiwHqDYXC4V93hGKoza9JopXYV","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317586-9b105c68d880c3043f3b6624cd2cc381742cc0da876066c3030d00db54ad1915"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mnDQ4cKxKRrdmYJQRL1J6rZhAD5TK865cE","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317587-2fe9e2e41a5aa9d6678fb91cefd68b1865e14de62727a8e8a33122d2fe484265"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n2EmERJZQw4aQLCnEuH8ZoX1ArgAUZ1AAi","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317587-3fd1d80d15fd9b1b60934c27df4fab7add4ad96bdea8c0eb18bdd3d1eae764e0"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n3nMdv892mFW16Wi2wDbwdsDgE4TGghse1","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317587-8d95b3b3084d35e268b507980a0fa845d7910f4a528aac41fada3863e864edfb"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mvqxR1ikBfXxyYgqhtpwyh7FWdSfRQcdm8","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317587-9b19524c193f51b5ef918c807a943a10efaf78955a5cbe1971772cf6d0a00759"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mjGQS7T7q9yZKpT4W83fXJduYo3d3VKsih","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317587-a8c3191eece19081121d6fed8a6f46545c057902490cc3cee1349f3108b85712"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"miV5HMV8oSXvW87UwJ2fMqZkZUSfZGnifJ","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317587-aacf387433d7b4b56e4f33b2900357f15cfd10fabf6668404f0b42d4a41d0a52"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mzs9nVhyTJep7Js6zfU9R9794qngkZjEqK","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317639-1b43aaa38a6764ac5867bc4cead1d4342ffb7a1402763207b96b95d919ebf390"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mhDsNxLftD6Au86YSw5ofchv6Va3fJiB3z","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317640-386dd2892fb0b0e0ceb946ed495f120d6e2b71490842b82f5324214196745f50"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n3S3GUjoYoqiTJQpWzxL3iYaevs6LHvseM","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317640-4f7c3524d67a1cfd2fb5e899c6477c3e457c912366c940d42f4142f78165292a"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mhtnswrehScUjtcy7ni19wS5v9wf92M5pE","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317640-5f2dae48df0a1cf216c2cd90fe777e13407fd67a1a93549dffc641d2c330877b"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mvc4Wihx4n5hKuKpbej2kKA5JUkAycz2Gc","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317640-76c62278abb512342f3083f6dc83233adce89f840a5bd641ba2e28d39c19e108"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mkgof9h777QJxoSBJ62XzHY3k8oNXwrhvM","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317640-80e15080275b8e7796cc7ad01e7f48d78db3b5881ed0aaa8b2dc868b5fb98d05"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"miyub62pQoHsPLfwU68iMh3B9m42G2Uf7Q","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317640-fd9ca629596b56f021f6f8e96ff2444c511ffe2fa303166b804ddcfcae3b6055"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mpjfCb86kA4iMNKMu8UZ1NAbht7F2979vr","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317641-01c1a61d9968cdd6a28db17084870f2176ca28347c6b54afdd9adb953b78f901"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mh6NXJ1iGAL9qkLYZx74MMzQPrZRKzrWH5","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317641-57b4b36fdce3790e9e27d1f1635a370b1062a465d82c36c356af5ed755a9f23b"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mzF1WmKyKXEB98tGStHQ6mV1rKFmbmZAwW","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317935-f5b183aafaf1617389d72e818c5d7840a66fd0bd95f9aaaa4482f16a65f08771"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mm3AWJ6KymqRmZ7vHK64k3MSPXhWnaEokV","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317936-504d759ac26f758830ce26ad2ac1952f81cd5ade7631ce75e22983392617e2c1"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mhRQhSrn1BzdM3sn3sqspDJc19MLFrfjdJ","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317937-2e2a35c94fe0fc502d3bf40fb49c1b7ac733a3c6946c31b2d08969176cd2f3b9"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mpMWpZo8qUPiVPogBzhpn7YvPzZQaubpxk","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317937-39579e2e8047f9b7ceb562567dfbefba4b3a31306e66326007f0af8b31bca728"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mta7TWGqNkPmhxjNGbudHenJENo4WsWz9T","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317937-44c9c9f9b81b76afb5b8fe4d2072a86cf310b40cf18fd03eac53e68175727ea7"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"midAwwvREjFuhybNCgm51M236oZEDteXxT","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317937-5a8ef942fc95dcbea90ab854a7e32e1360c512e095e02d8609b1cf806d3883cc"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mjaXkvEzqpMzEM3QQnA1Ku6hBfgUqugWPN","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317937-6693cb13f9fd7c09a7f85dcfcbc3c1f6ad09d068ab4ff4711ac685d2d63b8708"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mqTFSoyFtaVgYuYZ4pHjiZbh8PCqAAp8rB","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317937-743eb65aab0771a75576d68d6c7a88521b2bec0a7b7deb26576d4db9cce39232"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mzCsAbPxhB45ZxbyvU1g7yEYwGJHtk2cZT","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362317937-f98357846ea6225cb3ab73f1fd1375ff57f1cdd6a38af828b77e503b6b5aad68"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mnkzdYYUZnXZEHWQYe6h7WKLfbvVh6mMr2","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318139-e3d101440871670422c949ccb3a407709580d68b57f2575ed5dda1338ce67a78"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n2yyQBJqdQUULQLXkWa4bXAJK1EmmXNNW3","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318140-0f2ad50e85d4ebc9d1ee9ba6e060b4ef4d9a8fa02d7894f9ec6a99823bb97df5"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mzzxvZVmJnUWkra74p1Z84jNadxEt2oKmE","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318140-2a1be6142bc0b41061eacd8b389a949c10204b0a7a484fbc37fe9121a3e55546"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"myNMgcGXhnnDrpynuFYopVKbx4w7cVt9B6","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318140-5756c9e03a5abdb06c17d69f2dd11f3a791cc5eabea69035577129f06a238410"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mhtrxidZUpUFKDk3YLSpsVyvRouCtNUT6S","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318140-5780c77d657fa3da51aafdf0c7b9ddd322f9dc46dbb2cd76a02bd996489e6f0f"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"msQgQ2WZkC4NLhTGQWtg8ooCQCMay5sg2b","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318140-82ba4dfc565f524a469a05d2cdfaea571b01587c8f4b53ec7a818cd494c85d17"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mgQYQwenfXWbWbAxwmy8J6i7ewH7r8sdr5","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318140-ad5bd612ef4de993d476a51263621b3ac83881ec13794f4f532762bea43e77af"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mnqJzsUewjRkcAEY3RDJVkHMhRY4eJJ2MY","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318140-e34d95a9d30c4e7fa2fb6b32e74d86d3f2d383322077cd600cdcf9c3cdb03e93"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mhUy1SjDm2rcsY4R2bYXfchzfEQcTxquCT","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318140-f31819ccb87ab06c28ab6cb8590721f51b70e3b91260f583e7ca24f66b45cdf2"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n4DjYi1XQcP9vjMZNiUfo2TPCSJQDdLWX9","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318358-a2be6d37400912b9d79be352ae0e491108934be2d435857f95d2edcf9de0f8fd"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mvjvrNkM259UZRa2T8a34TyKvmfR5MVA45","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318503-96507bfed12b31c2f15ca5a378e48e1cfeb794d0ec5d1df4ea980df06a49df6f"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"moqz4TqncTDS5AZN9FUqaWnabxK6DLBzjp","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318504-7a7ab8cb378ef8994893b3ac4b3b1efc5f31b344aafa416950015c2dbab162c2"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mwTrQAQuRaAgGv7bPfguEAiNpmUAziwaBi","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318504-d8e4ed5e59cc19bd554f0757ab86c58fe47d49d25473a37238c3532a5b48511a"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"myFoK9HDwBTYdveoSJfPWiqkyXViJrA32G","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318505-0f78baa2a06c263da97b565b1c96992b447164d6bb5c32c59b7d8972814a911d"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mkeT9uNAUPL7xsKBX3mfdALQwep8UCUJdN","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318505-943a1e53444e05f7b81878b3131781ebb8264171cf4b5f9142d210edc323dc67"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mkMFJqk87nbVwqdFiFKsPSrVkz4k1g47Sf","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318505-db4495614d2705842f6f19ad7bf9363145856c89e700c85e27d8df75d7a512e4"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"msrM3QnBHfCPVQLLjUjKriRqcYvRATVpe5","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318505-f286a41cf444070596d0a1c45590e3a707133f9548961df805f25da1fefe51bf"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"myyui14DUmWXX1KZ7we3iM74iTf5odQTyQ","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318505-f4b229d3da617499dff6c41a2c674829a5f9b5265e44da2d5947c2ff8f98ad70"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mjtWxkJTbjtfv7fWjmVUcoJPNQKhzJNHtZ","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318589-10089b5722a67fbb75b854b955fe2914b6f74add6af9ca9643cd694a5ef29e7e"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mivarD8xoZ3V1taMGukoBn38XBM6wsw5L8","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318700-a9a96dec030156a20d9e61ac5e990efb016142c0046385acb5dd43adb962fac7"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mvYq41ckrWeZjt5nNdxJo3vpv8fyVFcvAC","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318701-0169d8e6e8fd9a8b32af576e079980f0bc51f23c0514914f59190e457b6188c9"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n27pdmWUSHwe4ZhJaxq2DhkiUi39JEcJ5o","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318701-34f8753ab275674a8df78d9087d2930f376424fb33489bcd0024bcc2fddb578d"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mzTBVQRV5iUjqzGf3YDthJVRP3NuQ9xKfE","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318701-63faf4601859d35f2b3ba78aa4fc8af7bbdf4947b61b3cd9835856ceddc691f5"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mrS8SYa5RSK2oDCxKh3ShXELcibXpm1tjU","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318701-825cc7cb5b2e56e6d54edcab0e3e3b04ca24ba98af002ab7c956a9dbd5ffec5e"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mnYh9RzARDN5Z83UjgSizd9vFNPkmUwumx","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318701-8bb892697d55ba815262616cc5af31f05cb1fc4d2e51c420fbc3399344c44f9c"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n25YNhrMKjs3yyjTyCKQvvZB1Zc9QdfB7P","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318701-9b799903f58d54e092dd0b6c628eb580ea12814c88f35533cb1d539c67d10a2b"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mi873VZ8fZzhpfUKbT2eGKqe27VCqZnrGw","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318701-fe9424deea7f3e8f67bb1a4c1e25f5be26ff86d4829d526a8636995049b3feac"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mjs2m7xPyhsyMhFDG3xSZaFbvTWvpWb4PS","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318702-c1999361a8e9921153d785f232d244f303bb90f68cb2c925a03b57b0c18931db"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n1yEMaLH1WG4u8uRwM9WGDyF2EZ5YDA1qf","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318975-d92005475135b083ec0772b9efcdd9e0ddca1a9ce0561058f1edad34c268c6d4"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"miRfeHNwpiJYWCKG4bZzJPoVdrBPNozMfG","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318978-40fc5e9eb8f5f1c21c990152adeef4001deb95e9b92ec825c763b37b65c73373"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n2q1HBNUWrybfZu76syxp26TaNQL57g5s3","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362318979-1154ff9c5430977eb65419ebd7b709ccac2adc6c7a8f6c4eea9d60640851b1ce"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mjANyCcoTLc69n7pyyDpoiHNzm1Dkgdxt9","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["buyer"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '60'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mw4vQWJt16oAXAqgEDpFBZ7m8huFebhoeV","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["taxer"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '60'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"n1jMj48Fiq7KosPS1XksBptrctUUmVtqNE","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getnewaddress","params":["1362319153-b262e52befcda6d5b4c164a5ff645b7abf27d2ac05973b1f96bc5d0bfc247f31"],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '130'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":"mpmdkCPMmNfszPHrA3uQLyB7tNLYA5bNGX","error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: US-ASCII
+      string: ! '{"method":"getbalance","params":["1362319153-b262e52befcda6d5b4c164a5ff645b7abf27d2ac05973b1f96bc5d0bfc247f31",0],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '129'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Mar 2013 13:59:14 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '50'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":0.00000000,"error":null,"id":"jsonrpc"}
+
+'
+    http_version: 
+  recorded_at: Sun, 03 Mar 2013 13:59:14 GMT
+recorded_with: VCR 2.4.0
