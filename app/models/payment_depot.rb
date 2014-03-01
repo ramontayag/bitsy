@@ -16,6 +16,7 @@ class PaymentDepot < ActiveRecord::Base
       message: 'must be a value within 0.0 and 1.0'
     }
   )
+  validate :address, uniqueness: true
 
   def initial_owner_rate
     self.min_payment * (1 - self.initial_tax_rate)
