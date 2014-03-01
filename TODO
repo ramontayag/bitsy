@@ -1,0 +1,4 @@
+- Retire the noun-based service classes
+- Continue with `BuildsSendManyHash` and `SendsPayments` (see `PaymentForwarder`)
+- Fix the "feature" integration spec
+- Add controller endpoints to manage the payment depots
