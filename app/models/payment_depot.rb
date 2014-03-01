@@ -6,7 +6,7 @@ class PaymentDepot < ActiveRecord::Base
 
   alias_attribute :balance, :balance_cache
   before_create :set_bitcoin_address
-  after_create :set_balance_cache
+  before_create :set_balance_cache
   delegate :balance, to: :bit_wallet_account
   scope :with_balance, -> { where('balance_cache > 0.0') }
   validate(
