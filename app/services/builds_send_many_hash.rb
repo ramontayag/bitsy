@@ -1,0 +1,3 @@
+class BuildsSendManyHash
+
+end

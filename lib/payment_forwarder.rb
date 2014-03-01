@@ -3,12 +3,14 @@ class PaymentForwarder
   include ClassToInstanceConvenienceMethods
 
   def forward
-    if payment_transactions.sum(:amount) >= App.forward_threshold
-      bitcoin_master_account.send_many send_many_args
-    end
+    bitcoin_master_account.send_many(send_many_args) if past_threshold?
   end
 
   private
+
+  def past_threshold?
+    payment_transactions.sum(:amount) >= App.forward_threshold
+  end
 
   def send_many_args
     @send_many_args ||= payment_transactions.inject({}) do |hash, transaction|

@@ -9,7 +9,7 @@ VCR.configure do |c|
   c.allow_http_connections_when_no_cassette = true
 end
 
-BitcoinTestnet.dir = 'spec/testnet'
+BitcoinTestnet.dir = App.testnet_dir
 BitcoinTestnet.configure_with_rspec_and_vcr!
 
 RSpec.configure do |config|

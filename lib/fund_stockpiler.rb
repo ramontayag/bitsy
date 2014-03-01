@@ -7,7 +7,7 @@ class FundStockpiler
   end
 
   def stockpile
-    if @payment_transaction && @payment_transaction.payment_type == 'receive'
+    if received_payment?(@payment_transaction)
       @wallet.move(
         payment_depot.bitcoin_account_name,
         App.bitcoin_master_account_name,
@@ -17,6 +17,10 @@ class FundStockpiler
   end
 
   private
+
+  def received_payment?(pt)
+    pt && pt.payment_type == 'recieve'
+  end
 
   def payment_depot
     @payment_depot ||= PaymentDepot.

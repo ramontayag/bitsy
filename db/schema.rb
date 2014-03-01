@@ -11,31 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228101117) do
+ActiveRecord::Schema.define(:version => 20140301092345) do
 
   create_table "payment_depots", :force => true do |t|
-    t.decimal  "min_payment",                       :null => false
-    t.decimal  "initial_tax_rate",                  :null => false
-    t.decimal  "added_tax_rate",                    :null => false
-    t.decimal  "balance_cache",    :default => 0.0, :null => false
+    t.decimal  "min_payment",      :null => false
+    t.decimal  "initial_tax_rate", :null => false
+    t.decimal  "added_tax_rate",   :null => false
+    t.decimal  "balance_cache",    :null => false
     t.string   "owner_address"
-    t.string   "address",                           :null => false
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.string   "address",          :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "payment_transactions", :force => true do |t|
-    t.integer  "payment_depot_id",          :null => false
-    t.decimal  "amount",                    :null => false
-    t.string   "receiving_address",         :null => false
-    t.string   "payment_type",              :null => false
-    t.integer  "confirmations",             :null => false
-    t.string   "transaction_id",            :null => false
+    t.integer  "payment_depot_id",                         :null => false
+    t.decimal  "amount",                                   :null => false
+    t.string   "receiving_address",                        :null => false
+    t.string   "payment_type",                             :null => false
+    t.string   "transaction_id",                           :null => false
     t.string   "forwarding_transaction_id"
-    t.datetime "occurred_at",               :null => false
-    t.datetime "received_at",               :null => false
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "occurred_at",                              :null => false
+    t.datetime "received_at",                              :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.integer  "confirmations",             :default => 0, :null => false
   end
 
 end

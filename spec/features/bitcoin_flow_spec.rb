@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Bitcoin flow", vcr: true do
+describe "Bitcoin flow", vcr: {record: :all} do
   let(:wallet) do
     App.bit_wallet
   end
@@ -26,8 +26,6 @@ describe "Bitcoin flow", vcr: true do
     buyer_account.send_amount 1.5, to: payment_depot.address
 
     PaymentJob.run
-
-    binding.pry
 
     taxer_account.balance.should == 0.8 * 1.5
     owner_account.balance.should == 0.2 * 1.5

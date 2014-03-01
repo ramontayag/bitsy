@@ -19,17 +19,7 @@ class TransactionsSyncer
   private
 
   def payment_transaction_for(tx)
-    PaymentTransaction.where(payment_transaction_args_for(tx)).first
-  end
-
-  def payment_transaction_args_for(tx)
-    {
-      transaction_id: tx.id,
-      receiving_address: tx.address,
-      amount: tx.amount,
-      occurred_at: tx.occurred_at,
-      received_at: tx.received_at
-    }
+    PaymentTransaction.matching_bit_wallet_transaction(tx).first
   end
 
   def bit_wallet_transactions

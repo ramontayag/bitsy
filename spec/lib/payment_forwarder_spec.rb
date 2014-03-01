@@ -1,5 +1,13 @@
 require 'spec_helper'
 
+# The PaymentForwarder makes only 1 transaction to send all the concerned
+# received transactions to the tax address and owner. This is helps save on
+# transaction fees.
+#
+# A threshold is also set in the configuration of the app that allows you to
+# only forward money when the app's wallet is past a certain point. This is
+# another measure to help save in transaction fees.
+
 describe PaymentForwarder do
 
   describe '#forward' do
