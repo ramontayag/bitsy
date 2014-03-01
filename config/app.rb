@@ -21,7 +21,7 @@ class App < Configurable # :nodoc:
   # This is the transaction fee that bitcoind will set.
   # TODO: find a way to programatically get this so Bitsy will be more robust to
   # to changes in the fee in the future.
-  config.transaction_fee = 0.0005
+  config.transaction_fee = 0.0001
   config.transaction_fee_threshold_multiplier = 200
   config.forward_threshold = config.transaction_fee * transaction_fee_threshold_multiplier
   config.safe_confirmation_threshold = 6
