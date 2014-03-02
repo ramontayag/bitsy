@@ -27,9 +27,12 @@ describe CreatesTransaction, ".execute" do
       payment_type: "received",
       occurred_at: Time.at(1365328873),
       received_at: Time.at(1365328875)
-    )
+    ).and_return(payment_tx)
 
-    described_class.execute(bit_wallet_transaction: bit_wallet_tx)
+    resulting_ctx = described_class.
+      execute(bit_wallet_transaction: bit_wallet_tx)
+
+    expect(resulting_ctx[:payment_transaction]).to eq(payment_tx)
   end
 
 end

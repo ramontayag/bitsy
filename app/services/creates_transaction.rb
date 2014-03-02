@@ -5,7 +5,7 @@ class CreatesTransaction
   executed do |ctx|
     bit_wallet_tx = ctx.fetch(:bit_wallet_transaction)
     payment_depot = PaymentDepot.find_by_address(bit_wallet_tx.address_str)
-    PaymentTransaction.create(
+    payment_tx = PaymentTransaction.create(
       payment_depot_id: payment_depot.id,
       amount: bit_wallet_tx.amount,
       receiving_address: bit_wallet_tx.address_str,
@@ -15,6 +15,7 @@ class CreatesTransaction
       occurred_at: bit_wallet_tx.occurred_at,
       received_at: bit_wallet_tx.received_at
     )
+    ctx[:payment_transaction] = payment_tx
   end
 
 end
