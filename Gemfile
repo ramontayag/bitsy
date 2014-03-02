@@ -13,7 +13,7 @@ gem 'unicorn', '4.6.2'
 # bitcoin-client is used by bit_wallet
 gem 'bitcoin-client', "0.0.3"
 
-gem 'bit_wallet', '0.5.0'
+gem 'bit_wallet', '0.6.0'
 gem 'clockwork', '0.5.0'
 gem 'daemons', '1.1.9'
 gem "light-service", "0.2.1"
