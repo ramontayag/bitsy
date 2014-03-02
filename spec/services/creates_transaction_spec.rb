@@ -29,7 +29,7 @@ describe CreatesTransaction, ".execute" do
       received_at: Time.at(1365328875)
     )
 
-    described_class.execute(bit_wallet_tx)
+    described_class.execute(bit_wallet_transaction: bit_wallet_tx)
   end
 
 end

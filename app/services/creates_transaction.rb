@@ -1,6 +1,9 @@
 class CreatesTransaction
 
-  def self.execute(bit_wallet_tx)
+  include LightService::Action
+
+  executed do |ctx|
+    bit_wallet_tx = ctx.fetch(:bit_wallet_transaction)
     payment_depot = PaymentDepot.find_by_address(bit_wallet_tx.address_str)
     PaymentTransaction.create(
       payment_depot_id: payment_depot.id,

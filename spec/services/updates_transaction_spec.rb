@@ -8,7 +8,8 @@ describe UpdatesTransaction, ".execute" do
 
     expect(payment_tx).to receive(:update_attributes).with(confirmations: 3)
 
-    described_class.execute(bit_wallet_tx, payment_tx)
+    described_class.execute(bit_wallet_transaction: bit_wallet_tx,
+                            payment_transaction: payment_tx)
   end
 
 end

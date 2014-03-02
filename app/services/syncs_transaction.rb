@@ -12,7 +12,7 @@ class SyncsTransaction
     if payment_tx
       actions << UpdatesTransaction
     else
-      actions << CreatesTransaction
+      actions += [CreatesTransaction, StockpilesTransaction]
     end
 
     with(ctx).reduce(actions)

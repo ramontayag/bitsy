@@ -14,7 +14,7 @@ describe SyncsTransaction, ".for" do
 
     it "creates the payment transaction" do
       ctx = { payment_transaction: nil, bit_wallet_transaction: bit_wallet_tx }
-      actions = [CreatesTransaction]
+      actions = [CreatesTransaction, StockpilesTransaction]
 
       actions.each do |action|
         expect(action).to receive(:execute).with(ctx) { ctx }
