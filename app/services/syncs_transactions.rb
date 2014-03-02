@@ -4,7 +4,7 @@ class SyncsTransactions
 
   executed do |ctx|
     App.bit_wallet.recent_transactions.each do |bit_wallet_tx|
-      SyncsTransaction.execute(bit_wallet_tx)
+      SyncsTransaction.for(bit_wallet_tx)
     end
   end
 

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe SyncsTransaction, ".execute" do
+describe SyncsTransaction, ".for" do
 
   let(:bit_wallet_tx) do
     double
@@ -13,10 +13,14 @@ describe SyncsTransaction, ".execute" do
     end
 
     it "creates the payment transaction" do
-      expect(CreatesTransaction).to receive(:execute).
-        with(bit_wallet_tx)
+      ctx = { payment_transaction: nil, bit_wallet_transaction: bit_wallet_tx }
+      actions = [CreatesTransaction]
 
-      described_class.execute(bit_wallet_tx)
+      actions.each do |action|
+        expect(action).to receive(:execute).with(ctx) { ctx }
+      end
+
+      described_class.for(bit_wallet_tx)
     end
   end
 
@@ -29,10 +33,14 @@ describe SyncsTransaction, ".execute" do
     end
 
     it "updates the payment transaction" do
-      expect(UpdatesTransaction).to receive(:execute).
-        with(bit_wallet_tx, payment_tx)
+      actions = [UpdatesTransaction]
+      ctx = { bit_wallet_transaction: bit_wallet_tx,
+              payment_transaction: payment_tx}
+      actions.each do |action|
+        expect(action).to receive(:execute).with(ctx) { ctx }
+      end
 
-      described_class.execute(bit_wallet_tx)
+      described_class.for(bit_wallet_tx)
     end
   end
 

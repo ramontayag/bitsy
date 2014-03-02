@@ -12,7 +12,7 @@ describe SyncsTransactions, ".execute" do
     allow(App).to receive(:bit_wallet) { bit_wallet }
 
     bit_wallet_txs.each do |bw_tx|
-      expect(SyncsTransaction).to receive(:execute).with(bw_tx).once
+      expect(SyncsTransaction).to receive(:for).with(bw_tx).once
     end
 
     described_class.execute({})
