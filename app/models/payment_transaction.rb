@@ -36,16 +36,18 @@ class PaymentTransaction < ActiveRecord::Base
     )
   }
   scope :for_forwarding, -> { safely_confirmed.not_forwarded.received }
+  scope :credits, -> { received }
 
   delegate :min_payment, to: :payment_depot, prefix: true
   delegate :balance, to: :payment_depot, prefix: true
   delegate :initial_tax_rate, to: :payment_depot, prefix: true
   delegate :added_tax_rate, to: :payment_depot, prefix: true
+  delegate :total_received_amount, to: :payment_depot, prefix: true
 
   def forward_tax_fee
     ForwardTaxCalculator.calculate(self.amount,
                                    self.payment_depot_min_payment,
-                                   self.payment_depot_balance,
+                                   self.payment_depot_total_received_amount,
                                    self.payment_depot_initial_tax_rate,
                                    self.payment_depot_added_tax_rate)
   end

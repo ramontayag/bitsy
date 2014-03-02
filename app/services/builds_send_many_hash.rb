@@ -21,9 +21,10 @@ class BuildsSendManyHash
   end
 
   def self.for_transaction(payment_transaction)
+    owner_address = payment_transaction.payment_depot.owner_address
     {
-      App.tax_address => payment_transaction.forward_tax_fee,
-      payment_transaction.payment_depot.address => payment_transaction.owner_fee
+      App.tax_address => payment_transaction.forward_tax_fee.to_f,
+      owner_address => payment_transaction.owner_fee.to_f
     }
   end
 

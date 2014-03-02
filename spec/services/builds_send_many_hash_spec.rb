@@ -28,14 +28,14 @@ describe BuildsSendManyHash do
   describe ".for_transaction" do
     it "returns a send_many hash for the single transaction" do
       payment_depot = build_stubbed(:payment_depot,
-                                    address: "payment_depot_address")
+                                    owner_address: "owner_address")
       payment_tx = build_stubbed(:payment_transaction,
                                  payment_depot: payment_depot)
       expect(payment_tx).to receive(:forward_tax_fee) { 0.15 }
       expect(payment_tx).to receive(:owner_fee) { 0.85 }
 
       expected_hash = { App.tax_address => 0.15,
-                        "payment_depot_address" => 0.85 }
+                        "owner_address" => 0.85 }
 
       expect(described_class.for_transaction(payment_tx)).to eq(expected_hash)
     end

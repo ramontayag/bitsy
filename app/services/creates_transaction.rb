@@ -4,8 +4,6 @@ class CreatesTransaction
 
   executed do |ctx|
     bit_wallet_tx = ctx.fetch(:bit_wallet_transaction)
-    puts "Will create bit_wallet_tx to #{bit_wallet_tx.address_str} with category: #{bit_wallet_tx.category}"
-    puts "Finding depot with address: #{bit_wallet_tx.address_str}"
     payment_depot = PaymentDepot.find_by_address(bit_wallet_tx.address_str)
     if payment_depot
       payment_tx = PaymentTransaction.create(
