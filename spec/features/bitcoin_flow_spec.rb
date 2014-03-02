@@ -23,9 +23,10 @@ describe "Bitcoin flow", vcr: {record: :all} do
     puts "This is the payment depot: #{payment_depot.inspect}"
 
     # Buyer pays
+    puts "Paying #{payment_depot.address}"
     buyer_account.send_amount 1.5, to: payment_depot.address
 
-    PaymentJob.run
+    PaymentJob.new.perform
 
     taxer_account.balance.should == 0.8 * 1.5
     owner_account.balance.should == 0.2 * 1.5

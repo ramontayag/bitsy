@@ -7,6 +7,7 @@ describe ProcessesPayments, ".for", integration: true do
 
   it "processes the payments for a bit_wallet" do
     actions = [
+      SelectsTransactionsForSync,
       SyncsTransactions,
       ForwardsPayments
     ]

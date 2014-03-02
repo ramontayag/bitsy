@@ -6,6 +6,7 @@ class ProcessesPayments
     ctx = { bit_wallet: bit_wallet,
             bit_wallet_master_account: bit_wallet_master_account }
     with(ctx).reduce([
+      SelectsTransactionsForSync,
       SyncsTransactions,
       ForwardsPayments
     ])

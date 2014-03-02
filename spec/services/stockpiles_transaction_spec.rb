@@ -20,7 +20,7 @@ describe StockpilesTransaction, ".execute" do
       expect(bit_wallet).to receive(:move).with(
         payment_depot.bitcoin_account_name,
         App.bitcoin_master_account_name,
-        payment_tx.amount
+        payment_tx.amount.to_f
       )
 
       described_class.execute(payment_transaction: payment_tx,
@@ -32,6 +32,15 @@ describe StockpilesTransaction, ".execute" do
     let(:payment_tx) do
       build_stubbed(:payment_transaction, payment_type: "send")
     end
+
+    it "does nothing" do
+      expect(bit_wallet).to_not receive(:move)
+      described_class.execute(payment_transaction: payment_tx)
+    end
+  end
+
+  context "there is no payment transaction" do
+    let(:payment_tx) { nil }
 
     it "does nothing" do
       expect(bit_wallet).to_not receive(:move)
