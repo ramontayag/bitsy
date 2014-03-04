@@ -32,6 +32,6 @@ group :development, :test do
   gem 'database_cleaner', '0.9.1'
   gem 'vcr', '~> 2.4'
   gem 'webmock', ">= 1.8.0", "< 1.16"
-  gem 'bitcoin_testnet', '0.5.0'
+  gem 'bitcoin_testnet', '0.5.1'
   gem 'factory_girl_rails', '4.2.1'
 end

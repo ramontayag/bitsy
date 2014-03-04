@@ -36,7 +36,7 @@ GEM
       bitcoin-client
     bitcoin-client (0.0.3)
       rest-client
-    bitcoin_testnet (0.5.0)
+    bitcoin_testnet (0.5.1)
       activesupport
       wait (~> 0.5.1)
     builder (3.0.4)
@@ -196,7 +196,7 @@ DEPENDENCIES
   app (= 1.0.3)
   bit_wallet (= 0.6.0)
   bitcoin-client (= 0.0.3)
-  bitcoin_testnet (= 0.5.0)
+  bitcoin_testnet (= 0.5.1)
   capistrano (= 2.14.2)
   capybara (= 2.0.2)
   clockwork (= 0.5.0)
