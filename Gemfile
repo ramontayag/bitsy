@@ -1,16 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
-gem 'rails-api', '0.1.0'
+gem "rails", "4.0.3"
+gem "rails-api", "0.2.0"
 
-gem 'app', '1.0.3'
-gem 'sidekiq', '~> 2.8'
-gem 'sqlite3', '1.3.7'
-gem 'unicorn', '4.6.2'
+gem "app", "~> 1.0"
+gem "sidekiq", "~> 2.8"
+gem "sqlite3", "~> 1.3"
+gem 'unicorn', "4.6.2"
 
 gem 'bit_wallet', '0.6.0'
 gem 'clockwork', '0.7.2'
-gem 'daemons', '1.1.9'
+gem 'daemons', "~> 1.1"
 gem "light-service", "0.2.1"
 
 # To use ActiveModel has_secure_password
@@ -20,16 +20,16 @@ gem "light-service", "0.2.1"
 # gem 'jbuilder'
 
 group :development, :test do
-  gem 'capistrano', '2.14.2'
+  gem 'capistrano', '~> 2.14'
   gem 'pry', '0.9.12'
 end
 
 group :test do
   gem 'rspec-rails', '~> 2.13'
-  gem 'capybara', '2.0.2'
-  gem 'database_cleaner', '0.9.1'
+  gem 'capybara', '~> 2.0'
+  gem 'database_cleaner', "~> 1.2"
   gem 'vcr', '~> 2.4'
   gem 'webmock', ">= 1.8.0", "< 1.16"
   gem 'bitcoin_testnet', '0.5.1'
-  gem 'factory_girl_rails', '4.2.1'
+  gem 'factory_girl_rails', "~> 4.2"
 end
