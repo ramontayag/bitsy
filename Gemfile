@@ -4,7 +4,7 @@ gem 'rails', '3.2.13'
 gem 'rails-api', '0.1.0'
 
 gem 'app', '1.0.3'
-gem 'sidekiq', '2.8.0'
+gem 'sidekiq', '~> 2.8'
 gem 'sqlite3', '1.3.7'
 gem 'unicorn', '4.6.2'
 
@@ -14,7 +14,7 @@ gem 'unicorn', '4.6.2'
 gem 'bitcoin-client', "0.0.3"
 
 gem 'bit_wallet', '0.6.0'
-gem 'clockwork', '0.5.0'
+gem 'clockwork', '0.7.2'
 gem 'daemons', '1.1.9'
 gem "light-service", "0.2.1"
 
