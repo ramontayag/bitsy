@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Bitcoin flow", vcr: {record: :all} do
+describe "Bitcoin flow", vcr: {record: :once} do
   let(:wallet) do
     App.bit_wallet
   end
