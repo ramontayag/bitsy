@@ -27,6 +27,9 @@ gem "light-service", "0.2.1"
 group :development, :test do
   gem 'capistrano', '2.14.2'
   gem 'pry', '0.9.12'
+end
+
+group :test do
   gem 'rspec-rails', '~> 2.13'
   gem 'capybara', '2.0.2'
   gem 'database_cleaner', '0.9.1'
