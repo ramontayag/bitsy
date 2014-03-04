@@ -1,13 +1,4 @@
 class PaymentTransaction < ActiveRecord::Base
-  attr_accessible(:amount,
-                  :payment_depot_id,
-                  :receiving_address,
-                  :sending_address,
-                  :transaction_id,
-                  :confirmations,
-                  :payment_type,
-                  :occurred_at,
-                  :received_at)
 
   belongs_to :payment_depot
 
