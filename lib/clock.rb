@@ -1,12 +1,10 @@
 require 'clockwork'
-require './../config/boot'
-require './../config/environment'
+require "sidekiq"
 
 module Clockwork
   handler do |job|
-    puts "Running #{job}"
+    Sidekiq::Client.push('class' => job, 'args' => [])
   end
 
-  every(5.seconds, 'dispatcher') { DispatchWorker.async_perform }
-  # every(1.second, 'dispatcher') { DispatchWorker.async_perform }
+  every(5.seconds, 'PaymentJob')
 end
