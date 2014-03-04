@@ -8,11 +8,6 @@ gem 'sidekiq', '~> 2.8'
 gem 'sqlite3', '1.3.7'
 gem 'unicorn', '4.6.2'
 
-# NOTE: Override what gem is included until
-# dcd70a686162fad41e5bd4bddc0ee67565227ec6 is released in rubygems
-# bitcoin-client is used by bit_wallet
-gem 'bitcoin-client', "0.0.3"
-
 gem 'bit_wallet', '0.6.0'
 gem 'clockwork', '0.7.2'
 gem 'daemons', '1.1.9'
