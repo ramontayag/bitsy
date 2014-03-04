@@ -29,7 +29,7 @@ GEM
     app (1.0.3)
     arel (4.0.2)
     atomic (1.1.15)
-    bit_wallet (0.6.0)
+    bit_wallet (0.6.1)
       activesupport
       bitcoin-client
     bitcoin-client (0.0.3)
@@ -178,7 +178,7 @@ PLATFORMS
 
 DEPENDENCIES
   app (~> 1.0)
-  bit_wallet (= 0.6.0)
+  bit_wallet (= 0.6.1)
   bitcoin_testnet (= 0.5.1)
   capistrano (~> 2.14)
   capybara (~> 2.0)

@@ -8,7 +8,7 @@ gem "sidekiq", "~> 2.8"
 gem "sqlite3", "~> 1.3"
 gem 'unicorn', "4.6.2"
 
-gem 'bit_wallet', '0.6.0'
+gem 'bit_wallet', '0.6.1'
 gem 'clockwork', '0.7.2'
 gem 'daemons', "~> 1.1"
 gem "light-service", "0.2.1"
