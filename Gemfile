@@ -7,6 +7,7 @@ gem "app", "~> 1.0"
 gem "sidekiq", "~> 2.8"
 gem "sqlite3", "~> 1.3"
 gem 'unicorn', "4.6.2"
+gem "active_model_serializers"
 
 gem 'bit_wallet', '0.6.1'
 gem 'clockwork', '0.7.2'
