@@ -7,12 +7,15 @@ describe SendsPayments, ".execute" do
 
   it "initiates a payment using the :send_many_hash from the master account" do
     expect(bit_wallet_master_account).
-      to receive(:send_many).with(send_many_hash)
+      to receive(:send_many).with(send_many_hash).
+      and_return("txid")
 
     ctx = { bit_wallet_master_account: bit_wallet_master_account,
             send_many_hash: send_many_hash }
 
-    described_class.execute(ctx)
+    resulting_ctx = described_class.execute(ctx)
+
+    expect(resulting_ctx[:forwarding_transaction_id]).to eq("txid")
   end
 
 end

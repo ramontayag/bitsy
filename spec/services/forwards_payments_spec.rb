@@ -14,7 +14,8 @@ describe ForwardsPayments, ".execute" do
   let(:actions) do
     [
       BuildsSendManyHash,
-      SendsPayments
+      SendsPayments,
+      AssociatesTransactions
     ]
   end
 

@@ -14,7 +14,8 @@ class ForwardsPayments
       }
       with(ctx).reduce([
         BuildsSendManyHash,
-        SendsPayments
+        SendsPayments,
+        AssociatesTransactions
       ])
     end
   end
