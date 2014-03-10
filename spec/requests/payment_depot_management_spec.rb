@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "Payment depoy management", vcr: {record: :all} do
+describe "Payment depoy management", vcr: {record: :once} do
   let(:wallet) { App.bit_wallet }
 
   let(:default_account) { App.bitcoin_master_account }
@@ -24,7 +24,7 @@ describe "Payment depoy management", vcr: {record: :all} do
                              initial_tax_rate: 0.8,
                              added_tax_rate: 0.1,
                              owner_address: owner_address }
-    post payment_depots_path(payment_depot: payment_depot_params)
+    post v1_payment_depots_path(payment_depot: payment_depot_params)
 
     # Buyer pays
     payment_depot = PaymentDepot.find_by_owner_address(owner_address)

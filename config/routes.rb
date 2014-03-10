@@ -1,5 +1,7 @@
 Bitsy::Application.routes.draw do
-  resources :payment_depots
+  namespace :v1 do
+    resources :payment_depots
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
