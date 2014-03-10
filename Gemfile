@@ -24,6 +24,11 @@ group :development, :test do
   gem 'pry', '0.9.12'
 end
 
+group :development do
+  gem "spring", "~> 1.1"
+  gem "spring-commands-rspec", "~> 1.0"
+end
+
 group :test do
   gem 'rspec-rails', '~> 2.13'
   gem 'capybara', '~> 2.0'
