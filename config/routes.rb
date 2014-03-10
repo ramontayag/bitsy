@@ -1,4 +1,5 @@
 Bitsy::Application.routes.draw do
+  resources :payment_depots
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
