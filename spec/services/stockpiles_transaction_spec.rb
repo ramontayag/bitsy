@@ -15,16 +15,22 @@ describe StockpilesTransaction, ".execute" do
             payment_depot: payment_depot,
             payment_type: "receive")
     end
+    let(:bit_wallet_master_account) do
+      build(:bit_wallet_account, name: "stockpiler", wallet: bit_wallet)
+    end
 
     it "moves the funds to the master account" do
       expect(bit_wallet).to receive(:move).with(
         payment_depot.bitcoin_account_name,
-        App.bitcoin_master_account_name,
+        "stockpiler",
         payment_tx.amount.to_f
       )
 
-      described_class.execute(payment_transaction: payment_tx,
-                              bit_wallet_transaction: bit_wallet_tx)
+      described_class.execute(
+        payment_transaction: payment_tx,
+        bit_wallet_transaction: bit_wallet_tx,
+        bit_wallet_master_account: bit_wallet_master_account
+      )
     end
   end
 

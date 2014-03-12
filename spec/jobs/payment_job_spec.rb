@@ -7,8 +7,10 @@ describe PaymentJob, "#perform" do
     allow(App).to receive(:bitcoin_master_account).
       and_return(bit_wallet_master_account)
 
-    expect(ProcessesPayments).to receive(:for).
-      with(App.bit_wallet, bit_wallet_master_account)
+    expect(ProcessesPayments).to receive(:for).with(
+      bit_wallet: App.bit_wallet,
+      bit_wallet_master_account: bit_wallet_master_account
+    )
     described_class.new.perform
   end
 

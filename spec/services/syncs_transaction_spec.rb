@@ -6,6 +6,8 @@ describe SyncsTransaction, ".for" do
     double
   end
 
+  let(:bit_wallet_master_account) { build_stubbed(:bit_wallet_account) }
+
   context "bit wallet transaction has not been synced before" do
     before do
       allow(PaymentTransaction).to receive(:matching_bit_wallet_transaction).
@@ -13,14 +15,17 @@ describe SyncsTransaction, ".for" do
     end
 
     it "creates the payment transaction" do
-      ctx = { payment_transaction: nil, bit_wallet_transaction: bit_wallet_tx }
+      ctx = { payment_transaction: nil,
+              bit_wallet_transaction: bit_wallet_tx,
+              bit_wallet_master_account: bit_wallet_master_account}
       actions = [CreatesTransaction, StockpilesTransaction]
 
       actions.each do |action|
         expect(action).to receive(:execute).with(ctx) { ctx }
       end
 
-      described_class.for(bit_wallet_tx)
+      described_class.for(bit_wallet_transaction: bit_wallet_tx,
+                          bit_wallet_master_account: bit_wallet_master_account)
     end
   end
 
@@ -40,7 +45,7 @@ describe SyncsTransaction, ".for" do
         expect(action).to receive(:execute).with(ctx) { ctx }
       end
 
-      described_class.for(bit_wallet_tx)
+      described_class.for(bit_wallet_transaction: bit_wallet_tx)
     end
   end
 

@@ -19,7 +19,8 @@ describe ProcessesPayments, ".for", integration: true do
       expect(action).to receive(:execute).with(ctx) { ctx }
     end
 
-    described_class.for(wallet, bit_wallet_master_account)
+    described_class.for(bit_wallet: wallet,
+                        bit_wallet_master_account: bit_wallet_master_account)
   end
 
 end
