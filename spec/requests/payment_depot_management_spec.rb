@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "Payment depoy management", vcr: {record: :once} do
+describe "Payment depot management", vcr: {record: :once} do
   let(:wallet) { App.bit_wallet }
 
   let(:default_account) { App.bitcoin_master_account }
