@@ -14,7 +14,7 @@ describe "Payment depoy management", vcr: {record: :once} do
   let(:owner_address) { owner_account.addresses.first.address }
 
   before do
-    allow(App).to receive(:tax_address) { taxer_address }
+    allow(App).to receive(:tax_address).and_return(taxer_address)
     # Transfer money from default account to the buyer, so the buyer can buy
     default_account.send_amount 10, to: buyer_address
   end
