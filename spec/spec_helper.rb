@@ -34,5 +34,5 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   # NOTE: Turn off random order because it seems to mess up VCR-related tests.
-  # config.order = "random"
+  config.order = "random"
 end
