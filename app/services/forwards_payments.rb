@@ -4,15 +4,17 @@ class ForwardsPayments
   include LightService::Action
 
   executed do |ctx|
-    bit_wallet_master_account = ctx.fetch(:bit_wallet_master_account)
     payment_transactions = PaymentTransaction.for_forwarding
 
     if past_threshold?(payment_transactions)
-      ctx = {
+      bit_wallet_master_account = ctx.fetch(:bit_wallet_master_account)
+      tax_address = ctx.fetch(:tax_address)
+      context = {
         bit_wallet_master_account: bit_wallet_master_account,
-        payment_transactions: payment_transactions
+        payment_transactions: payment_transactions,
+        tax_address: tax_address
       }
-      with(ctx).reduce([
+      with(context).reduce([
         BuildsSendManyHash,
         SendsPayments,
         AssociatesTransactions
