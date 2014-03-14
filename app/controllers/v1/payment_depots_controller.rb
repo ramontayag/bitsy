@@ -1,6 +1,11 @@
 module V1
   class PaymentDepotsController < ApplicationController
 
+    def show
+      @payment_depot = PaymentDepot.find(params[:id])
+      render json: @payment_depot
+    end
+
     def create
       @payment_depot = PaymentDepot.create(payment_depot_params)
       render json: @payment_depot

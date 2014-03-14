@@ -19,7 +19,7 @@ describe "Payment depot management", vcr: {record: :once} do
     default_account.send_amount 10, to: buyer_address
   end
 
-  it "creates a payment depot to receive payments" do
+  it "creates a payment depot to monitor payments" do
     payment_depot_params = { min_payment: 2.0,
                              initial_tax_rate: 0.8,
                              added_tax_rate: 0.1,
@@ -34,6 +34,12 @@ describe "Payment depot management", vcr: {record: :once} do
 
     expect(taxer_account.balance).to eq(1.6) # 0.8 * 2.0
     expect(owner_account.balance).to eq(0.4) # 0.2 * 2.0
+
+    get v1_payment_depot_path(payment_depot)
+
+    json = JSON.parse(response.body).with_indifferent_access[:payment_depot]
+
+    expect(json[:total_received_amount]).to eq "2.0"
   end
 
 end
