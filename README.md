@@ -1,5 +1,7 @@
 # Introduction
 
+*Bitsy is under active development and not yet used in production.*
+
 Bitsy is a Bitcoin payment server that your application can talk to to create "Payment Depots" with certain characteristics. A "Payment Depot" is a Bitcoin address, but the Bitsy will do certain things with the money it recieves.
 
 # Security
