@@ -16,3 +16,7 @@ The payment depot that will be available is the `forwarder` with specific charac
 - Send the rest to the "owner" (perhaps a merchant on your website)
 
 There could be other types in the future, but this all I (Ramon Tayag) need for now.
+
+## BTC Love
+
+If you find this useful, consider sharing some BTC love: `1PwQWijmJ39hWXk9X3CdAhEdExdkANEAPk`
