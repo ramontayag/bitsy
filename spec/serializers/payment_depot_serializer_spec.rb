@@ -15,6 +15,7 @@ describe PaymentDepotSerializer do
     expect(payment_depot).to receive(:min_payment_received?) { true }
   end
 
+  its([:id]) { should eq payment_depot.id }
   its([:total_received_amount]) { should eq 19.0 }
   its([:min_payment_received]) { should be_true }
 
