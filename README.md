@@ -17,6 +17,10 @@ The payment depot that will be available is the `forwarder` with specific charac
 
 There could be other types in the future, but this all I (Ramon Tayag) need for now.
 
+## Contributing
+
+I suggest you do your development in this [Vagrant box](https://github.com/ramontayag/ruby-bitcoin-box). I use it for my development.
+
 ## BTC Love
 
 If you find this useful, consider sharing some BTC love: `1PwQWijmJ39hWXk9X3CdAhEdExdkANEAPk`
