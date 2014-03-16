@@ -8,11 +8,9 @@ class ForwardsPayments
 
     if past_threshold?(payment_transactions)
       bit_wallet_master_account = ctx.fetch(:bit_wallet_master_account)
-      tax_address = ctx.fetch(:tax_address)
       context = {
         bit_wallet_master_account: bit_wallet_master_account,
-        payment_transactions: payment_transactions,
-        tax_address: tax_address
+        payment_transactions: payment_transactions
       }
       with(context).reduce([
         BuildsSendManyHash,

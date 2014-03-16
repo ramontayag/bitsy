@@ -2,7 +2,6 @@ require 'securerandom'
 
 class PaymentDepot < ActiveRecord::Base
   has_many :transactions, class_name: 'PaymentTransaction'
-  TAX_ADDRESS = App.tax_address
 
   alias_attribute :balance, :balance_cache
   before_create :set_bitcoin_address
@@ -18,6 +17,7 @@ class PaymentDepot < ActiveRecord::Base
   )
   validate :address, uniqueness: true
   validate :owner_address, presence: true
+  validate :tax_address, presence: true
 
   def initial_owner_rate
     self.min_payment * (1 - self.initial_tax_rate)

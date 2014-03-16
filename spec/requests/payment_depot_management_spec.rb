@@ -14,7 +14,6 @@ describe "Payment depot management", vcr: {record: :once} do
   let(:owner_address) { owner_account.addresses.first.address }
 
   before do
-    allow(App).to receive(:tax_address).and_return(taxer_address)
     # Transfer money from default account to the buyer, so the buyer can buy
     default_account.send_amount 10, to: buyer_address
   end
@@ -23,7 +22,8 @@ describe "Payment depot management", vcr: {record: :once} do
     payment_depot_params = { min_payment: 2.0,
                              initial_tax_rate: 0.8,
                              added_tax_rate: 0.1,
-                             owner_address: owner_address }
+                             owner_address: owner_address,
+                             tax_address: taxer_address }
     post v1_payment_depots_path(payment_depot: payment_depot_params)
 
     # Buyer pays

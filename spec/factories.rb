@@ -5,6 +5,7 @@ FactoryGirl.define do
     initial_tax_rate 0.5
     added_tax_rate 0.03
     owner_address "the address of the owner"
+    tax_address "address where the tax money goes"
   end
 
   factory :payment_transaction do

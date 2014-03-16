@@ -2,8 +2,6 @@ class App < Configurable # :nodoc:
   # Settings in config/app/* take precedence over those specified here.
   config.name = Rails.application.class.parent.name
 
-  config.tax_address = '115odcfXHs6rPGj2akdwQBFdQZSMRwemzb'
-
   config.bitcoind_username = 'admin1'
   config.bitcoind_password = '123'
   config.bitcoind_port = 19001

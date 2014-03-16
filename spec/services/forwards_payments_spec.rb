@@ -19,8 +19,6 @@ describe ForwardsPayments, ".execute" do
     ]
   end
 
-  let(:tax_address) { "taxaddr" }
-
   let(:payment_txs) do
     [
       build_stubbed(:payment_transaction),
@@ -31,8 +29,7 @@ describe ForwardsPayments, ".execute" do
   let(:ctx) do
     {
       payment_transactions: payment_txs,
-      bit_wallet_master_account: bit_wallet_master_account,
-      tax_address: tax_address
+      bit_wallet_master_account: bit_wallet_master_account
     }
   end
 
@@ -52,8 +49,7 @@ describe ForwardsPayments, ".execute" do
       end
 
       described_class.
-        execute(bit_wallet_master_account: bit_wallet_master_account,
-                tax_address: tax_address)
+        execute(bit_wallet_master_account: bit_wallet_master_account)
     end
   end
 
