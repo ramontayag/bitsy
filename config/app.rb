@@ -32,5 +32,5 @@ class App < Configurable # :nodoc:
   config.transaction_fee = 0.0001
   config.transaction_fee_threshold_multiplier = 200
   config.forward_threshold = config.transaction_fee * transaction_fee_threshold_multiplier
-  config.safe_confirmation_threshold = 6
+  config.safe_confirmation_threshold = 0
 end
