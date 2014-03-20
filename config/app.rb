@@ -23,7 +23,6 @@ class App < Configurable # :nodoc:
 
   config.bitcoin_master_account_name = ''
   config.bitcoin_master_account = -> {
-    puts "Instantiating the master account"
     config.bit_wallet.accounts.new(config.bitcoin_master_account_name)
   }
 
