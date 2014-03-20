@@ -2,13 +2,24 @@ class App < Configurable # :nodoc:
   # Settings in config/app/* take precedence over those specified here.
   config.name = Rails.application.class.parent.name
 
-  config.bitcoind_username = 'admin1'
-  config.bitcoind_password = '123'
-  config.bitcoind_port = 19001
+  # TODO: Remove when Rails 4.1 comes with built-in support for secrets
+  config.secrets_file_path = Rails.root.join("config", "secrets.yml")
+  config.secrets = YAML.load_file(secrets_file_path).
+    with_indifferent_access[Rails.env]
 
-  config.bit_wallet = BitWallet.at(username: App.bitcoind_username,
-                                   password: App.bitcoind_password,
-                                   port: App.bitcoind_port)
+  config.bitcoind_host = App.secrets.fetch(:bitcoind).fetch(:host)
+  config.bitcoind_port = App.secrets.fetch(:bitcoind).fetch(:port)
+  config.bitcoind_username = App.secrets.fetch(:bitcoind).fetch(:username)
+  config.bitcoind_password = App.secrets.fetch(:bitcoind).fetch(:password)
+  config.bitcoind_ssl = App.secrets.fetch(:bitcoind).fetch(:ssl)
+
+  config.bit_wallet = BitWallet.at(
+    host: App.bitcoind_host,
+    port: App.bitcoind_port,
+    username: App.bitcoind_username,
+    password: App.bitcoind_password,
+    ssl: App.bitcoind_ssl,
+  )
 
   config.bitcoin_master_account_name = ''
   config.bitcoin_master_account = -> {
