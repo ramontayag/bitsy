@@ -3,7 +3,7 @@ require "spec_helper"
 describe PaymentDepotSerializer do
 
   let(:payment_depot) do
-    build_stubbed(:payment_depot)
+    build_stubbed(:payment_depot, address: "89s8x8")
   end
   let(:serializer) { described_class.new(payment_depot) }
   subject(:json) do
@@ -18,5 +18,6 @@ describe PaymentDepotSerializer do
   its([:id]) { should eq payment_depot.id }
   its([:total_received_amount]) { should eq 19.0 }
   its([:min_payment_received]) { should be_true }
+  its([:address]) { should eq "89s8x8" }
 
 end
