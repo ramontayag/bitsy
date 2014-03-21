@@ -18,7 +18,8 @@ module V1
         :min_payment,
         :initial_tax_rate,
         :added_tax_rate,
-        :owner_address
+        :owner_address,
+        :tax_address,
       )
     end
 

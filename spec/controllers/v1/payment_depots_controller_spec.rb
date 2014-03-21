@@ -9,7 +9,8 @@ module V1
         params = { min_payment: "0.5",
                    initial_tax_rate: "0.8",
                    added_tax_rate: "0.1",
-                   owner_address: "x9s9319" }
+                   owner_address: "x9s9319",
+                   tax_address: "tax2388" }
         expect(PaymentDepot).to receive(:create).
           with(hash_including(params)) { payment_depot }
 
