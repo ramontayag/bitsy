@@ -30,7 +30,7 @@ describe "Payment depot management", vcr: {record: :once} do
     payment_depot = PaymentDepot.find_by_owner_address(owner_address)
     buyer_account.send_amount 2.0, to: payment_depot.address
 
-    PaymentJob.new.perform
+    post v1_syncs_path
 
     expect(taxer_account.balance).to eq(1.6) # 0.8 * 2.0
     expect(owner_account.balance).to eq(0.4) # 0.2 * 2.0
