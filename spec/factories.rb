@@ -12,6 +12,10 @@ FactoryGirl.define do
     payment_depot
     amount 1.345
     receiving_address 'the address that received the money'
+    payment_type "receive"
+    transaction_id "xx1"
+    occurred_at { 1.minute.ago }
+    received_at { 1.minute.ago }
   end
 
   factory :bit_wallet, :class => OpenStruct do

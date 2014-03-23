@@ -3,6 +3,7 @@ Bitsy::Application.routes.draw do
     resources :payment_depots
     unless Rails.env.production?
       resources :syncs
+      resources :truncations
     end
   end
 end

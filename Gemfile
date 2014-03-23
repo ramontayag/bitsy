@@ -23,6 +23,7 @@ gem "light-service", "0.2.1"
 group :development, :test do
   gem 'capistrano', '~> 2.14'
   gem 'pry', '0.9.12'
+  gem 'database_cleaner', "~> 1.2"
 end
 
 group :development do
@@ -33,7 +34,6 @@ end
 group :test do
   gem 'rspec-rails', '~> 2.13'
   gem 'capybara', '~> 2.0'
-  gem 'database_cleaner', "~> 1.2"
   gem 'vcr', '~> 2.4'
   gem 'webmock', ">= 1.8.0", "< 1.16"
   gem 'bitcoin_testnet', '0.5.1'
