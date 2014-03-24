@@ -13,6 +13,7 @@ gem 'bit_wallet', '0.6.1'
 gem 'clockwork', '0.7.2'
 gem 'daemons', "~> 1.1"
 gem "light-service", "0.2.1"
+gem "uuidtools", "~> 2.1"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

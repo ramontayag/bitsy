@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316115637) do
+ActiveRecord::Schema.define(version: 20140323131019) do
 
   create_table "payment_depots", force: true do |t|
     t.decimal  "min_payment",      null: false
@@ -23,7 +23,10 @@ ActiveRecord::Schema.define(version: 20140316115637) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "tax_address"
+    t.string   "uuid"
   end
+
+  add_index "payment_depots", ["uuid"], name: "index_payment_depots_on_uuid"
 
   create_table "payment_transactions", force: true do |t|
     t.integer  "payment_depot_id",                      null: false

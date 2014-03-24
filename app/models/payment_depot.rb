@@ -4,6 +4,7 @@ class PaymentDepot < ActiveRecord::Base
   has_many :transactions, class_name: 'PaymentTransaction'
 
   alias_attribute :balance, :balance_cache
+  after_initialize :set_uuid
   before_create :set_bitcoin_address
   before_create :set_balance_cache
   delegate :balance, to: :bit_wallet_account
@@ -18,6 +19,7 @@ class PaymentDepot < ActiveRecord::Base
   validate :address, uniqueness: true
   validate :owner_address, presence: true
   validate :tax_address, presence: true
+  validate :uuid, uniqueness: true, presence: true
 
   def initial_owner_rate
     self.min_payment * (1 - self.initial_tax_rate)
@@ -80,7 +82,7 @@ class PaymentDepot < ActiveRecord::Base
   end
 
   def bitcoin_account_name
-    self.id.to_s
+    self.uuid
   end
 
   private
@@ -114,6 +116,10 @@ class PaymentDepot < ActiveRecord::Base
 
   def bit_wallet_account_balance
     bit_wallet_account.balance
+  end
+
+  def set_uuid
+    self.uuid ||= UUIDTools::UUID.random_create.to_s
   end
 
 end

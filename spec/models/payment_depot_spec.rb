@@ -2,6 +2,24 @@ require 'spec_helper'
 
 describe PaymentDepot do
 
+  describe "after initialization" do
+    context "there is no uuid" do
+      it "creates a uuid" do
+        uuid = UUIDTools::UUID.random_create
+        expect(UUIDTools::UUID).to receive(:random_create) { uuid }
+        payment_depot = PaymentDepot.new
+        expect(payment_depot.uuid).to eq uuid.to_s
+      end
+    end
+
+    context "there is a uuid" do
+      it "does not overwrite the uuid" do
+        payment_depot = PaymentDepot.new(uuid: "asdasd")
+        expect(payment_depot.uuid).to eq "asdasd"
+      end
+    end
+  end
+
   describe 'initial_tax_rate validity' do
     subject do
       build_stubbed(:payment_depot,
@@ -78,6 +96,13 @@ describe PaymentDepot do
       txs.stub(:sum).with(:amount).and_return(-5.5)
       payment_depot.stub(:owner_transactions).and_return(txs)
       payment_depot.total_owner_sent.should == 5.5
+    end
+  end
+
+  describe "#bitcoin_account_name" do
+    it "uses the uuid" do
+      payment_depot = described_class.new(uuid: "asd123")
+      expect(payment_depot.bitcoin_account_name).to eq "asd123"
     end
   end
 
