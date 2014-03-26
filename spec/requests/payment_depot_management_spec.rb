@@ -19,15 +19,18 @@ describe "Payment depot management", vcr: {record: :once} do
   end
 
   it "creates a payment depot to monitor payments" do
-    payment_depot_params = { min_payment: 2.0,
-                             initial_tax_rate: 0.8,
-                             added_tax_rate: 0.1,
-                             owner_address: owner_address,
-                             tax_address: taxer_address }
-    post v1_payment_depots_path(payment_depot: payment_depot_params)
+    # Must create payment depot through a factory and define the uuid
+    payment_depot = create(
+      :payment_depot,
+      min_payment: 2.0,
+      initial_tax_rate: 0.8,
+      added_tax_rate: 0.1,
+      owner_address: owner_address,
+      tax_address: taxer_address,
+      uuid: "sowealwaysfetchthesameaddress",
+    )
 
     # Buyer pays
-    payment_depot = PaymentDepot.find_by_owner_address(owner_address)
     buyer_account.send_amount 2.0, to: payment_depot.address
 
     post v1_syncs_path
