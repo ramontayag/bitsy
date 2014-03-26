@@ -18,6 +18,16 @@ describe PaymentDepot do
         expect(payment_depot.uuid).to eq "asdasd"
       end
     end
+
+    describe "address", vcr: {record: :once} do
+      it "is always set to a different address" do
+        payment_depot_1 = create(:payment_depot)
+        payment_depot_2 = create(:payment_depot)
+        address_1 = payment_depot_1.address
+        address_2 = payment_depot_2.address
+        expect(address_1).to_not eq address_2
+      end
+    end
   end
 
   describe 'initial_tax_rate validity' do

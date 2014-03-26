@@ -89,7 +89,7 @@ class PaymentDepot < ActiveRecord::Base
 
   def set_bitcoin_address
     if self.address.blank?
-      self.address = bit_wallet_account.addresses.first.address
+      self.address = bit_wallet_account.addresses.new.address
     end
   end
 
