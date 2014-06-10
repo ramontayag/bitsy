@@ -5,7 +5,7 @@ module Bitsy
 
     scope :safely_confirmed, -> {
       column_name = "#{self.table_name}.confirmations"
-      where("#{column_name} >= #{App.safe_confirmation_threshold}")
+      where("#{column_name} >= #{Bitsy.config.safe_confirmation_threshold}")
     }
     scope :forwarded, -> {
       where("#{self.table_name}.forwarding_transaction_id IS NOT NULL")

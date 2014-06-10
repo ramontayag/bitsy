@@ -1,17 +1,19 @@
 require "spec_helper"
 
-describe AssociatesTransactions, ".execute" do
+module Bitsy
+  describe AssociatesTransactions, ".execute" do
 
-  it "associates the payment transactions with the bitcoin transaction that forwarded its money" do
-    payment_txs = double
+    it "associates the payment transactions with the bitcoin transaction that forwarded its money" do
+      payment_txs = double
 
-    expect(payment_txs).to receive(:update_all).
-      with(forwarding_transaction_id: "forwarding_txid")
+      expect(payment_txs).to receive(:update_all).
+        with(forwarding_transaction_id: "forwarding_txid")
 
-    ctx = { payment_transactions: payment_txs,
-            forwarding_transaction_id: "forwarding_txid" }
+      ctx = { payment_transactions: payment_txs,
+              forwarding_transaction_id: "forwarding_txid" }
 
-    described_class.execute(ctx)
+      described_class.execute(ctx)
+    end
+
   end
-
 end

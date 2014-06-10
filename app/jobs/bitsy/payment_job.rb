@@ -5,8 +5,8 @@ module Bitsy
 
     def perform
       ProcessesPayments.for(
-        bit_wallet: App.bit_wallet,
-        bit_wallet_master_account: App.bitcoin_master_account
+        bit_wallet: Bitsy.bit_wallet,
+        bit_wallet_master_account: Bitsy.master_account
       )
     end
 

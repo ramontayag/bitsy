@@ -19,4 +19,9 @@ db/*.sqlite3-journal
 
 config/secrets.yml
 
+Gemfile.lock
+
 .DS_Store
+
+spec/dummy/log/*.log
+spec/dummy/db/*.sqlite3

@@ -24,7 +24,7 @@ module Bitsy
     private
 
     def self.past_threshold?(payment_txs)
-      payment_txs.sum(:amount) >= App.forward_threshold
+      payment_txs.sum(:amount) >= Bitsy.config.forward_threshold
     end
 
   end

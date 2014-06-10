@@ -22,6 +22,8 @@ module Bitsy
     validate :tax_address, presence: true
     validate :uuid, uniqueness: true, presence: true
 
+    delegate :bit_wallet, to: :Bitsy
+
     def initial_owner_rate
       self.min_payment * (1 - self.initial_tax_rate)
     end
@@ -109,10 +111,6 @@ module Bitsy
     def bit_wallet_account
       return @bit_wallet_account if @bit_wallet_account
       @bit_wallet_account = bit_wallet.accounts.new(self.bitcoin_account_name)
-    end
-
-    def bit_wallet
-      App.bit_wallet
     end
 
     def bit_wallet_account_balance
