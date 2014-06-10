@@ -1,9 +1,11 @@
-module V1
-  class SyncsController < ApplicationController
+module Bitsy
+  module V1
+    class SyncsController < ApplicationController
 
-    def create
-      PaymentJob.new.perform
+      def create
+        PaymentJob.new.perform
+      end
+
     end
-
   end
 end
