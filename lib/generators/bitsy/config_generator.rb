@@ -21,5 +21,13 @@ module Bitsy
       append_file ".gitignore", "config/bitsy.yml"
     end
 
+    def mount_on_routes
+      inject_into_file(
+        "config/routes.rb",
+        %Q(  mount Bitsy::Engine, at: "bitsy"\n),
+        before: /^end/
+      )
+    end
+
   end
 end
