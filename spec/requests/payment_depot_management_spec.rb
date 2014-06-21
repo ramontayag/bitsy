@@ -1,9 +1,9 @@
 require "spec_helper"
 
 describe "Payment depot management", vcr: {record: :once} do
-  let(:wallet) { App.bit_wallet }
+  let(:wallet) { Bitsy.bit_wallet }
 
-  let(:default_account) { App.bitcoin_master_account }
+  let(:default_account) { Bitsy.master_account }
   let(:buyer_account) { wallet.accounts.new('buyer') }
   let(:buyer_address) { buyer_account.addresses.first.address }
 
@@ -33,12 +33,12 @@ describe "Payment depot management", vcr: {record: :once} do
     # Buyer pays
     buyer_account.send_amount 2.0, to: payment_depot.address
 
-    post v1_syncs_path
+    post bitsy.v1_syncs_path
 
     expect(taxer_account.balance).to eq(1.6) # 0.8 * 2.0
     expect(owner_account.balance).to eq(0.4) # 0.2 * 2.0
 
-    get v1_payment_depot_path(payment_depot)
+    get bitsy.v1_payment_depot_path(payment_depot)
 
     json = JSON.parse(response.body).with_indifferent_access[:payment_depot]
 

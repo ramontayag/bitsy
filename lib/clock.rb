@@ -6,5 +6,5 @@ module Clockwork
     Sidekiq::Client.push('class' => job, 'args' => [])
   end
 
-  every(5.seconds, 'PaymentJob')
+  every(5.seconds, 'Bitsy::PaymentJob')
 end

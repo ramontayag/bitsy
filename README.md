@@ -2,7 +2,7 @@
 
 *Bitsy is under active development and not yet used in production.*
 
-Bitsy is a Bitcoin payment server that your application can talk to to create "Payment Depots" with certain characteristics. A "Payment Depot" is a Bitcoin address, but the Bitsy will do certain things with the money it recieves.
+Bitsy is a Rails engine to enable a Bitcoin payment server. Other applications in your ecosystem can talk to the app with Bitsy mounted to create "Payment Depots" with certain characteristics. A "Payment Depot" is a Bitcoin address, but the Bitsy will do certain things with the money it recieves.
 
 ## Security
 
@@ -16,6 +16,15 @@ The payment depot that will be available is the `forwarder` with specific charac
 - Send the rest to the "owner" (perhaps a merchant on your website)
 
 There could be other types in the future, but this all I (Ramon Tayag) need for now.
+
+## Installation
+
+From your Rails app, add the `bitsy` gem to your Gemfile. Then:
+
+```
+rails g bitsy:config
+rake bitsy:install:migrations
+```
 
 ## Contributing
 

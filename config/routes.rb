@@ -1,4 +1,5 @@
-Bitsy::Application.routes.draw do
+Bitsy::Engine.routes.draw do
+
   namespace :v1 do
     resources :payment_depots
     unless Rails.env.production?
@@ -6,4 +7,5 @@ Bitsy::Application.routes.draw do
       resources :truncations
     end
   end
+
 end

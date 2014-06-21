@@ -18,3 +18,11 @@ db/*.sqlite3-journal
 *.sw[po]
 
 config/secrets.yml
+
+Gemfile.lock
+
+.DS_Store
+
+spec/dummy/log/*.log
+spec/dummy/db/*.sqlite3
+config/bitsy.yml

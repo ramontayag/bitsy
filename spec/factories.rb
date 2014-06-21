@@ -1,6 +1,6 @@
 FactoryGirl.define do
 
-  factory :payment_depot do
+  factory :payment_depot, class: "Bitsy::PaymentDepot" do
     min_payment 2
     initial_tax_rate 0.5
     added_tax_rate 0.03
@@ -8,7 +8,7 @@ FactoryGirl.define do
     tax_address "address where the tax money goes"
   end
 
-  factory :payment_transaction do
+  factory :payment_transaction, class: "Bitsy::PaymentTransaction" do
     payment_depot
     amount 1.345
     receiving_address 'the address that received the money'

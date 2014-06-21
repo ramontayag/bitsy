@@ -1,4 +1,5 @@
-Bundler.require(:test)
+require "bundler/setup"
+Bundler.require(:defaults, :test, :development)
 puts "Required inline testing"
 require 'sidekiq/testing/inline'
 
@@ -9,7 +10,7 @@ VCR.configure do |c|
   c.allow_http_connections_when_no_cassette = true
 end
 
-BitcoinTestnet.dir = App.testnet_dir
+BitcoinTestnet.dir = File.join(SPEC_DIR, "testnet")
 BitcoinTestnet.configure_with_rspec_and_vcr!
 
 RSpec.configure do |config|
@@ -17,7 +18,13 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
 
   config.before(:suite) do
+    # Automigrate if needs migration
+    if ActiveRecord::Migrator.needs_migration?
+      ActiveRecord::Migrator.migrate(File.join(Rails.root, 'db/migrate'))
+    end
+
     DatabaseCleaner.clean_with :truncation
     BitWallet.config.min_conf = 0
   end
+
 end
