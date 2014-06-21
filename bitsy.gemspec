@@ -5,7 +5,7 @@ require "bitsy/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "bitsy"
+  s.name        = "bitsy-bitcoin"
   s.version     = Bitsy::VERSION
   s.authors     = ["Ramon Tayag"]
   s.email       = ["ramon.tayag@gmail.com"]
