@@ -3,11 +3,13 @@ require "spec_helper"
 describe Bitsy do
 
   describe ".load_config" do
-    it "loads the bitsy config and keeps and instance of the config in .config" do
+    it "loads the memoizes bitsy config as .config" do
       config_path = Rails.root.join("config", "bitsy.yml")
       config = ::Bitsy::Config.new(config_path)
-      described_class.load_config(config_path)
+      original_id = described_class.load_config(config_path).object_id
       expect(described_class.config.bitcoind).to eq config.bitcoind
+      expect(described_class.load_config(config_path).object_id).
+        to eq original_id
     end
   end
 

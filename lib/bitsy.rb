@@ -15,7 +15,7 @@ module Bitsy
   mattr_accessor :config
 
   def self.load_config(path)
-    self.config = Config.new(path)
+    self.config ||= Config.new(path)
   end
 
   def self.configure
@@ -23,7 +23,7 @@ module Bitsy
   end
 
   def self.master_account
-    bit_wallet.accounts.new(config.master_account_name)
+    bit_wallet.accounts.new(self.config.master_account_name)
   end
 
   def self.bit_wallet
