@@ -24,7 +24,7 @@ RSpec.configure do |config|
     end
 
     DatabaseCleaner.clean_with :truncation
-    BitWallet.config.min_conf = 0
+    BitWallet.min_conf = 0
   end
 
 end
