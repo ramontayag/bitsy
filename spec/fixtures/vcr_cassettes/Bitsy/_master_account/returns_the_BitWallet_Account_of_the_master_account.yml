@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 08 Jun 2014 08:21:11 +0000
+      - Sat, 21 Jun 2014 05:39:21 +0000
       Connection:
       - keep-alive
       Content-Length:
@@ -37,7 +37,7 @@ http_interactions:
       string: |
         {"result":{"":8800.00000000},"error":null,"id":"jsonrpc"}
     http_version: 
-  recorded_at: Sun, 08 Jun 2014 08:21:11 GMT
+  recorded_at: Sat, 21 Jun 2014 05:39:21 GMT
 - request:
     method: post
     uri: http://admin1:123@localhost:19001/
@@ -61,7 +61,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 08 Jun 2014 08:21:11 +0000
+      - Sat, 21 Jun 2014 05:39:21 +0000
       Connection:
       - keep-alive
       Content-Length:
@@ -75,5 +75,43 @@ http_interactions:
       string: |
         {"result":"mi487X6jj8ggY6FAoG8ibv7qomcq9TXL1U","error":null,"id":"jsonrpc"}
     http_version: 
-  recorded_at: Sun, 08 Jun 2014 08:21:11 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Sat, 21 Jun 2014 05:39:21 GMT
+- request:
+    method: post
+    uri: http://admin1:123@localhost:19001/
+    body:
+      encoding: UTF-8
+      string: '{"method":"getnewaddress","params":[],"id":"jsonrpc"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '53'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 21 Jun 2014 05:39:21 +0000
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '76'
+      Content-Type:
+      - application/json
+      Server:
+      - bitcoin-json-rpc/v0.7.2-beta
+    body:
+      encoding: UTF-8
+      string: |
+        {"result":"mkwWW2pnqFkDfH5esHxXBNARTN7GnUDpsv","error":null,"id":"jsonrpc"}
+    http_version: 
+  recorded_at: Sat, 21 Jun 2014 05:39:21 GMT
+recorded_with: VCR 2.9.2
