@@ -1,4 +1,4 @@
-# TBA
+# 0.0.3
 
 - Generate clockwork config file
 
