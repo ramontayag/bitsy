@@ -20,7 +20,7 @@ module Bitsy
     def create_clockwork_config_file
       copy_file(
         "clock.rb",
-        File.join("lib", "clock.rb")
+        File.join("config", "clock.rb")
       )
     end
 
