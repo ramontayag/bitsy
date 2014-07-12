@@ -17,6 +17,13 @@ module Bitsy
       )
     end
 
+    def create_clockwork_config_file
+      copy_file(
+        "clock.rb",
+        File.join("lib", "clock.rb")
+      )
+    end
+
     def ignore_bitsy_yml
       append_file ".gitignore", "config/bitsy.yml"
     end
