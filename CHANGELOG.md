@@ -1,3 +1,7 @@
+# TBA
+
+- Remove retry from Sidekiq job (do not want to DoS the server)
+
 # 0.0.4
 
 - Generate clockwork config file in `config/clock.rb` instead of `lib/clock.rb`

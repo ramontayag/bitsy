@@ -2,6 +2,7 @@ module Bitsy
   class PaymentJob
 
     include Sidekiq::Worker
+    sidekiq_options retry: false
 
     def perform
       ProcessesPayments.for(
