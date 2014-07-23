@@ -1,4 +1,4 @@
-# TBA
+# 0.0.5
 
 - Remove retry from Sidekiq job (do not want to DoS the server)
 
