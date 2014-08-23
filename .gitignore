@@ -28,3 +28,6 @@ spec/dummy/db/*.sqlite3
 config/bitsy.yml
 
 pkg
+
+spec/config.yml
+spec/dummy/config/bitsy.yml

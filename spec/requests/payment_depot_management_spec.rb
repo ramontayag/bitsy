@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "Payment depot management", vcr: {record: :once} do
+describe "Payment depot management", vcr: {record: :once}, bitcoin_cleaner: true do
   let(:wallet) { Bitsy.bit_wallet }
 
   let(:default_account) { Bitsy.master_account }
@@ -15,7 +15,7 @@ describe "Payment depot management", vcr: {record: :once} do
 
   before do
     # Transfer money from default account to the buyer, so the buyer can buy
-    default_account.send_amount 10, to: buyer_address
+    default_account.send_amount 5, to: buyer_address
   end
 
   it "creates a payment depot to monitor payments" do

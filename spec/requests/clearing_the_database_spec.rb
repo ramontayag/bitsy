@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "Clearing the database", vcr: {record: :once} do
+describe "Clearing the database", vcr: {record: :once}, bitcoin_cleaner: true do
 
   it "clears the database" do
     create(:payment_transaction, payment_depot_id: 1)

@@ -26,7 +26,7 @@ describe Bitsy do
     end
   end
 
-  describe ".master_account", vcr: {record: :once} do
+  describe ".master_account", vcr: {record: :once}, bitcoin_cleaner: true do
     it "returns the BitWallet::Account of the master account" do
       account = described_class.master_account
       expect(account).to be_a BitWallet::Account

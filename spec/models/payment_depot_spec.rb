@@ -20,7 +20,7 @@ module Bitsy
         end
       end
 
-      describe "address", vcr: {record: :once} do
+      describe "address", vcr: {record: :once}, bitcoin_cleaner: true do
         it "is always set to a different address" do
           payment_depot_1 = create(:payment_depot)
           payment_depot_2 = create(:payment_depot)
