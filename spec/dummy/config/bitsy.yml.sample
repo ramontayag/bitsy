@@ -1,8 +1,8 @@
 defaults: &defaults
   bitcoind:
     host: "localhost"
-    username: "admin1"
-    password: "123"
+    username: "bitcoinrpc"
+    password: "thisisjustapasswordfortesting"
     port: "19001"
     ssl: false
 
