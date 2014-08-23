@@ -31,7 +31,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "capybara", "~> 2.0"
   s.add_development_dependency "vcr", "~> 2.4"
   s.add_development_dependency "webmock", ">= 1.8.0", "< 1.16"
-  s.add_development_dependency "bitcoin_testnet", "0.5.1"
   s.add_development_dependency "factory_girl_rails", "~> 4.2"
   s.add_development_dependency "database_cleaner"
   s.add_development_dependency "standalone_migrations"

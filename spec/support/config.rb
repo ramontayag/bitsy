@@ -10,9 +10,6 @@ VCR.configure do |c|
   c.allow_http_connections_when_no_cassette = true
 end
 
-BitcoinTestnet.dir = File.join(SPEC_DIR, "testnet")
-BitcoinTestnet.configure_with_rspec_and_vcr!
-
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.use_transactional_fixtures = false
