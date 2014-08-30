@@ -1,6 +1,7 @@
 # TBA
 
 - No longer use "" as the default master account because blockchain.info doesn't like it. Use "master" instead
+- Add fix for issue with AMS [not serializing in controllers](https://github.com/rails-api/active_model_serializers/issues/600)
 
 # 0.0.6
 
