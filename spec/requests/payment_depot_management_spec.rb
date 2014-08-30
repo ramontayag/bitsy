@@ -3,7 +3,7 @@ require "spec_helper"
 describe "Payment depot management", vcr: {record: :once}, bitcoin_cleaner: true do
   let(:wallet) { Bitsy.bit_wallet }
 
-  let(:default_account) { Bitsy.master_account }
+  let(:default_account) { wallet.accounts.new("") }
   let(:buyer_account) { wallet.accounts.new('buyer') }
   let(:buyer_address) { buyer_account.addresses.first.address }
 

@@ -1,3 +1,7 @@
+# TBA
+
+- No longer use "" as the default master account because blockchain.info doesn't like it. Use "master" instead
+
 # 0.0.6
 
 - Use BitcoinCleaner over BitcoinTestnet

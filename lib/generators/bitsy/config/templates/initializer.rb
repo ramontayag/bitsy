@@ -11,6 +11,7 @@ Bitsy.configure do |c|
   c.safe_confirmation_threshold = 0
 
   # The name where all money is pooled before sending out. You will likely not
-  # need to change this value.
-  c.master_account_name = ""
+  # need to change this value. Note that blockchain.info only accepts master
+  # account names between 0 and 255 characters.
+  c.master_account_name = "master"
 end
