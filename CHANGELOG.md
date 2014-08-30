@@ -1,6 +1,7 @@
-# TBA
+# 0.0.6
 
 - Use BitcoinCleaner over BitcoinTestnet
+- Upgrade `bit_wallet` to 0.7.3: do not rely on listaccounts because blockchain.info behaves differently compared to bitcoind
 
 # 0.0.5
 
