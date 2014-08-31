@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails-api", "0.2.1"
   s.add_dependency "sidekiq", "~> 2.8"
   s.add_dependency "active_model_serializers"
-  s.add_dependency "bit_wallet", '0.7.3'
+  s.add_dependency "bit_wallet", '0.7.6'
   s.add_dependency "clockwork", '0.7.2'
   s.add_dependency "daemons", "~> 1.1"
   s.add_dependency "light-service", "0.2.1"

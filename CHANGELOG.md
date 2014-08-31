@@ -1,3 +1,7 @@
+# 0.0.8
+
+- Upgrade `bit_wallet`
+
 # 0.0.7
 
 - No longer use "" as the default master account because blockchain.info doesn't like it. Use "master" instead
