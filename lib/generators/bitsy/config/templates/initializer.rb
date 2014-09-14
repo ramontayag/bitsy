@@ -4,7 +4,8 @@ Bitsy.configure do |c|
   # How much of a transaction fee to pay to the network
   c.transaction_fee = 0.0001
 
-  # How much Bitcoin to accumulate before forwarding the money out
+  # This setting multiplied by the transaction fee is how much bitcoin the
+  # system will accumulate before forwarding money
   c.transaction_fee_threshold_multiplier = 200
 
   # How many confirmations are needed to consider a transaction as complete
