@@ -2,6 +2,11 @@ module Bitsy
   module V1
     class PaymentDepotsController < ApplicationController
 
+      def index
+        @payment_depots = PaymentDepot.all
+        render json: @payment_depots
+      end
+
       def show
         @payment_depot = PaymentDepot.find(params[:id])
         render json: @payment_depot

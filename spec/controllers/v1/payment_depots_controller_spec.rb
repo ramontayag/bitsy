@@ -5,6 +5,17 @@ module Bitsy
     describe PaymentDepotsController do
       routes { Bitsy::Engine.routes }
 
+      describe "GET /payment_depots" do
+        it "returns a list of all payment depots", vcr: {record: :once}, bitcoin_cleaner: true do
+          create(:payment_depot, address: "xyz")
+          get :index
+          json = JSON.parse(response.body).with_indifferent_access
+          payment_depots_json = json.fetch(:payment_depots)
+          expect(payment_depots_json.count).to eq 1
+          expect(payment_depots_json.first[:address]).to eq "xyz"
+        end
+      end
+
       describe "POST /payment_depots" do
         it "creates a payment depot and returns its details" do
           payment_depot = build_stubbed(:payment_depot)

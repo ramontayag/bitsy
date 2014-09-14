@@ -1,3 +1,7 @@
+# TBA
+
+- Add `PaymentDepotsController#index` to see all payment depots
+
 # 0.0.8
 
 - Upgrade `bit_wallet`
