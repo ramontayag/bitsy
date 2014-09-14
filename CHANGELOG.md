@@ -1,4 +1,4 @@
-# TBA
+# 0.1.0
 
 - Add `PaymentDepotsController#index` to see all payment depots
 
