@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140607015859) do
+ActiveRecord::Schema.define(version: 20141106132211) do
+
+  create_table "bitsy_blockchain_notifications", force: true do |t|
+    t.integer "value",                        null: false
+    t.string  "transaction_hash",             null: false
+    t.string  "input_address",                null: false
+    t.integer "confirmations",    default: 0, null: false
+    t.string  "secret",                       null: false
+  end
 
   create_table "bitsy_payment_depots", force: true do |t|
     t.decimal  "min_payment",      null: false

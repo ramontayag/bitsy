@@ -1,5 +1,13 @@
 FactoryGirl.define do
 
+  factory :blockchain_notification, class: Bitsy::BlockchainNotification do
+    value 1.2
+    sequence(:transaction_hash) {|n| "transaction_hash_#{n}"}
+    input_address "input_address"
+    confirmations 1
+    secret "secret"
+  end
+
   factory :payment_depot, class: "Bitsy::PaymentDepot" do
     min_payment 2
     initial_tax_rate 0.5
