@@ -1,5 +1,5 @@
 module Bitsy
-  class ForwardsPayments
+  class ForwardPayments
 
     include LightService::Organizer
     include LightService::Action
@@ -8,9 +8,7 @@ module Bitsy
       payment_transactions = PaymentTransaction.for_forwarding
 
       if past_threshold?(payment_transactions)
-        bit_wallet_master_account = ctx.fetch(:bit_wallet_master_account)
         context = {
-          bit_wallet_master_account: bit_wallet_master_account,
           payment_transactions: payment_transactions
         }
         with(context).reduce([
@@ -24,7 +22,7 @@ module Bitsy
     private
 
     def self.past_threshold?(payment_txs)
-      payment_txs.sum(:amount) >= Bitsy.config.forward_threshold
+      payment_txs.sum(:amount) >= Bitsy.config.forward_threshold_amount
     end
 
   end

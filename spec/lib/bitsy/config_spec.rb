@@ -36,20 +36,20 @@ module Bitsy
     end
 
     describe "#safe_confirmation_threshold=" do
-      it "sets #safe_confirmation_threshold" do
+      it "sets confirmation threshold that determines whether or not the payment depots are paid" do
         config = described_class.new(config_path)
         config.safe_confirmation_threshold = 1
         expect(config.safe_confirmation_threshold).to eq 1
       end
     end
 
-    describe "#forward_threshold" do
+    describe "#forward_threshold_amount" do
       it "is transaction_fee * transaction_fee_threshold_multiplier" do
         config = described_class.new(config_path)
         config.transaction_fee = 22.0
         config.transaction_fee_threshold_multiplier = 2
         expected_value = 44.0
-        expect(config.forward_threshold).to eq(expected_value)
+        expect(config.forward_threshold_amount).to eq(expected_value)
       end
     end
 

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-# ForwardsPayments attemps to save on Bitcoin transaction fees. Since
+# ForwardPayments attemps to save on Bitcoin transaction fees. Since
 # application is meant to accept micro payments, sending a fee (0.0001) every
 # time we receive a payment would be costly.
 #
@@ -10,8 +10,7 @@ require "spec_helper"
 # one fee everytime we reach the threshold.
 
 module Bitsy
-  describe ForwardsPayments, ".execute" do
-    let(:bit_wallet_master_account) { build(:bit_wallet_account) }
+  describe ForwardPayments, ".execute" do
     let(:actions) do
       [
         BuildsSendManyHash,
@@ -30,7 +29,6 @@ module Bitsy
     let(:ctx) do
       {
         payment_transactions: payment_txs,
-        bit_wallet_master_account: bit_wallet_master_account
       }
     end
 
@@ -41,7 +39,7 @@ module Bitsy
     context "transactions on or past the threshold" do
       before do
         allow(payment_txs).to receive(:sum).with(:amount).
-          and_return(Bitsy.config.forward_threshold)
+          and_return(Bitsy.config.forward_threshold_amount)
       end
 
       it "performs the actions in order" do
@@ -49,15 +47,14 @@ module Bitsy
           expect(action).to receive(:execute).with(ctx) { ctx }
         end
 
-        described_class.
-          execute(bit_wallet_master_account: bit_wallet_master_account)
+        described_class.execute
       end
     end
 
     context "transactions are not past the threshold" do
       before do
         allow(payment_txs).to receive(:sum).with(:amount).
-          and_return(Bitsy.config.forward_threshold - 0.1)
+          and_return(Bitsy.config.forward_threshold_amount - 0.1)
       end
 
       it "does nothing" do
@@ -65,8 +62,7 @@ module Bitsy
           expect(action).to_not receive(:execute)
         end
 
-        described_class.
-          execute(bit_wallet_master_account: bit_wallet_master_account)
+        described_class.execute
       end
     end
   end

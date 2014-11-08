@@ -20,7 +20,7 @@ module Bitsy
       end
     end
 
-    def forward_threshold
+    def forward_threshold_amount
       transaction_fee * transaction_fee_threshold_multiplier
     end
 
