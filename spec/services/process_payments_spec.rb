@@ -1,12 +1,12 @@
 require "spec_helper"
 
 module Bitsy
-  describe ProcessesPayments, ".for", integration: true do
+  describe ProcessPayments, ".for", integration: true do
 
     let(:wallet) { Bitsy.bit_wallet }
     let(:bit_wallet_master_account) { build(:bit_wallet_account) }
 
-    it "processes the payments for a bit_wallet" do
+    it "process the payments for a bit_wallet" do
       actions = [
         SelectsTransactionsForSync,
         SyncsTransactions,

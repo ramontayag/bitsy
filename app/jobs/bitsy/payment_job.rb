@@ -5,7 +5,7 @@ module Bitsy
     sidekiq_options retry: false
 
     def perform
-      ProcessesPayments.for(
+      ProcessPayments.for(
         bit_wallet: Bitsy.bit_wallet,
         bit_wallet_master_account: Bitsy.master_account
       )

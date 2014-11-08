@@ -1,5 +1,5 @@
 module Bitsy
-  class ProcessesPayments
+  class ProcessPayments
 
     include LightService::Organizer
 
