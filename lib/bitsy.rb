@@ -22,18 +22,4 @@ module Bitsy
     yield self.config
   end
 
-  def self.master_account
-    bit_wallet.accounts.new(self.config.master_account_name)
-  end
-
-  def self.bit_wallet
-    BitWallet.at(
-      host: Bitsy.config.bitcoind.fetch(:host),
-      port: Bitsy.config.bitcoind.fetch(:port),
-      username: Bitsy.config.bitcoind.fetch(:username),
-      password: Bitsy.config.bitcoind.fetch(:password),
-      ssl: Bitsy.config.bitcoind.fetch(:ssl),
-    )
-  end
-
 end

@@ -10,7 +10,7 @@ Bitsy.configure do |c|
   # How many confirmations are needed to consider a transaction as complete
   c.safe_confirmation_threshold = 0
 
-  # The name where all money is pooled before sending out. You will likely not
-  # need to change this value.
-  c.master_account_name = ""
+  # List of allowed secrets from Blockchain.info. The callback URL should look
+  # like this http://app.com/bitsy/v1/blockchain_notifications?secret=mysecret
+  c.blockchain_secrets = %w(secret)
 end

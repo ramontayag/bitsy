@@ -16,9 +16,6 @@ module Bitsy
         expected_config.each do |key, value|
           expect(resulting_config.send(key)).to eq value
         end
-
-        expect(resulting_config.bitcoind[:host]).
-          to eq expected_config["bitcoind"]["host"]
       end
     end
 
@@ -46,14 +43,6 @@ module Bitsy
       end
     end
 
-    describe "#master_account_name=" do
-      it "sets #master_account_name" do
-        config = described_class.new(config_path)
-        config.master_account_name = "master"
-        expect(config.master_account_name).to eq "master"
-      end
-    end
-
     describe "#forward_threshold" do
       it "is transaction_fee * transaction_fee_threshold_multiplier" do
         config = described_class.new(config_path)
@@ -61,6 +50,14 @@ module Bitsy
         config.transaction_fee_threshold_multiplier = 2
         expected_value = 44.0
         expect(config.forward_threshold).to eq(expected_value)
+      end
+    end
+
+    describe "#blockchain_secrets=" do
+      it "sets #blockchain_secrets" do
+        config = described_class.new(config_path)
+        config.blockchain_secrets = %w(a b)
+        expect(config.blockchain_secrets).to eq %w(a b)
       end
     end
 

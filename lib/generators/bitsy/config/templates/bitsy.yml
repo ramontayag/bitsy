@@ -1,10 +1,4 @@
 defaults: &defaults
-  bitcoind:
-    host: "localhost"
-    username: "admin1"
-    password: "123"
-    port: "19001"
-    ssl: false
 
 development:
   <<: *defaults

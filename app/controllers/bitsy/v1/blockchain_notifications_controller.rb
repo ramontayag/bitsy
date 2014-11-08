@@ -3,8 +3,13 @@ module Bitsy
     class BlockchainNotificationsController < ApplicationController
 
       def index
-        BlockchainNotification.create(blockchain_notification_params)
-        render nothing: true, status: 200
+        bn = BlockchainNotification.new(blockchain_notification_params)
+        if bn.save
+          BlockchainNotificationJob.perform_async(bn.id)
+          render nothing: true, status: 200
+        else
+          render nothing: true, status: 422
+        end
       end
 
       protected

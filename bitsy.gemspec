@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "bit_wallet", '0.7.6'
   s.add_dependency "clockwork", '0.7.2'
   s.add_dependency "daemons", "~> 1.1"
-  s.add_dependency "light-service", "0.2.1"
+  s.add_dependency "light-service", "0.5.0"
   s.add_dependency "uuidtools", "~> 2.1"
   s.add_dependency "blockchain", "~> 1.0"
 
@@ -36,4 +36,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "database_cleaner"
   s.add_development_dependency "bitcoin_cleaner", "1.0.0.beta.1"
   s.add_development_dependency "standalone_migrations"
+  s.add_development_dependency "shoulda-matchers"
 end

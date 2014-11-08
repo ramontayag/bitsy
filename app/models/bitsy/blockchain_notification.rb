@@ -9,5 +9,7 @@ module Bitsy
       presence: true
     )
 
+    validates(:secret, inclusion: {in: Bitsy.config.blockchain_secrets})
+
   end
 end

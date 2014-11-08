@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106132211) do
+ActiveRecord::Schema.define(version: 20141108004117) do
 
   create_table "bitsy_blockchain_notifications", force: true do |t|
     t.integer "value",                        null: false
@@ -44,8 +44,6 @@ ActiveRecord::Schema.define(version: 20141106132211) do
     t.integer  "confirmations",             default: 0, null: false
     t.string   "transaction_id",                        null: false
     t.string   "forwarding_transaction_id"
-    t.datetime "occurred_at",                           null: false
-    t.datetime "received_at",                           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

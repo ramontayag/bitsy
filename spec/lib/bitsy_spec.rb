@@ -26,18 +26,10 @@ describe Bitsy do
     end
   end
 
-  describe ".master_account", vcr: {record: :once}, bitcoin_cleaner: true do
-    it "returns the BitWallet::Account of the master account" do
-      account = described_class.master_account
-      expect(account).to be_a BitWallet::Account
-      expect(account.name).to eq Bitsy.config.master_account_name
-    end
-  end
-
   describe ".configure" do
     it "yields a block to configure Bitsy" do
-      Bitsy.configure { |c| c.master_account_name = "mister" }
-      expect(Bitsy.config.master_account_name).to eq "mister"
+      Bitsy.configure { |c| c.transaction_fee_threshold_multiplier = 2}
+      expect(Bitsy.config.transaction_fee_threshold_multiplier).to eq 2
     end
   end
 

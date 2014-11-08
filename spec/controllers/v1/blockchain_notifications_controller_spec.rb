@@ -33,6 +33,22 @@ module Bitsy
           get :index, params
           expect(response.status).to eq 200
         end
+
+        it "enqueues BlockchainNotificationJob" do
+          blockchain_notification = double(BlockchainNotification, id: 2)
+          allow(BlockchainNotification).to receive(:new).
+            and_return(blockchain_notification)
+          allow(blockchain_notification).to receive(:save).and_return(true)
+          expect(BlockchainNotificationJob).to receive(:perform_async).with(2)
+          get :index, params
+        end
+
+        context "error creating" do
+          it "does not respond with 200" do
+            get :index
+            expect(response.status).to_not eq 200
+          end
+        end
       end
 
     end

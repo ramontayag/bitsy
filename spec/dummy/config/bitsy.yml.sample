@@ -1,8 +1,4 @@
 defaults: &defaults
-  blockchain_secrets:
-  - "the secret set in the callback url"
-  - "you can provide many in case you want to change it"
-  - "I suppose after a period of time you can delete the ones you don't need"
 
 development:
   <<: *defaults
