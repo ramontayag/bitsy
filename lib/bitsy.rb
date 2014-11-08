@@ -6,6 +6,7 @@ require "clockwork"
 require "daemons"
 require "light-service"
 require "uuidtools"
+require "blockchain"
 require "bitsy/engine"
 require "bitsy/config"
 

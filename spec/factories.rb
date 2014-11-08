@@ -8,6 +8,27 @@ FactoryGirl.define do
     secret "secret"
   end
 
+  factory :blockchain_latest_block, class: Blockchain::LatestBlock do
+    hash "block_hash"
+    time Time.now.to_i
+    block_index 188288
+    height 828282
+    txIndexes []
+    initialize_with do
+      Blockchain::LatestBlock.new(attributes.with_indifferent_access)
+    end
+  end
+
+  factory :blockchain_transaction, class: Blockchain::Transaction do
+    sequence(:hash) { |n| "transaction_hash_#{n}" }
+    inputs []
+    out []
+    block_height 1002020
+    initialize_with do
+      Blockchain::Transaction.new(attributes.with_indifferent_access)
+    end
+  end
+
   factory :payment_depot, class: "Bitsy::PaymentDepot" do
     min_payment 2
     initial_tax_rate 0.5
