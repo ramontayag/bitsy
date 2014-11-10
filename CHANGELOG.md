@@ -1,3 +1,7 @@
+# 0.2.0
+
+- Use blockchain.info instead of bitcoind
+
 # 0.1.0
 
 - Add `PaymentDepotsController#index` to see all payment depots
