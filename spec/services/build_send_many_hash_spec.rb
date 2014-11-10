@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module Bitsy
-  describe BuildsSendManyHash do
+  describe BuildSendManyHash do
 
     let(:tax_address) { "taxaddr" }
 
@@ -25,20 +25,23 @@ module Bitsy
 
         allow(described_class).to receive(:for_transaction).
           with(payment_tx_1).
-          and_return({addr_1: 1})
+          and_return({addr_1: 1 * 100_000_000})
         allow(described_class).to receive(:for_transaction).
           with(payment_tx_2).
-          and_return({addr_2: 2, addr_4: 0.1})
+          and_return({addr_2: 2 * 100_000_000, addr_4: 0.1 * 100_000_000})
         allow(described_class).to receive(:for_transaction).
           with(payment_tx_3).
-          and_return({addr_1: 0.2, addr_2: 1.5})
+          and_return({addr_1: 0.2 * 100_000_000, addr_2: 1.5 * 100_000_000})
 
         ctx = { payment_transactions: payment_txs }
 
         resulting_ctx = described_class.execute(ctx)
 
-        expect(resulting_ctx[:send_many_hash]).
-          to eq(addr_1: 1.2, addr_2: 3.5, addr_4: 0.1)
+        expect(resulting_ctx[:send_many_hash]).to eq(
+          addr_1: 1.2 * 100_000_000,
+          addr_2: 3.5 * 100_000_000,
+          addr_4: 0.1 * 100_000_000,
+        )
       end
     end
 
@@ -52,8 +55,8 @@ module Bitsy
         expect(payment_tx).to receive(:forward_tax_fee) { 0.15 }
         expect(payment_tx).to receive(:owner_fee) { 0.85 }
 
-        expected_hash = { "tax_address" => 0.15,
-                          "owner_address" => 0.85 }
+        expected_hash = { "tax_address" => 0.15 * 100_000_000,
+                          "owner_address" => 0.85 * 100_000_000 }
 
         resulting_hash = described_class.for_transaction(payment_tx)
         expect(resulting_hash).to eq(expected_hash)

@@ -7,9 +7,9 @@ module Bitsy
 
       describe "POST #create" do
         it "responds with successful 200" do
-          payment_job = double
-          allow(PaymentJob).to receive(:new) { payment_job }
-          expect(payment_job).to receive(:perform)
+          job = double(TransactionsSyncJob)
+          allow(TransactionsSyncJob).to receive(:new) { job }
+          expect(job).to receive(:perform)
 
           post :create
           expect(response.status).to eq 200

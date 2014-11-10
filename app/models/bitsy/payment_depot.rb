@@ -7,17 +7,18 @@ module Bitsy
     alias_attribute :balance, :balance_cache
     after_initialize :set_uuid
     scope :with_balance, -> { where('balance_cache > 0.0') }
-    validate(
+    validates(
       :initial_tax_rate,
       inclusion: {
-        in: [0.0..1.0],
+        in: 0.0..1.0,
         message: 'must be a value within 0.0 and 1.0'
       }
     )
-    validate :address, uniqueness: true
-    validate :owner_address, presence: true
-    validate :tax_address, presence: true
-    validate :uuid, uniqueness: true, presence: true
+    validates :address, presence: true, uniqueness: true
+    validates :balance_cache, presence: true
+    validates :owner_address, presence: true
+    validates :tax_address, presence: true
+    validates :uuid, uniqueness: true, presence: true
 
     def initial_owner_rate
       self.min_payment * (1 - self.initial_tax_rate)

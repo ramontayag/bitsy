@@ -1,5 +1,5 @@
 module Bitsy
-  class BuildsSendManyHash
+  class BuildSendManyHash
 
     include LightService::Action
 
@@ -26,8 +26,8 @@ module Bitsy
       owner_address = payment_depot.owner_address
       tax_address = payment_depot.tax_address
       {
-        tax_address => payment_transaction.forward_tax_fee.to_f,
-        owner_address => payment_transaction.owner_fee.to_f
+        tax_address => payment_transaction.forward_tax_fee.to_f * 100_000_000,
+        owner_address => payment_transaction.owner_fee.to_f * 100_000_000,
       }
     end
 

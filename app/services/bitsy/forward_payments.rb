@@ -4,19 +4,18 @@ module Bitsy
     include LightService::Organizer
     include LightService::Action
 
-    executed do |ctx|
+    def self.execute
       payment_transactions = PaymentTransaction.for_forwarding
 
-      if past_threshold?(payment_transactions)
-        context = {
-          payment_transactions: payment_transactions
-        }
-        with(context).reduce([
-          BuildsSendManyHash,
-          SendsPayments,
-          AssociatesTransactions
-        ])
-      end
+      return unless past_threshold?(payment_transactions)
+      with(
+        payment_transactions: payment_transactions
+      ).reduce([
+        InstantiateBlockchainWallet,
+        BuildSendManyHash,
+        SendPayments,
+        AssociatesTransactions
+      ])
     end
 
     private

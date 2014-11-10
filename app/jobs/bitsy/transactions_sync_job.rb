@@ -1,10 +1,10 @@
 module Bitsy
-  class TransactionsUpdateJob
+  class TransactionsSyncJob
 
     include Sidekiq::Worker
 
     def perform
-      UpdateTransactions.execute
+      Updating::SyncTransactions.execute
     end
 
   end

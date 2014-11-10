@@ -7,7 +7,7 @@ module Bitsy
       build_stubbed(:blockchain_notification, {
         transaction_hash: "transaction_hash",
         input_address: "address",
-        value: 33.0,
+        value: 3_300_000,
         confirmations: 1,
       })
     end
@@ -22,7 +22,7 @@ module Bitsy
     it "creates a corresponding payment transaction" do
       expect(PaymentTransaction).to receive(:create!).with(
         payment_depot_id: payment_depot.id,
-        amount: 33.0,
+        amount: 0.033,
         receiving_address: "address",
         payment_type: "receive",
         confirmations: 1,

@@ -6,13 +6,19 @@ module Bitsy
       routes { Bitsy::Engine.routes }
 
       describe "GET #index" do
+        let(:secret) { Bitsy.config.blockchain_secrets.sample }
+        let(:payment_depot) do
+          create(:payment_depot, {
+            address: "receiving_address",
+          })
+        end
         let(:params) do
           {
             value: 1_800_991,
             transaction_hash: "transaction_hash",
-            input_address: "receiving_address",
+            input_address: payment_depot.address,
             confirmations: 1,
-            secret: "sekret",
+            secret: secret,
           }
         end
 
@@ -25,7 +31,7 @@ module Bitsy
             transaction_hash: "transaction_hash",
             input_address: "receiving_address",
             confirmations: 1,
-            secret: "sekret",
+            secret: secret,
           )
         end
 

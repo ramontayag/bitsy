@@ -6,6 +6,7 @@ module Bitsy
       :transaction_fee_threshold_multiplier,
       :safe_confirmation_threshold,
       :blockchain_secrets,
+      :blockchain,
     )
 
     def initialize(file_path)

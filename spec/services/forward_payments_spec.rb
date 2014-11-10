@@ -13,8 +13,9 @@ module Bitsy
   describe ForwardPayments, ".execute" do
     let(:actions) do
       [
-        BuildsSendManyHash,
-        SendsPayments,
+        InstantiateBlockchainWallet,
+        BuildSendManyHash,
+        SendPayments,
         AssociatesTransactions
       ]
     end

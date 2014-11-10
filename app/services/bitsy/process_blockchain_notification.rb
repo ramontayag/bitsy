@@ -10,7 +10,7 @@ module Bitsy
       payment_depot = PaymentDepot.find_by(address: bn.input_address)
       ctx.payment_transaction = PaymentTransaction.create!(
         payment_depot_id: payment_depot.id,
-        amount: bn.value,
+        amount: bn.value / 100_000_000.0,
         receiving_address: bn.input_address,
         payment_type: "receive",
         confirmations: bn.confirmations,

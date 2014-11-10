@@ -34,7 +34,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "webmock", ">= 1.8.0", "< 1.16"
   s.add_development_dependency "factory_girl_rails", "~> 4.2"
   s.add_development_dependency "database_cleaner"
-  s.add_development_dependency "bitcoin_cleaner", "1.0.0.beta.1"
   s.add_development_dependency "standalone_migrations"
   s.add_development_dependency "shoulda-matchers"
 end

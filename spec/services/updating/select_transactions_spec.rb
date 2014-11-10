@@ -12,11 +12,6 @@ module Bitsy
       end
 
       it "selects transactions that have not been forwarded" do
-        txs.each do |tx|
-          expect(UpdateTransaction).to receive(:execute).
-            with(payment_transaction: tx)
-        end
-
         expect(described_class.execute.payment_transactions).to eq txs
       end
 

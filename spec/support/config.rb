@@ -6,9 +6,6 @@ require 'sidekiq/testing/inline'
 SPEC_CONFIG = YAML.load_file(File.join(SPEC_DIR, "config.yml")).
   with_indifferent_access
 
-BitcoinCleaner.dir = SPEC_CONFIG.fetch(:bitcoin_dir)
-BitcoinCleaner.configure_with_rspec_and_vcr!
-
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   c.hook_into :webmock
@@ -27,7 +24,6 @@ RSpec.configure do |config|
     end
 
     DatabaseCleaner.clean_with :truncation
-    BitWallet.min_conf = 0
   end
 
 end

@@ -37,4 +37,14 @@ RSpec.configure do |config|
   #     --seed 1234
   # NOTE: Turn off random order because it seems to mess up VCR-related tests.
   config.order = "random"
+
+  config.after :suite do
+    wallet = Bitsy::InstantiateBlockchainWallet.execute.wallet
+
+    # Archive the addresses so we avoid too many address errors
+    addresses = wallet.list_addresses rescue []
+    addresses.each do |address|
+      wallet.archive_address(address.address)
+    end
+  end
 end

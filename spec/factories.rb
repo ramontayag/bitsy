@@ -19,6 +19,13 @@ FactoryGirl.define do
     end
   end
 
+  factory :blockchain_payment_response, class: Blockchain::PaymentResponse do
+    message nil
+    tx_hash "transaction_hash"
+    notice nil
+    initialize_with {Blockchain::PaymentResponse.new(message, tx_hash, notice)}
+  end
+
   factory :blockchain_transaction, class: Blockchain::Transaction do
     sequence(:hash) { |n| "transaction_hash_#{n}" }
     inputs []
@@ -26,6 +33,36 @@ FactoryGirl.define do
     block_height 1002020
     initialize_with do
       Blockchain::Transaction.new(attributes.with_indifferent_access)
+    end
+  end
+
+  factory :blockchain_wallet, class: Blockchain::Wallet do
+    identifier "identifier"
+    password "pass"
+    second_password "second pass"
+    api_code "api_code"
+    initialize_with do
+      Blockchain::Wallet.new(
+        attributes[:identifier],
+        attributes[:password],
+        attributes[:second_password],
+        attributes[:api_code],
+      )
+    end
+  end
+
+  factory :blockchain_address, class: Blockchain::WalletAddress do
+    balance 0.005
+    sequence(:address) { |n| "address_#{n}"}
+    label nil
+    total_received 0.005
+    initialize_with do
+      Blockchain::WalletAddress.new(
+        attributes[:balance],
+        attributes[:address],
+        attributes[:label],
+        attributes[:total_received],
+      )
     end
   end
 

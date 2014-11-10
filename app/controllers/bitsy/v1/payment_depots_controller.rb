@@ -13,7 +13,9 @@ module Bitsy
       end
 
       def create
-        @payment_depot = PaymentDepot.create(payment_depot_params)
+        @payment_depot = CreatePaymentDepot.
+          execute(params: payment_depot_params).
+          payment_depot
         render json: @payment_depot
       end
 

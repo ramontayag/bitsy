@@ -61,5 +61,14 @@ module Bitsy
       end
     end
 
+    describe "#blockchain" do
+      it "returns the blockchain config" do
+        config = described_class.new(config_path)
+        expected_config = YAML.load_file(config_path).
+          with_indifferent_access[:test][:blockchain]
+        expect(config.blockchain).to eq expected_config
+      end
+    end
+
   end
 end

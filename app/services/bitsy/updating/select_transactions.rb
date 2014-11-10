@@ -6,11 +6,7 @@ module Bitsy
       promises :payment_transactions
 
       executed do |ctx|
-        txs = PaymentTransaction.not_forwarded
-        txs.each do |tx|
-          UpdateTransaction.execute(payment_transaction: tx)
-        end
-        ctx.payment_transactions = txs
+        ctx.payment_transactions = PaymentTransaction.not_forwarded
       end
 
     end
