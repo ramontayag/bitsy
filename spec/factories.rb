@@ -1,5 +1,71 @@
 FactoryGirl.define do
 
+  factory :blockchain_notification, class: Bitsy::BlockchainNotification do
+    value 1.2
+    sequence(:transaction_hash) {|n| "transaction_hash_#{n}"}
+    input_address "input_address"
+    confirmations 1
+    secret "secret"
+  end
+
+  factory :blockchain_latest_block, class: Blockchain::LatestBlock do
+    hash "block_hash"
+    time Time.now.to_i
+    block_index 188288
+    height 828282
+    txIndexes []
+    initialize_with do
+      Blockchain::LatestBlock.new(attributes.with_indifferent_access)
+    end
+  end
+
+  factory :blockchain_payment_response, class: Blockchain::PaymentResponse do
+    message nil
+    tx_hash "transaction_hash"
+    notice nil
+    initialize_with {Blockchain::PaymentResponse.new(message, tx_hash, notice)}
+  end
+
+  factory :blockchain_transaction, class: Blockchain::Transaction do
+    sequence(:hash) { |n| "transaction_hash_#{n}" }
+    inputs []
+    out []
+    block_height 1002020
+    initialize_with do
+      Blockchain::Transaction.new(attributes.with_indifferent_access)
+    end
+  end
+
+  factory :blockchain_wallet, class: Blockchain::Wallet do
+    identifier "identifier"
+    password "pass"
+    second_password "second pass"
+    api_code "api_code"
+    initialize_with do
+      Blockchain::Wallet.new(
+        attributes[:identifier],
+        attributes[:password],
+        attributes[:second_password],
+        attributes[:api_code],
+      )
+    end
+  end
+
+  factory :blockchain_address, class: Blockchain::WalletAddress do
+    balance 0.005
+    sequence(:address) { |n| "address_#{n}"}
+    label nil
+    total_received 0.005
+    initialize_with do
+      Blockchain::WalletAddress.new(
+        attributes[:balance],
+        attributes[:address],
+        attributes[:label],
+        attributes[:total_received],
+      )
+    end
+  end
+
   factory :payment_depot, class: "Bitsy::PaymentDepot" do
     min_payment 2
     initial_tax_rate 0.5
@@ -14,34 +80,6 @@ FactoryGirl.define do
     receiving_address 'the address that received the money'
     payment_type "receive"
     transaction_id "xx1"
-    occurred_at { 1.minute.ago }
-    received_at { 1.minute.ago }
-  end
-
-  factory :bit_wallet, :class => OpenStruct do
-  end
-
-  factory :bit_wallet_account, :class => OpenStruct do
-    sequence(:name) {|n| n.to_s}
-    addresses do |account|
-      [FactoryGirl.build(:bit_wallet_address, account: account)]
-    end
-  end
-
-  factory :bit_wallet_address, :class => OpenStruct do
-    account { FactoryGirl.build(:bit_wallet_account) }
-    sequence(:address) {|n| "address_#{n+1000}"}
-  end
-
-  factory :bit_wallet_transaction, :class => OpenStruct do
-    account { FactoryGirl.build(:bit_wallet_account) }
-    sequence(:id) {|n| "longhash_#{n}"}
-    sequence(:address_str) {|n| "address_#{n}"}
-    amount 1.22
-    category 'receive'
-    confirmations 0
-    occurred_at 1.minute.ago
-    received_at 1.minute.ago
   end
 
 end

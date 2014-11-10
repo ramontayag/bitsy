@@ -5,7 +5,8 @@ module Bitsy
       :transaction_fee,
       :transaction_fee_threshold_multiplier,
       :safe_confirmation_threshold,
-      :master_account_name,
+      :blockchain_secrets,
+      :blockchain,
     )
 
     def initialize(file_path)
@@ -20,7 +21,7 @@ module Bitsy
       end
     end
 
-    def forward_threshold
+    def forward_threshold_amount
       transaction_fee * transaction_fee_threshold_multiplier
     end
 

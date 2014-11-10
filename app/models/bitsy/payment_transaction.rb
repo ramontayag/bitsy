@@ -18,15 +18,6 @@ module Bitsy
     scope :sent_by, lambda { |address| where(sending_address: address) }
     scope :tax, lambda { where(payment_type: 'tax') }
     scope :non_tax, lambda { where('payment_type != ?', 'tax') }
-    scope :matching_bit_wallet_transaction, lambda { |bw_tx|
-      where(
-        transaction_id: bw_tx.id,
-        receiving_address: bw_tx.address_str,
-        amount: bw_tx.amount,
-        occurred_at: bw_tx.occurred_at,
-        received_at: bw_tx.received_at
-      )
-    }
     scope :for_forwarding, -> { safely_confirmed.not_forwarded.received }
     scope :credits, -> { received }
 

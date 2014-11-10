@@ -6,23 +6,19 @@ module Bitsy
 
     alias_attribute :balance, :balance_cache
     after_initialize :set_uuid
-    before_create :set_bitcoin_address
-    before_create :set_balance_cache
-    delegate :balance, to: :bit_wallet_account
     scope :with_balance, -> { where('balance_cache > 0.0') }
-    validate(
+    validates(
       :initial_tax_rate,
       inclusion: {
-        in: [0.0..1.0],
+        in: 0.0..1.0,
         message: 'must be a value within 0.0 and 1.0'
       }
     )
-    validate :address, uniqueness: true
-    validate :owner_address, presence: true
-    validate :tax_address, presence: true
-    validate :uuid, uniqueness: true, presence: true
-
-    delegate :bit_wallet, to: :Bitsy
+    validates :address, presence: true, uniqueness: true
+    validates :balance_cache, presence: true
+    validates :owner_address, presence: true
+    validates :tax_address, presence: true
+    validates :uuid, uniqueness: true, presence: true
 
     def initial_owner_rate
       self.min_payment * (1 - self.initial_tax_rate)
@@ -76,10 +72,6 @@ module Bitsy
       added_fee_received * self.added_tax_fee
     end
 
-    def balance
-      self.balance_cache = bit_wallet_account_balance
-    end
-
     def has_balance?
       self.balance > 0
     end
@@ -90,31 +82,12 @@ module Bitsy
 
     private
 
-    def set_bitcoin_address
-      if self.address.blank?
-        self.address = bit_wallet_account.addresses.new.address
-      end
-    end
-
-    def set_balance_cache
-      self.balance_cache = bit_wallet_account.balance
-    end
-
     def tax_transactions
       self.transactions.debit.tax
     end
 
     def owner_transactions
       self.transactions.debit.non_tax
-    end
-
-    def bit_wallet_account
-      return @bit_wallet_account if @bit_wallet_account
-      @bit_wallet_account = bit_wallet.accounts.new(self.bitcoin_account_name)
-    end
-
-    def bit_wallet_account_balance
-      bit_wallet_account.balance
     end
 
     def set_uuid

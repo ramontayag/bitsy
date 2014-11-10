@@ -1,48 +1,45 @@
 require "spec_helper"
 
-describe "Payment depot management", vcr: {record: :once}, bitcoin_cleaner: true do
+describe "Payment depot management", vcr: {record: :once} do
   let(:wallet) { Bitsy.bit_wallet }
-
-  let(:default_account) { wallet.accounts.new("") }
-  let(:buyer_account) { wallet.accounts.new('buyer') }
-  let(:buyer_address) { buyer_account.addresses.first.address }
-
-  let(:taxer_account) { wallet.accounts.new('taxer') }
-  let(:taxer_address) { taxer_account.addresses.first.address }
-
-  let(:owner_account) { wallet.accounts.new('owner') }
-  let(:owner_address) { owner_account.addresses.first.address }
-
-  before do
-    # Transfer money from default account to the buyer, so the buyer can buy
-    default_account.send_amount 5, to: buyer_address
-  end
+  let(:owner_address) { "owner_address" }
+  let(:taxer_address) { "taxer_address" }
 
   it "creates a payment depot to monitor payments" do
-    # Must create payment depot through a factory and define the uuid
-    payment_depot = create(
-      :payment_depot,
+    post bitsy.v1_payment_depots_path(payment_depot: {
       min_payment: 2.0,
       initial_tax_rate: 0.8,
       added_tax_rate: 0.1,
       owner_address: owner_address,
       tax_address: taxer_address,
-      uuid: "sowealwaysfetchthesameaddress",
-    )
+    })
+
+    json_response = JSON.parse(response.body).with_indifferent_access
+    payment_depot = Bitsy::PaymentDepot.find(json_response[:payment_depot][:id])
 
     # Buyer pays
-    buyer_account.send_amount 2.0, to: payment_depot.address
+    get bitsy.v1_blockchain_notifications_path(
+      value: 200_000_000.0,
+      transaction_hash: "transaction_hash",
+      input_address: payment_depot.address,
+      confirmations: 0,
+      secret: Bitsy.config.blockchain_secrets.sample,
+    )
 
-    post bitsy.v1_syncs_path
+    # Since blockchain has no test account, we simulate it instead of
+    # fully running the ForwardJob
+    payment_response = build(:blockchain_payment_response, tx_hash: "tx_hash")
+    expect_any_instance_of(Blockchain::Wallet).to receive(:send_many).with(
+      "taxer_address" => 160_000_000.0,
+      "owner_address" => 40_000_000.0,
+    ).and_return(payment_response)
 
-    expect(taxer_account.balance).to eq(1.6) # 0.8 * 2.0
-    expect(owner_account.balance).to eq(0.4) # 0.2 * 2.0
-
-    get bitsy.v1_payment_depot_path(payment_depot)
-
-    json = JSON.parse(response.body).with_indifferent_access[:payment_depot]
-
-    expect(json[:total_received_amount]).to eq "2.0"
+    resulting_ctx = Bitsy::ForwardJob.new.perform
+    expect(resulting_ctx.forwarding_transaction_id).
+      to eq payment_response.tx_hash
+    expect(Bitsy::PaymentTransaction.all.pluck(:forwarding_transaction_id)).
+      to eq [payment_response.tx_hash]
+    expect(payment_depot.reload.total_received_amount).to eq 2.0
   end
 
 end

@@ -37,36 +37,6 @@ module Bitsy
       end
     end
 
-    describe ".matching_bit_wallet_transaction" do
-      it "returns the payment transactions that match the bit wallet transaction" do
-        occurred_at = Time.new(2013, 1, 2, 3, 4, 5)
-        received_at = Time.new(2013, 1, 2, 3, 4, 6)
-
-        bit_wallet_transaction = double(
-          id: "932hx9",
-          address_str: "38x883mmz94m32mxcz",
-          amount: 2.0,
-          occurred_at: occurred_at,
-          received_at: received_at
-        )
-
-        payment_transactions = described_class.
-          matching_bit_wallet_transaction(bit_wallet_transaction)
-
-        expected_where_values = described_class.where(
-          transaction_id: "932hx9",
-          receiving_address: "38x883mmz94m32mxcz",
-          amount: 2.0,
-          occurred_at: occurred_at,
-          received_at: received_at,
-        ).where_values.map(&:to_sql)
-
-        resulting_where_sql = payment_transactions.where_values.map(&:to_sql)
-
-        expect(resulting_where_sql).to eq(expected_where_values)
-      end
-    end
-
     describe "#forward_tax_fee" do
       it "is the tax fee imposed on the payment for this particular transaction" do
         payment_depot = build_stubbed(:payment_depot)

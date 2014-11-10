@@ -1,0 +1,152 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://blockchain.info/merchant/eeadf652-e1c3-414e-bd3b-c4aef10756c4/address_balance?address=1HdvhZe47Xth9kxeEnqCCe9bsRTKsNHp7m&confirmations=0&password=Ye054oH96zSueHnVHLAAWwwM9
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 10 Nov 2014 09:07:42 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d8b95c69b809cb8cf34f54e9d73ca070b1415610462386; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.blockchain.info; HttpOnly
+      Content-Language:
+      - en
+      Content-Security-Policy:
+      - 'img-src ''self'' data: https://blockchain.info; style-src ''self'' ''unsafe-inline'';
+        frame-src ''none''; script-src ''self''; connect-src ''self'' *.blockchain.info
+        wss://*.blockchain.info ws://*.blockchain.info; object-src ''none''; media-src
+        ''none''; font-src ''none'';'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Ray:
+      - 187119ede7370bb1-HKG
+    body:
+      encoding: UTF-8
+      string: '{"address":"1HdvhZe47Xth9kxeEnqCCe9bsRTKsNHp7m","balance":0,"total_received":0}'
+    http_version: 
+  recorded_at: Mon, 10 Nov 2014 09:07:43 GMT
+- request:
+    method: post
+    uri: https://blockchain.info/merchant/eeadf652-e1c3-414e-bd3b-c4aef10756c4/new_address
+    body:
+      encoding: US-ASCII
+      string: password=Ye054oH96zSueHnVHLAAWwwM9
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 10 Nov 2014 09:08:33 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d0d5f39bb2e09d3cbec8423ba44e40a931415610512801; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.blockchain.info; HttpOnly
+      Content-Language:
+      - en
+      Content-Security-Policy:
+      - 'img-src ''self'' data: https://blockchain.info; style-src ''self'' ''unsafe-inline'';
+        frame-src ''none''; script-src ''self''; connect-src ''self'' *.blockchain.info
+        wss://*.blockchain.info ws://*.blockchain.info; object-src ''none''; media-src
+        ''none''; font-src ''none'';'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cache-Control:
+      - max-age=0, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Cf-Ray:
+      - 18711b25ed3d0bb1-HKG
+    body:
+      encoding: UTF-8
+      string: '{"address":"1b8cXfz4irfEJbwEHdfsqGW9V2fdhuTeS"}'
+    http_version: 
+  recorded_at: Mon, 10 Nov 2014 09:08:34 GMT
+- request:
+    method: get
+    uri: https://blockchain.info/merchant/eeadf652-e1c3-414e-bd3b-c4aef10756c4/address_balance?address=1b8cXfz4irfEJbwEHdfsqGW9V2fdhuTeS&confirmations=0&password=Ye054oH96zSueHnVHLAAWwwM9
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Mon, 10 Nov 2014 09:08:36 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=de7387d4aabaaa79d54f3ca637f6ebdc31415610515380; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.blockchain.info; HttpOnly
+      Content-Language:
+      - en
+      Content-Security-Policy:
+      - 'img-src ''self'' data: https://blockchain.info; style-src ''self'' ''unsafe-inline'';
+        frame-src ''none''; script-src ''self''; connect-src ''self'' *.blockchain.info
+        wss://*.blockchain.info ws://*.blockchain.info; object-src ''none''; media-src
+        ''none''; font-src ''none'';'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Ray:
+      - 18711b3920fa0be1-HKG
+    body:
+      encoding: UTF-8
+      string: '{"address":"1b8cXfz4irfEJbwEHdfsqGW9V2fdhuTeS","balance":0,"total_received":0}'
+    http_version: 
+  recorded_at: Mon, 10 Nov 2014 09:08:41 GMT
+recorded_with: VCR 2.9.2

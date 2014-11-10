@@ -3,6 +3,17 @@ require 'spec_helper'
 module Bitsy
   describe PaymentDepot do
 
+    describe "validations" do
+      subject { described_class.new }
+      it { should validate_presence_of(:address) }
+      it { should validate_presence_of(:balance_cache) }
+      it do
+        should ensure_inclusion_of(:initial_tax_rate).
+          in_range(0.0..1.0).
+          with_message('must be a value within 0.0 and 1.0')
+      end
+    end
+
     describe "after initialization" do
       context "there is no uuid" do
         it "creates a uuid" do
@@ -17,16 +28,6 @@ module Bitsy
         it "does not overwrite the uuid" do
           payment_depot = PaymentDepot.new(uuid: "asdasd")
           expect(payment_depot.uuid).to eq "asdasd"
-        end
-      end
-
-      describe "address", vcr: {record: :once}, bitcoin_cleaner: true do
-        it "is always set to a different address" do
-          payment_depot_1 = create(:payment_depot)
-          payment_depot_2 = create(:payment_depot)
-          address_1 = payment_depot_1.address
-          address_2 = payment_depot_2.address
-          expect(address_1).to_not eq address_2
         end
       end
     end
@@ -54,15 +55,6 @@ module Bitsy
       end
     end
 
-    describe '#balance' do
-      it 'should always update the #balance_cache field' do
-        payment_depot = build(:payment_depot)
-        payment_depot.stub(:bit_wallet_account_balance).and_return(2.2)
-        payment_depot.balance.should == 2.2
-        payment_depot.balance_cache.should == 2.2
-      end
-    end
-
     describe '#balance_owner_amount' do
       it 'should return the part of the balance that should be sent to the owner address'
     end
@@ -80,7 +72,7 @@ module Bitsy
       it 'should return the total amount received' do
         tx1 = build_stubbed(:payment_transaction, amount: 1.2)
         tx2 = build_stubbed(:payment_transaction, amount: -1.1)
-        tx3 = build_stubbed(:payment_transaction, amount: 0.5)
+        build_stubbed(:payment_transaction, amount: 0.5)
         credits = [tx1, tx2]
         credits.stub(:sum).with(:amount).and_return(1.2+0.5)
         payment_depot = build_stubbed(:payment_depot)

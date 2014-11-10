@@ -31,12 +31,11 @@ rake bitsy:install:migrations
 I suggest you do your development in this [Vagrant box](https://github.com/ramontayag/ruby-bitcoin-box). I use it for my development.
 
 1. Fork it
-2. To run the integration tests, you need to have bitcoind and bitcoin-cli in the path that [BitcoinCleaner](https://github.com/ramontayag/ruby-bitcoin_cleaner) support (basically, a version that supports `regtest`).
-3. Copy `spec/config.yml.sample` to `spec/config.yml` and set where the path to you `.bitcoin` dir is (this is the place where `bitcoin.conf`, `wallet.dat`, etc live)
-4. Copy `spec/dummy/config/bitsy.yml.sample` to `spec/dummy/config/bitsy.yml` and set the correct username, password, host, port of `bitcoind`.
-5. Create your feature branch (`git checkout -b my-new-feature`)
-6. Commit your changes (`git commit -am 'Add some feature'`)
-7. Push to the branch (`git push origin my-new-feature`)
-8. Create new Pull Request
+2. Copy `spec/config.yml.sample` to `spec/config.yml` and set where the path to you `.bitcoin` dir is (this is the place where `bitcoin.conf`, `wallet.dat`, etc live)
+3. Copy `spec/dummy/config/bitsy.yml.sample` to `spec/dummy/config/bitsy.yml` and set the correct username, password, host, port of `bitcoind`.
+4. Create your feature branch (`git checkout -b my-new-feature`)
+5. Commit your changes (`git commit -am 'Add some feature'`)
+6. Push to the branch (`git push origin my-new-feature`)
+7. Create new Pull Request
 
 If you find this useful, consider sharing some BTC love: `1PwQWijmJ39hWXk9X3CdAhEdExdkANEAPk`

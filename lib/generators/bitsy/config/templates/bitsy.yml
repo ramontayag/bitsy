@@ -1,10 +1,9 @@
 defaults: &defaults
-  bitcoind:
-    host: "localhost"
-    username: "admin1"
-    password: "123"
-    port: "19001"
-    ssl: false
+  blockchain:
+    identifier: ada4e4b6-3c9f-11e4-baad-164230d1df67
+    password: password123
+    second_password: if any
+    api_code: if any
 
 development:
   <<: *defaults

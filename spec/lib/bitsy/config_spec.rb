@@ -16,9 +16,6 @@ module Bitsy
         expected_config.each do |key, value|
           expect(resulting_config.send(key)).to eq value
         end
-
-        expect(resulting_config.bitcoind[:host]).
-          to eq expected_config["bitcoind"]["host"]
       end
     end
 
@@ -39,28 +36,37 @@ module Bitsy
     end
 
     describe "#safe_confirmation_threshold=" do
-      it "sets #safe_confirmation_threshold" do
+      it "sets confirmation threshold that determines whether or not the payment depots are paid" do
         config = described_class.new(config_path)
         config.safe_confirmation_threshold = 1
         expect(config.safe_confirmation_threshold).to eq 1
       end
     end
 
-    describe "#master_account_name=" do
-      it "sets #master_account_name" do
-        config = described_class.new(config_path)
-        config.master_account_name = "master"
-        expect(config.master_account_name).to eq "master"
-      end
-    end
-
-    describe "#forward_threshold" do
+    describe "#forward_threshold_amount" do
       it "is transaction_fee * transaction_fee_threshold_multiplier" do
         config = described_class.new(config_path)
         config.transaction_fee = 22.0
         config.transaction_fee_threshold_multiplier = 2
         expected_value = 44.0
-        expect(config.forward_threshold).to eq(expected_value)
+        expect(config.forward_threshold_amount).to eq(expected_value)
+      end
+    end
+
+    describe "#blockchain_secrets=" do
+      it "sets #blockchain_secrets" do
+        config = described_class.new(config_path)
+        config.blockchain_secrets = %w(a b)
+        expect(config.blockchain_secrets).to eq %w(a b)
+      end
+    end
+
+    describe "#blockchain" do
+      it "returns the blockchain config" do
+        config = described_class.new(config_path)
+        expected_config = YAML.load_file(config_path).
+          with_indifferent_access[:test][:blockchain]
+        expect(config.blockchain).to eq expected_config
       end
     end
 

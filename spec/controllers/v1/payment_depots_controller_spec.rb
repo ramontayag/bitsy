@@ -6,7 +6,7 @@ module Bitsy
       routes { Bitsy::Engine.routes }
 
       describe "GET /payment_depots" do
-        it "returns a list of all payment depots", vcr: {record: :once}, bitcoin_cleaner: true do
+        it "returns a list of all payment depots" do
           create(:payment_depot, address: "xyz")
           get :index
           json = JSON.parse(response.body).with_indifferent_access
@@ -19,13 +19,16 @@ module Bitsy
       describe "POST /payment_depots" do
         it "creates a payment depot and returns its details" do
           payment_depot = build_stubbed(:payment_depot)
+          resulting_ctx = double(LightService::Context, {
+            payment_depot: payment_depot,
+          })
           params = { min_payment: "0.5",
                      initial_tax_rate: "0.8",
                      added_tax_rate: "0.1",
                      owner_address: "x9s9319",
-                     tax_address: "tax2388" }
-          expect(PaymentDepot).to receive(:create).
-            with(hash_including(params)) { payment_depot }
+                     tax_address: "tax2388" }.with_indifferent_access
+          expect(CreatePaymentDepot).to receive(:execute).
+            with(params: params).and_return(resulting_ctx)
 
           post :create, payment_depot: params
           json = JSON.parse(response.body).with_indifferent_access[:payment_depot]

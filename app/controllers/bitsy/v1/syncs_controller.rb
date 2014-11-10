@@ -3,7 +3,7 @@ module Bitsy
     class SyncsController < ApplicationController
 
       def create
-        PaymentJob.new.perform
+        TransactionsSyncJob.new.perform
       end
 
     end
