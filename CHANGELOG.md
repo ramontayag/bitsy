@@ -1,3 +1,7 @@
+# 0.2.1
+
+- Do not retry certain jobs that may cause adverse effects
+
 # 0.2.0
 
 - Use blockchain.info instead of bitcoind
