@@ -2,6 +2,7 @@ module Bitsy
   class BlockchainNotificationJob
 
     include Sidekiq::Worker
+    sidekiq_options retry: false
 
     def perform(blockchain_notification_id)
       blockchain_notification = BlockchainNotification.

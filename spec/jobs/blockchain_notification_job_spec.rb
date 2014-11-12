@@ -3,6 +3,10 @@ require "spec_helper"
 module Bitsy
   describe BlockchainNotificationJob, "#perform" do
 
+    it "does not retry" do
+      expect(described_class.sidekiq_options_hash['retry']).to be false
+    end
+
     let(:blockchain_notification) { build_stubbed(:blockchain_notification) }
 
     before do
