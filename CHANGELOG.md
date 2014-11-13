@@ -1,3 +1,7 @@
+# 0.3.2
+
+- Fix wrong job name in `clock.rb`
+
 # 0.3.1
 
 - Load correct `redis_url` for clockwork

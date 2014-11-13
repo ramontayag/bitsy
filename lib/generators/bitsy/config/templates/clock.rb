@@ -23,5 +23,5 @@ module Clockwork
     Sidekiq::Client.push('class' => job, 'args' => [])
   end
 
-  every(10.minutes, 'Bitsy::TransactionsUpdateJob')
+  every(10.minutes, 'Bitsy::TransactionsSyncJob')
 end
