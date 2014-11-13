@@ -1,3 +1,7 @@
+# 0.3.0
+
+- Add redis url settings to settings.yml
+
 # 0.2.1
 
 - Do not retry certain jobs that may cause adverse effects

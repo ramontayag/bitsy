@@ -14,3 +14,11 @@ Bitsy.configure do |c|
   # like this http://app.com/bitsy/v1/blockchain_notifications?secret=mysecret
   c.blockchain_secrets = %w(secret)
 end
+
+Sidekiq.configure_server do |config|
+  config.redis = { url: Bitsy.config.redis_url }
+end
+
+Sidekiq.configure_client do |config|
+  config.redis = { url: Bitsy.config.redis_url }
+end

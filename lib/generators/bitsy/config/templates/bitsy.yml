@@ -4,6 +4,7 @@ defaults: &defaults
     password: password123
     second_password: if any
     api_code: if any
+  redis_url: 'redis://localhost:6379'
 
 development:
   <<: *defaults
