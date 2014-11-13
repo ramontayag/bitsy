@@ -1,3 +1,7 @@
+# 0.3.1
+
+- Load correct `redis_url` for clockwork
+
 # 0.3.0
 
 - Add redis url settings to settings.yml

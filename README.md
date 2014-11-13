@@ -26,6 +26,8 @@ rails g bitsy:config
 rake bitsy:install:migrations
 ```
 
+You need to start the Rails app, sidekiq workers, and clockwork daemon, with the `RAILS_ENV` set in the environment.
+
 ## Contributing
 
 I suggest you do your development in this [Vagrant box](https://github.com/ramontayag/ruby-bitcoin-box). I use it for my development.
