@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module Bitsy
-  describe CreatePaymentDepot, ".execute", vcr: {record: :all} do
+  describe CreatePaymentDepot, ".execute", vcr: {record: :once} do
 
     let(:wallet) { InstantiateBlockchainWallet.execute.wallet }
 
