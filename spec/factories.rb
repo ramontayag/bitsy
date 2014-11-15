@@ -67,6 +67,7 @@ FactoryGirl.define do
   end
 
   factory :payment_depot, class: "Bitsy::PaymentDepot" do
+    address "fake address"
     min_payment 2
     initial_tax_rate 0.5
     added_tax_rate 0.03

@@ -68,17 +68,12 @@ module Bitsy
       end
     end
 
-    describe '#total_received_amount' do
-      it 'should return the total amount received' do
-        tx1 = build_stubbed(:payment_transaction, amount: 1.2)
-        tx2 = build_stubbed(:payment_transaction, amount: -1.1)
-        build_stubbed(:payment_transaction, amount: 0.5)
-        credits = [tx1, tx2]
-        credits.stub(:sum).with(:amount).and_return(1.2+0.5)
-        payment_depot = build_stubbed(:payment_depot)
-        payment_depot.stub_chain(:transactions, :credits).
-          and_return(credits)
-        payment_depot.total_received_amount.should == 1.7
+    describe "#total_received_amount" do
+      it "is the total_received_amount_cache value" do
+        payment_depot = build_stubbed(:payment_depot, {
+          total_received_amount_cache: 1.22,
+        })
+        expect(payment_depot.total_received_amount.to_f).to eq 1.22
       end
     end
 

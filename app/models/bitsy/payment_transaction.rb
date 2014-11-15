@@ -27,6 +27,8 @@ module Bitsy
     delegate :added_tax_rate, to: :payment_depot, prefix: true
     delegate :total_received_amount, to: :payment_depot, prefix: true
 
+    after_create :update_payment_depot_cache
+
     def forward_tax_fee
       ForwardTaxCalculator.calculate(self.amount,
                                      self.payment_depot_min_payment,
@@ -38,5 +40,13 @@ module Bitsy
     def owner_fee
       self.amount - self.forward_tax_fee
     end
+
+    def update_payment_depot_cache
+      if payment_type == "receive"
+        payment_depot.total_received_amount_cache += amount
+        payment_depot.save
+      end
+    end
+
   end
 end

@@ -33,7 +33,7 @@ module Bitsy
     end
 
     def total_received_amount
-      self.transactions.credits.sum(:amount)
+      read_attribute :total_received_amount_cache
     end
 
     def total_tax_sent

@@ -1,3 +1,7 @@
+# 0.4.0
+
+- Cache `PaymentDepot#total_received_amount` in `total_received_amount_cache`. Migration must be run.
+
 # 0.3.2
 
 - Fix wrong job name in `clock.rb`

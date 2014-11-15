@@ -3,6 +3,36 @@ require "spec_helper"
 module Bitsy
   describe PaymentTransaction do
 
+    describe "after creation" do
+      let(:payment_depot) { create(:payment_depot) }
+
+      it "updates its payment depot's total_received_amount_cache" do
+        create(:payment_transaction, {
+          payment_depot: payment_depot,
+          amount: 0.5,
+          payment_type: "receive",
+        })
+        expect(payment_depot.reload.total_received_amount_cache).to eq 0.5
+        create(:payment_transaction, {
+          payment_depot: payment_depot,
+          amount: 1.5,
+          payment_type: "receive",
+        })
+        expect(payment_depot.reload.total_received_amount_cache).to eq 2.0
+      end
+
+      context "payment_type is not receive" do
+        it "does not update the payment depot's total_received_amount_cache" do
+          create(:payment_transaction, {
+            payment_depot: payment_depot,
+            amount: 0.5,
+            payment_type: "send",
+          })
+          expect(payment_depot.reload.total_received_amount_cache).to be_zero
+        end
+      end
+    end
+
     describe ".for_forwarding" do
       it "returns the safe confirmed, not forwarded, and received transactions" do
         expected_sql = described_class.
