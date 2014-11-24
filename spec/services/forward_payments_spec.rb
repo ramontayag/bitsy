@@ -14,7 +14,7 @@ module Bitsy
     let(:actions) do
       [
         InstantiateBlockchainWallet,
-        BuildSendManyHash,
+        BuildSendManyHashWithTransactionFee,
         SendPayments,
         AssociatesTransactions
       ]
@@ -30,6 +30,7 @@ module Bitsy
     let(:ctx) do
       {
         payment_transactions: payment_txs,
+        transaction_fee: Bitsy.config.transaction_fee,
       }
     end
 

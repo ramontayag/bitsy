@@ -9,10 +9,11 @@ module Bitsy
 
       return unless past_threshold?(payment_transactions)
       with(
-        payment_transactions: payment_transactions
+        payment_transactions: payment_transactions,
+        transaction_fee: Bitsy.config.transaction_fee,
       ).reduce([
         InstantiateBlockchainWallet,
-        BuildSendManyHash,
+        BuildSendManyHashWithTransactionFee,
         SendPayments,
         AssociatesTransactions
       ])

@@ -2,33 +2,45 @@ module Bitsy
   class BuildSendManyHash
 
     include LightService::Action
+    expects :payment_transactions, :amount_for_splitting, :total_amount
+    promises :send_many_hash, :computed_transaction_fee
 
     executed do |ctx|
-      payment_txs = ctx.fetch(:payment_transactions)
+      ctx.send_many_hash = send_many_hash_from(ctx)
+      total_payments = total_payments_from(ctx.send_many_hash)
+      ctx.computed_transaction_fee =
+        (ctx.total_amount * 100_000_000.0 - total_payments).round
+    end
+
+    private
+
+    def self.send_many_hash_from(ctx)
       send_many_hash = {}
 
-      payment_txs.each do |payment_tx|
-        tx_hash = for_transaction(payment_tx)
-        tx_hash.each do |address, value|
+      ctx.payment_transactions.each do |tx|
+        tx_hash = BuildSendManyHashForTransaction.execute(
+          payment_transaction: tx,
+          amount_for_splitting: ctx.amount_for_splitting,
+          total_amount: ctx.total_amount,
+        ).transaction_send_many_hash
+
+        tx_hash.each do |address, amount|
           if send_many_hash.has_key?(address)
-            send_many_hash[address] = send_many_hash[address] + value
+            send_many_hash[address] += amount
           else
-            send_many_hash[address] = value
+            send_many_hash[address] = amount
           end
         end
       end
 
-      ctx[:send_many_hash] = send_many_hash
+      send_many_hash
     end
 
-    def self.for_transaction(payment_transaction)
-      payment_depot = payment_transaction.payment_depot
-      owner_address = payment_depot.owner_address
-      tax_address = payment_depot.tax_address
-      {
-        tax_address => payment_transaction.forward_tax_fee.to_f * 100_000_000,
-        owner_address => payment_transaction.owner_fee.to_f * 100_000_000,
-      }
+    def self.total_payments_from(send_many_hash)
+      send_many_hash.inject(0) do |sum, hash|
+        sum += hash[1]
+        sum
+      end
     end
 
   end

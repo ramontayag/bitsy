@@ -2,11 +2,15 @@ module Bitsy
   class SendPayments
 
     include LightService::Action
-    expects :send_many_hash, :wallet
+    expects :send_many_hash, :wallet, :computed_transaction_fee
     promises :forwarding_transaction_id
 
     executed do |ctx|
-      payment_response = ctx.wallet.send_many(ctx.send_many_hash)
+      payment_response = ctx.wallet.send_many(
+        ctx.send_many_hash,
+        nil,
+        ctx.computed_transaction_fee,
+      )
       ctx.forwarding_transaction_id = payment_response.tx_hash
     end
 

@@ -26,13 +26,21 @@ describe "Payment depot management", vcr: {record: :once} do
       secret: Bitsy.config.blockchain_secrets.sample,
     )
 
+    tx_fee_satoshi = (Bitsy.config.transaction_fee * 100_000_000).to_i
+    total_payment_amount = 200_000_000 - tx_fee_satoshi
+    expected_tax_fee = ((16.0 / 20.0) * total_payment_amount).to_i
+    expected_owner_fee = ((4.0 / 20.0) * total_payment_amount).to_i
+
     # Since blockchain has no test account, we simulate it instead of
     # fully running the ForwardJob
+    expected_send_many_hash = {
+      "taxer_address" => expected_tax_fee,
+      "owner_address" => expected_owner_fee,
+    }
     payment_response = build(:blockchain_payment_response, tx_hash: "tx_hash")
-    expect_any_instance_of(Blockchain::Wallet).to receive(:send_many).with(
-      "taxer_address" => 160_000_000.0,
-      "owner_address" => 40_000_000.0,
-    ).and_return(payment_response)
+    expect_any_instance_of(Blockchain::Wallet).to receive(:send_many).
+      with(expected_send_many_hash, nil, tx_fee_satoshi).
+      and_return(payment_response)
 
     resulting_ctx = Bitsy::ForwardJob.new.perform
     expect(resulting_ctx.forwarding_transaction_id).
