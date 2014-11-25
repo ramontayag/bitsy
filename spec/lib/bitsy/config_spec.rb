@@ -19,27 +19,18 @@ module Bitsy
       end
     end
 
-    describe "#transaction_fee=" do
-      it "sets #transaction_fee" do
-        config = described_class.new(config_path)
-        config.transaction_fee = 23.2
-        expect(config.transaction_fee).to eq 23.2
-      end
-    end
-
-    describe "#transaction_fee_threshold_multiplier=" do
-      it "sets #transaction_fee_threshold_multiplier" do
-        config = described_class.new(config_path)
-        config.transaction_fee_threshold_multiplier = 2
-        expect(config.transaction_fee_threshold_multiplier).to eq 2
-      end
-    end
-
-    describe "#safe_confirmation_threshold=" do
-      it "sets confirmation threshold that determines whether or not the payment depots are paid" do
-        config = described_class.new(config_path)
-        config.safe_confirmation_threshold = 1
-        expect(config.safe_confirmation_threshold).to eq 1
+    [
+      :transaction_fee,
+      :transaction_fee_threshold_multiplier,
+      :safe_confirmation_threshold,
+      :blockchain_secrets,
+    ].each do |attr|
+      describe "##{attr}=" do
+        it "sets ##{attr}" do
+          config = described_class.new(config_path)
+          config.send("#{attr}=", "value for #{attr}")
+          expect(config.send(attr)).to eq "value for #{attr}"
+        end
       end
     end
 
@@ -50,14 +41,6 @@ module Bitsy
         config.transaction_fee_threshold_multiplier = 2
         expected_value = 44.0
         expect(config.forward_threshold_amount).to eq(expected_value)
-      end
-    end
-
-    describe "#blockchain_secrets=" do
-      it "sets #blockchain_secrets" do
-        config = described_class.new(config_path)
-        config.blockchain_secrets = %w(a b)
-        expect(config.blockchain_secrets).to eq %w(a b)
       end
     end
 
