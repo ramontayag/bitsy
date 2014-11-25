@@ -1,3 +1,7 @@
+# TBA
+
+- Do not retry TransactionsSyncJob if it fails
+
 # 0.5.1
 
 - Fix wrong library name in `clock.rb` template
