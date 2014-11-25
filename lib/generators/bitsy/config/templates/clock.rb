@@ -1,6 +1,6 @@
 require 'clockwork'
 require "sidekiq"
-require 'yml'
+require 'yaml'
 
 RAILS_ENV = ENV['RAILS_ENV']
 if RAILS_ENV.nil?

@@ -1,3 +1,7 @@
+# 0.5.1
+
+- Fix wrong library name in `clock.rb` template
+
 # 0.5.0
 
 - Take transaction fee from the bitcoin being sent out
