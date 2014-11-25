@@ -15,6 +15,7 @@ module Bitsy
       [
         InstantiateBlockchainWallet,
         BuildSendManyHashWithTransactionFee,
+        LogSendMany,
         SendPayments,
         AssociatesTransactions
       ]

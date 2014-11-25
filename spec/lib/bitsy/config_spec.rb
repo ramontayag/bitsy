@@ -24,6 +24,8 @@ module Bitsy
       :transaction_fee_threshold_multiplier,
       :safe_confirmation_threshold,
       :blockchain_secrets,
+      :debug,
+      :send_many_log_path,
     ].each do |attr|
       describe "##{attr}=" do
         it "sets ##{attr}" do

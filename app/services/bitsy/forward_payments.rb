@@ -14,6 +14,7 @@ module Bitsy
       ).reduce([
         InstantiateBlockchainWallet,
         BuildSendManyHashWithTransactionFee,
+        LogSendMany,
         SendPayments,
         AssociatesTransactions
       ])

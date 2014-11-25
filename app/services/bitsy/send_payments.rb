@@ -6,6 +6,11 @@ module Bitsy
     promises :forwarding_transaction_id
 
     executed do |ctx|
+      if Bitsy.config.debug
+        ctx.forwarding_transaction_id = nil
+        next ctx
+      end
+
       payment_response = ctx.wallet.send_many(
         ctx.send_many_hash,
         nil,

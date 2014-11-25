@@ -16,14 +16,32 @@ module Bitsy
       ).and_return(payment_response)
     end
 
-    it "initiates a payment using the :send_many_hash" do
-      ctx = {
-        wallet: wallet,
-        send_many_hash: send_many_hash,
-        computed_transaction_fee: transaction_fee,
-      }
-      resulting_ctx = described_class.execute(ctx)
-      expect(resulting_ctx[:forwarding_transaction_id]).to eq("h")
+    context "non-debug mode" do
+      before { Bitsy.config.debug = false }
+
+      it "initiates a payment using the :send_many_hash" do
+        ctx = {
+          wallet: wallet,
+          send_many_hash: send_many_hash,
+          computed_transaction_fee: transaction_fee,
+        }
+        resulting_ctx = described_class.execute(ctx)
+        expect(resulting_ctx[:forwarding_transaction_id]).to eq("h")
+      end
+    end
+
+    context "debug mode" do
+      before { Bitsy.config.debug = true }
+
+      it "does not initiate any payment" do
+        ctx = {
+          wallet: wallet,
+          send_many_hash: send_many_hash,
+          computed_transaction_fee: transaction_fee,
+        }
+        expect(wallet).to_not receive(:send_many)
+        described_class.execute(ctx)
+      end
     end
 
   end

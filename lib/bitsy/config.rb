@@ -7,6 +7,8 @@ module Bitsy
       :safe_confirmation_threshold,
       :blockchain_secrets,
       :blockchain,
+      :debug,
+      :send_many_log_path
     )
 
     def initialize(file_path)

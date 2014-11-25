@@ -1,3 +1,9 @@
+# 0.5.0
+
+- Take transaction fee from the bitcoin being sent out
+- Add `debug` to the Bitsy config
+- Add a separate logger for the `send_many` hash
+
 # 0.4.0
 
 - Cache `PaymentDepot#total_received_amount` in `total_received_amount_cache`. Migration must be run.
