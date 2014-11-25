@@ -24,4 +24,5 @@ module Clockwork
   end
 
   every(10.minutes, 'Bitsy::TransactionsSyncJob')
+  every(15.minutes, 'Bitsy::ForwardJob')
 end

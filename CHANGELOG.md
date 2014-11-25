@@ -1,3 +1,7 @@
+# 0.5.4
+
+- Run ForwardJob every 15 minutes
+
 # 0.5.3
 
 - Fix wrongly computed transaction confirmations
