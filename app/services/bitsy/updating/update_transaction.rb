@@ -9,8 +9,8 @@ module Bitsy
         blockchain_tx = Blockchain.
           get_tx(ctx.payment_transaction.transaction_id)
         confirmations = if blockchain_tx.block_height
-                          blockchain_tx.block_height + 1 -
-                            ctx.latest_block.height
+                          ctx.latest_block.height -
+                            blockchain_tx.block_height + 1
                         else
                           0
                         end

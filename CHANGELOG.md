@@ -1,3 +1,7 @@
+# 0.5.3
+
+- Fix wrongly computed transaction confirmations
+
 # 0.5.2
 
 - Do not retry TransactionsSyncJob if it fails

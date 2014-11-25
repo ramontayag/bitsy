@@ -15,9 +15,9 @@ module Bitsy
       end
 
       context "confirmed tx" do
-        let(:block_height) { 30 }
+        let(:block_height) { 29 }
         it "updates the transaction with data from blockchain" do
-          expect(tx).to receive(:update_attributes).with(confirmations: 1)
+          expect(tx).to receive(:update_attributes).with(confirmations: 2)
 
           described_class.execute(
             latest_block: latest_block,
