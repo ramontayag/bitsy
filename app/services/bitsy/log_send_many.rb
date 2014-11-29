@@ -8,6 +8,7 @@ module Bitsy
       message = ["Will forward transactions for payment transactions:"]
       message << ctx.payment_transactions.map(&:id).join(", ")
       message << "hash: #{ctx.send_many_hash.inspect}"
+      message << "Transaction fee: #{ctx.computed_transaction_fee.to_f}"
       message = message.join("\n")
 
       logger = Logger.new(Bitsy.config.send_many_log_path)
