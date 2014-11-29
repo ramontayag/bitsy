@@ -1,4 +1,4 @@
-# TBA
+# 0.5.5
 
 - Change `total_received_amount` to decimal to avoid comparison issues. Migration needed.
 
