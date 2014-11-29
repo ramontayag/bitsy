@@ -1,4 +1,4 @@
-# TBA
+# 0.6.0
 
 - Log transaction fee in `send_many.log`
 
