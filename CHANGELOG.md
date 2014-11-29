@@ -1,3 +1,7 @@
+# TBA
+
+- Change `total_received_amount` to decimal to avoid comparison issues. Migration needed.
+
 # 0.5.4
 
 - Run ForwardJob every 15 minutes
