@@ -6,7 +6,7 @@ module Bitsy
         bn = BlockchainNotification.new(blockchain_notification_params)
         if bn.save
           BlockchainNotificationJob.perform_async(bn.id)
-          render nothing: true, status: 200
+          render text: "*ok*", status: 200
         else
           render nothing: true, status: 422
         end

@@ -1,3 +1,7 @@
+# 0.6.1
+
+- Properly respond with "*ok*" to successful BlockchainNotificationsController requests
+
 # 0.6.0
 
 - Log transaction fee in `send_many.log`

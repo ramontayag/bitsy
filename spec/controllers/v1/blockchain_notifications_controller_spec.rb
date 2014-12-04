@@ -40,6 +40,11 @@ module Bitsy
           expect(response.status).to eq 200
         end
 
+        it "responds with `*ok*`" do
+          get :index, params
+          expect(response.body).to eq "*ok*"
+        end
+
         it "enqueues BlockchainNotificationJob" do
           blockchain_notification = double(BlockchainNotification, id: 2)
           allow(BlockchainNotification).to receive(:new).
