@@ -1,6 +1,7 @@
 # TBA
 
 - if `test: true` is passed in the parameters for the blockchain notification, then "*ok*" is returned. This should have always been the case.
+- Manually check addresses that haven't received payments yet.
 
 # 0.6.1
 

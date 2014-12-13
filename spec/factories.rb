@@ -36,6 +36,18 @@ FactoryGirl.define do
     end
   end
 
+  factory :blockchain_output, class: Blockchain::Output do
+    sequence(:n) { |n| n }
+    value 1_000_000
+    addr "output_address"
+    tx_index "tx_index"
+    script "tx_script"
+    spent "spent"
+    initialize_with do
+      Blockchain::Output.new(attributes.with_indifferent_access)
+    end
+  end
+
   factory :blockchain_wallet, class: Blockchain::Wallet do
     identifier "identifier"
     password "pass"
@@ -51,7 +63,20 @@ FactoryGirl.define do
     end
   end
 
-  factory :blockchain_address, class: Blockchain::WalletAddress do
+  factory :blockchain_address, class: Blockchain::Address do
+    sequence(:hash160) { |n| "hash_160-#{n}" }
+    address "address"
+    n_tx "n_tx"
+    total_received 80023
+    total_sent 2122
+    final_balance 80023 - 2122
+    txs []
+    initialize_with do
+      Blockchain::Address.new(attributes.with_indifferent_access)
+    end
+  end
+
+  factory :blockchain_wallet_address, class: Blockchain::WalletAddress do
     balance 0.005
     sequence(:address) { |n| "address_#{n}"}
     label nil

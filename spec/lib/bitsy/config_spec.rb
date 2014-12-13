@@ -26,6 +26,7 @@ module Bitsy
       :blockchain_secrets,
       :debug,
       :send_many_log_path,
+      :check_limit,
     ].each do |attr|
       describe "##{attr}=" do
         it "sets ##{attr}" do

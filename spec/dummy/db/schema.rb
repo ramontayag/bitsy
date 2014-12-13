@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129065336) do
+ActiveRecord::Schema.define(version: 20141209131446) do
 
   create_table "bitsy_blockchain_notifications", force: true do |t|
     t.integer "value",                        null: false
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20141129065336) do
     t.string   "tax_address"
     t.string   "uuid",                                      null: false
     t.decimal  "total_received_amount_cache", default: 0.0, null: false
+    t.integer  "check_count",                 default: 0,   null: false
+    t.datetime "checked_at"
   end
 
   add_index "bitsy_payment_depots", ["uuid"], name: "index_bitsy_payment_depots_on_uuid"

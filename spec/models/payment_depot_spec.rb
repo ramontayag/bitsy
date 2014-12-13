@@ -55,6 +55,36 @@ module Bitsy
       end
     end
 
+    describe ".for_manual_checking" do
+      it "returns payment depots that are "
+    end
+
+    describe ".checked_at_is_past" do
+      it "returns payment depots whose checked_at is in the past" do
+        create(:payment_depot, checked_at: 5.minutes.from_now)
+        payment_depot_2 = create(:payment_depot, checked_at: 2.minutes.ago)
+        expect(PaymentDepot.checked_at_is_past).to match_array [payment_depot_2]
+      end
+    end
+
+    describe "#reset_checked_at!" do
+      before do
+        Timecop.freeze
+      end
+      it "updates the checked_at to be current time plus the check_count**2 and ticks the check_count" do
+        payment_depot = create(:payment_depot, {
+          checked_at: 1.minute.ago,
+          check_count: 4,
+        })
+        payment_depot.reset_checked_at!
+        expected_checked_at = (4**2).seconds.from_now
+        payment_depot.reload
+        expect(payment_depot.checked_at.to_i).
+          to eq expected_checked_at.to_i
+        expect(payment_depot.check_count).to eq 5
+      end
+    end
+
     describe '#balance_owner_amount' do
       it 'should return the part of the balance that should be sent to the owner address'
     end

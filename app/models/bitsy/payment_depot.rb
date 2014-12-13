@@ -2,11 +2,13 @@ require 'securerandom'
 
 module Bitsy
   class PaymentDepot < ActiveRecord::Base
+
     has_many :transactions, class_name: 'PaymentTransaction'
 
     alias_attribute :balance, :balance_cache
     after_initialize :set_uuid
     scope :with_balance, -> { where('balance_cache > 0.0') }
+    scope :checked_at_is_past, -> { where(arel_table[:checked_at].lt(Time.now)) }
     validates(
       :initial_tax_rate,
       inclusion: {
@@ -22,6 +24,13 @@ module Bitsy
 
     def initial_owner_rate
       self.min_payment * (1 - self.initial_tax_rate)
+    end
+
+    def reset_checked_at!
+      self.update_attributes(
+        check_count: self.check_count + 1,
+        checked_at: (self.check_count**2).seconds.from_now,
+      )
     end
 
     def balance_tax_amount

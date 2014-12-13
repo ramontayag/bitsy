@@ -8,7 +8,8 @@ module Bitsy
       :blockchain_secrets,
       :blockchain,
       :debug,
-      :send_many_log_path
+      :send_many_log_path,
+      :check_limit,
     )
 
     def initialize(file_path)
