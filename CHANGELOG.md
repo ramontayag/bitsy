@@ -1,3 +1,7 @@
+# TBA
+
+- if `test: true` is passed in the parameters for the blockchain notification, then "*ok*" is returned. This should have always been the case.
+
 # 0.6.1
 
 - Properly respond with "*ok*" to successful BlockchainNotificationsController requests

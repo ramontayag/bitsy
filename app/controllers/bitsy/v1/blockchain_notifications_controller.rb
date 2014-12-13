@@ -4,7 +4,9 @@ module Bitsy
 
       def index
         bn = BlockchainNotification.new(blockchain_notification_params)
-        if bn.save
+        if bn.test
+          render text: "*ok*", status: 200
+        elsif bn.save
           BlockchainNotificationJob.perform_async(bn.id)
           render text: "*ok*", status: 200
         else
@@ -21,6 +23,7 @@ module Bitsy
           :input_address,
           :confirmations,
           :secret,
+          :test,
         )
       end
 

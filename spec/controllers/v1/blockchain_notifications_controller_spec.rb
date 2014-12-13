@@ -46,7 +46,7 @@ module Bitsy
         end
 
         it "enqueues BlockchainNotificationJob" do
-          blockchain_notification = double(BlockchainNotification, id: 2)
+          blockchain_notification = build(:blockchain_notification, id: 2)
           allow(BlockchainNotification).to receive(:new).
             and_return(blockchain_notification)
           allow(blockchain_notification).to receive(:save).and_return(true)
@@ -58,6 +58,14 @@ module Bitsy
           it "does not respond with 200" do
             get :index
             expect(response.status).to_not eq 200
+          end
+        end
+
+        context "test param is `true`" do
+          it "responds with `*ok*` regardless of other params" do
+            get :index, test: true
+            expect(response.body).to eq "*ok*"
+            expect(response).to be_success
           end
         end
       end

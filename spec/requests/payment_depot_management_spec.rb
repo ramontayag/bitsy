@@ -24,7 +24,10 @@ describe "Payment depot management", vcr: {record: :once} do
       input_address: payment_depot.address,
       confirmations: 0,
       secret: Bitsy.config.blockchain_secrets.sample,
+      test: false,
     )
+
+    expect(Bitsy::BlockchainNotification.count).to be > 0
 
     tx_fee_satoshi = (Bitsy.config.transaction_fee * 100_000_000).to_i
     total_payment_amount = 200_000_000 - tx_fee_satoshi
