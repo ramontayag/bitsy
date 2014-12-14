@@ -6,7 +6,7 @@ module Bitsy
     def self.execute
       reduce(
         GetLatestBlock,
-        CheckPaymentDepotTransactions,
+        CheckPaymentDepotsTransactions,
       )
     end
 
