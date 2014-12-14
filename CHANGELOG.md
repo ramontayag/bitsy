@@ -1,3 +1,7 @@
+# 0.7.1
+
+- Ensure that only payment depots that ought to be checked are checked
+
 # 0.7.0
 
 - if `test: true` is passed in the parameters for the blockchain notification, then "*ok*" is returned. This should have always been the case.

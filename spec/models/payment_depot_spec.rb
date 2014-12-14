@@ -56,7 +56,36 @@ module Bitsy
     end
 
     describe ".for_manual_checking" do
-      it "returns payment depots that are "
+      it "returns payment depots that haven't been paid for fully and checked_at is in the past" do
+        expected_payment_depot = create(:payment_depot, {
+          checked_at: 1.minute.ago,
+          min_payment: 2,
+          total_received_amount_cache: 3,
+        })
+        create(:payment_depot, min_payment: 2, total_received_amount_cache: 1)
+        create(:payment_depot, checked_at: 1.minute.from_now)
+        expect(described_class.for_manual_checking).
+          to match_array([expected_payment_depot])
+      end
+    end
+
+    describe ".received_at_least_minimum" do
+      it "returns the payments depots that have received at least the minimum" do
+        create(:payment_depot, {
+          min_payment: 12.0,
+          total_received_amount_cache: 11.0,
+        })
+        paid_payment_depot_1 = create(:payment_depot, {
+          min_payment: 12.0,
+          total_received_amount_cache: 12.0,
+        })
+        paid_payment_depot_2 = create(:payment_depot, {
+          min_payment: 12.0,
+          total_received_amount_cache: 13.0,
+        })
+        expect(described_class.received_at_least_minimum).
+          to match_array([paid_payment_depot_1, paid_payment_depot_2])
+      end
     end
 
     describe ".checked_at_is_past" do

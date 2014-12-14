@@ -21,7 +21,7 @@ module Bitsy
         and_return(blockchain_transactions)
     end
 
-    it "checks the transactions of the payment depot" do
+    it "checks the transactions of the payment depot and resets the check count" do
       blockchain_transactions.each do |tx|
         expect(ProcessBlockchainBlockexplorerTransaction).
           to receive(:execute).with(
@@ -30,6 +30,8 @@ module Bitsy
             blockchain_transaction: tx,
           )
       end
+
+      expect(payment_depot).to receive(:reset_checked_at!)
 
       described_class.execute(
         latest_block: latest_block,

@@ -13,6 +13,7 @@ module Bitsy
           blockchain_transaction: tx,
         )
       end
+      ctx.payment_depot.reset_checked_at!
     end
 
   end

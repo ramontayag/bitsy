@@ -2,10 +2,10 @@ module Bitsy
   class CheckPaymentDepotsTransactions
 
     include LightService::Action
-    expects :latest_block, :payment_depots
+    expects :latest_block
 
     executed do |ctx|
-      ctx.payment_depots.each do |payment_depot|
+      PaymentDepot.for_manual_checking.find_each do |payment_depot|
         CheckPaymentDepotTransactions.execute(
           payment_depot: payment_depot,
           latest_block: ctx.latest_block,
