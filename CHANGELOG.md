@@ -1,3 +1,7 @@
+# 0.8.1
+
+- Check payment depots whose `checked_at` has not been seen
+
 # 0.8.0
 
 - Only fetch the latest block when checking for payments if there are payment depots we need to check

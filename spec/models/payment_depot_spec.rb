@@ -88,11 +88,13 @@ module Bitsy
       end
     end
 
-    describe ".checked_at_is_past" do
+    describe ".checked_at_is_past_or_nil" do
       it "returns payment depots whose checked_at is in the past" do
         create(:payment_depot, checked_at: 5.minutes.from_now)
         payment_depot_2 = create(:payment_depot, checked_at: 2.minutes.ago)
-        expect(PaymentDepot.checked_at_is_past).to match_array [payment_depot_2]
+        payment_depot_3 = create(:payment_depot, checked_at: nil)
+        expect(PaymentDepot.checked_at_is_past_or_nil).
+          to match_array [payment_depot_2, payment_depot_3]
       end
     end
 

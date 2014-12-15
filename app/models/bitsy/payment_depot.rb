@@ -8,14 +8,17 @@ module Bitsy
     alias_attribute :balance, :balance_cache
     after_initialize :set_uuid
     scope :with_balance, -> { where('balance_cache > 0.0') }
-    scope :checked_at_is_past, -> { where(arel_table[:checked_at].lt(Time.now)) }
+    scope :checked_at_is_past_or_nil, -> do
+      checked_at = arel_table[:checked_at]
+      where(checked_at.lt(Time.now).or(checked_at.eq(nil)))
+    end
     scope :received_at_least_minimum, -> do
       min_payment = arel_table[:min_payment]
       total_received_amount_cache = arel_table[:total_received_amount_cache]
       where(min_payment.lteq(total_received_amount_cache))
     end
     scope :for_manual_checking, -> do
-      checked_at_is_past.received_at_least_minimum
+      checked_at_is_past_or_nil.received_at_least_minimum
     end
     validates(
       :initial_tax_rate,
