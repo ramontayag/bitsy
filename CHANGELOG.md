@@ -1,4 +1,4 @@
-# TBA
+# 0.8.0
 
 - Only fetch the latest block when checking for payments if there are payment depots we need to check
 
