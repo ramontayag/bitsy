@@ -5,7 +5,8 @@ module Bitsy
 
     it "executes actions" do
       actions = [
-        GetLatestBlock,
+        FetchPaymentDepotsForManualChecking,
+        GetLatestBlockIfPaymentDepots,
         CheckPaymentDepotsTransactions,
       ]
 

@@ -1,3 +1,7 @@
+# TBA
+
+- Only fetch the latest block when checking for payments if there are payment depots we need to check
+
 # 0.7.1
 
 - Ensure that only payment depots that ought to be checked are checked

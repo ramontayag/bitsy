@@ -9,8 +9,6 @@ module Bitsy
     let(:payment_depots) { [payment_depot_1, payment_depot_2] }
 
     before do
-      expect(PaymentDepot).to receive(:for_manual_checking).
-        and_return(payment_depots)
       expect(payment_depots).to receive(:find_each).and_yield(payment_depot_1).
         and_yield(payment_depot_2)
     end
@@ -24,6 +22,7 @@ module Bitsy
       end
 
       described_class.execute(
+        payment_depots: payment_depots,
         latest_block: latest_block,
       )
     end
