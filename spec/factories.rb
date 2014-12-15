@@ -70,9 +70,11 @@ FactoryGirl.define do
     total_received 80023
     total_sent 2122
     final_balance 80023 - 2122
-    txs []
+    transactions []
     initialize_with do
-      Blockchain::Address.new(attributes.with_indifferent_access)
+      attrs = attributes.with_indifferent_access
+      attrs[:txs] = attrs.delete(:transactions)
+      Blockchain::Address.new(attrs)
     end
   end
 

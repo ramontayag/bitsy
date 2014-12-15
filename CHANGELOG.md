@@ -1,3 +1,7 @@
+# 0.8.2
+
+- Use `Blockchain::Address.transactions` and not `.txs`
+
 # 0.8.1
 
 - Check payment depots whose `checked_at` has not been seen

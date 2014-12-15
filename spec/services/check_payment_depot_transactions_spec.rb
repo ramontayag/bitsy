@@ -15,9 +15,9 @@ module Bitsy
     end
 
     before do
-      allow(Blockchain).to receive(:get_address).with("address").
+      expect(Blockchain).to receive(:get_address).with("address").
         and_return(blockchain_address)
-      allow(blockchain_address).to receive(:txs).
+      expect(blockchain_address).to receive(:transactions).
         and_return(blockchain_transactions)
     end
 

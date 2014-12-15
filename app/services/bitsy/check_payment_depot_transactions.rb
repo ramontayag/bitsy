@@ -6,7 +6,7 @@ module Bitsy
 
     executed do |ctx|
       blockchain_address = Blockchain.get_address(ctx.payment_depot.address)
-      blockchain_address.txs.each do |tx|
+      blockchain_address.transactions.each do |tx|
         ProcessBlockchainBlockexplorerTransaction.execute(
           payment_depot: ctx.payment_depot,
           latest_block: ctx.latest_block,
