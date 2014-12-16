@@ -1,3 +1,7 @@
+# 0.8.3
+
+- Follow the `check_limit`
+
 # 0.8.2
 
 - Use `Blockchain::Address.transactions` and not `.txs`

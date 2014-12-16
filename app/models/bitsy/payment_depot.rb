@@ -17,8 +17,12 @@ module Bitsy
       total_received_amount_cache = arel_table[:total_received_amount_cache]
       where(min_payment.lteq(total_received_amount_cache))
     end
+    scope :within_check_count_threshold, -> do
+      where(arel_table[:check_count].lt(Bitsy.config.check_limit))
+    end
     scope :for_manual_checking, -> do
-      checked_at_is_past_or_nil.received_at_least_minimum
+      checked_at_is_past_or_nil.received_at_least_minimum.
+        within_check_count_threshold
     end
     validates(
       :initial_tax_rate,

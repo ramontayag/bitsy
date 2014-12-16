@@ -21,6 +21,11 @@ Bitsy.configure do |c|
   # WHen debug is true, no money will be forwarded. This is for testing
   # purposes.
   c.debug = false
+
+  # Bitsy will check the transactions of the payment depot manually if it hasn't
+  # been paid for yet. It will check 40 times, in approximately check count ** 2
+  # power intervals. Ex: check_count = 3, then it will check again in 9 seconds.
+  c.check_limit = 40
 end
 
 Sidekiq.configure_server do |config|

@@ -64,6 +64,12 @@ module Bitsy
         })
         create(:payment_depot, min_payment: 2, total_received_amount_cache: 1)
         create(:payment_depot, checked_at: 1.minute.from_now)
+        create(:payment_depot, {
+          checked_at: 1.minute.ago,
+          min_payment: 2,
+          total_received_amount_cache: 3,
+          check_count: Bitsy.config.check_limit,
+        })
         expect(described_class.for_manual_checking).
           to match_array([expected_payment_depot])
       end
@@ -95,6 +101,18 @@ module Bitsy
         payment_depot_3 = create(:payment_depot, checked_at: nil)
         expect(PaymentDepot.checked_at_is_past_or_nil).
           to match_array [payment_depot_2, payment_depot_3]
+      end
+    end
+
+    describe ".within_check_count_threshold" do
+      it "returns payment depots within check_count threshold" do
+        create(:payment_depot, check_count: Bitsy.config.check_limit)
+        create(:payment_depot, check_count: Bitsy.config.check_limit+1)
+        payment_depot_1 = create(:payment_depot, {
+          check_count: Bitsy.config.check_limit-1,
+        })
+        expect(described_class.within_check_count_threshold).
+          to match_array([payment_depot_1])
       end
     end
 
