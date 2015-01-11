@@ -1,4 +1,4 @@
-# TBA
+# 0.8.4
 
 - Fix arguments for `#send_many`
 
