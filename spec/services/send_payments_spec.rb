@@ -11,8 +11,7 @@ module Bitsy
     before do
       allow(wallet).to receive(:send_many).with(
         send_many_hash,
-        nil,
-        transaction_fee,
+        fee: transaction_fee,
       ).and_return(payment_response)
     end
 

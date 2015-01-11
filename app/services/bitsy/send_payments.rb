@@ -13,8 +13,7 @@ module Bitsy
 
       payment_response = ctx.wallet.send_many(
         ctx.send_many_hash,
-        nil,
-        ctx.computed_transaction_fee,
+        fee: ctx.computed_transaction_fee,
       )
       ctx.forwarding_transaction_id = payment_response.tx_hash
     end

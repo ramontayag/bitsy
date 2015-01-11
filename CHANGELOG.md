@@ -1,3 +1,7 @@
+# TBA
+
+- Fix arguments for `#send_many`
+
 # 0.8.3
 
 - Follow the `check_limit`

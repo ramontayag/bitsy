@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 10 Nov 2014 09:07:34 GMT
+      - Sun, 11 Jan 2015 05:47:19 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -31,17 +31,17 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d104b60cca29a328ae2b05bbbe34ac7211415610454356; expires=Mon, 23-Dec-2019
-        23:50:00 GMT; path=/; domain=.blockchain.info; HttpOnly
+      - __cfduid=dc5cd3d77696be3e223942b65bb76cbcd1420955239; expires=Mon, 11-Jan-16
+        05:47:19 GMT; path=/; domain=.blockchain.info; HttpOnly
       Content-Language:
       - en
       Content-Security-Policy:
       - 'img-src ''self'' data: https://blockchain.info; style-src ''self'' ''unsafe-inline'';
         frame-src ''none''; script-src ''self''; connect-src ''self'' *.blockchain.info
-        wss://*.blockchain.info ws://*.blockchain.info; object-src ''none''; media-src
+        wss://*.blockchain.info https://blockchain.info; object-src ''none''; media-src
         ''none''; font-src ''none'';'
       Strict-Transport-Security:
-      - max-age=31536000
+      - max-age=31536000; includeSubDomains; preload
       Cache-Control:
       - max-age=0, no-cache, no-store, must-revalidate
       Pragma:
@@ -49,15 +49,15 @@ http_interactions:
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       Cf-Ray:
-      - 187119b536640bb1-HKG
+      - 1a6ed1a4f7100be1-HKG
     body:
       encoding: UTF-8
-      string: '{"address":"1NVhms9Ltot5CKTWKDeNMUqjyBencFB33S"}'
+      string: '{"address":"1A2wscdXeGAJrcuGWuowDiqYnpfBE4mNst"}'
     http_version: 
-  recorded_at: Mon, 10 Nov 2014 09:07:36 GMT
+  recorded_at: Sun, 11 Jan 2015 05:47:19 GMT
 - request:
     method: get
-    uri: https://blockchain.info/merchant/eeadf652-e1c3-414e-bd3b-c4aef10756c4/address_balance?address=1NVhms9Ltot5CKTWKDeNMUqjyBencFB33S&confirmations=0&password=Ye054oH96zSueHnVHLAAWwwM9
+    uri: https://blockchain.info/merchant/eeadf652-e1c3-414e-bd3b-c4aef10756c4/address_balance?address=1A2wscdXeGAJrcuGWuowDiqYnpfBE4mNst&confirmations=0&password=Ye054oH96zSueHnVHLAAWwwM9
     body:
       encoding: US-ASCII
       string: ''
@@ -76,7 +76,7 @@ http_interactions:
       Server:
       - cloudflare-nginx
       Date:
-      - Mon, 10 Nov 2014 09:07:37 GMT
+      - Sun, 11 Jan 2015 05:47:20 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -84,22 +84,22 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d59f460b7b7c956bde5058ec125faa52c1415610457321; expires=Mon, 23-Dec-2019
-        23:50:00 GMT; path=/; domain=.blockchain.info; HttpOnly
+      - __cfduid=ddfe4a49d5c9bf6344b94eaa92086eee21420955240; expires=Mon, 11-Jan-16
+        05:47:20 GMT; path=/; domain=.blockchain.info; HttpOnly
       Content-Language:
       - en
       Content-Security-Policy:
       - 'img-src ''self'' data: https://blockchain.info; style-src ''self'' ''unsafe-inline'';
         frame-src ''none''; script-src ''self''; connect-src ''self'' *.blockchain.info
-        wss://*.blockchain.info ws://*.blockchain.info; object-src ''none''; media-src
+        wss://*.blockchain.info https://blockchain.info; object-src ''none''; media-src
         ''none''; font-src ''none'';'
       Strict-Transport-Security:
-      - max-age=31536000
+      - max-age=31536000; includeSubDomains; preload
       Cf-Ray:
-      - 187119ce46c90bb1-HKG
+      - 1a6ed1ab17880be1-HKG
     body:
       encoding: UTF-8
-      string: '{"address":"1NVhms9Ltot5CKTWKDeNMUqjyBencFB33S","balance":0,"total_received":0}'
+      string: '{"address":"1A2wscdXeGAJrcuGWuowDiqYnpfBE4mNst","balance":0,"total_received":0}'
     http_version: 
-  recorded_at: Mon, 10 Nov 2014 09:07:39 GMT
+  recorded_at: Sun, 11 Jan 2015 05:47:21 GMT
 recorded_with: VCR 2.9.2

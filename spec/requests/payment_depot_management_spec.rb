@@ -42,7 +42,7 @@ describe "Payment depot management", vcr: {record: :once} do
     }
     payment_response = build(:blockchain_payment_response, tx_hash: "tx_hash")
     expect_any_instance_of(Blockchain::Wallet).to receive(:send_many).
-      with(expected_send_many_hash, nil, tx_fee_satoshi).
+      with(expected_send_many_hash, fee: tx_fee_satoshi).
       and_return(payment_response)
 
     resulting_ctx = Bitsy::ForwardJob.new.perform
