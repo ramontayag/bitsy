@@ -57,6 +57,15 @@ module Bitsy
       end
     end
 
+    describe ".debits" do
+      it "returns the payments sent out (forwarding transactions)" do
+        tx_1 = create(:payment_transaction, forwarding_transaction_id: 3)
+        tx_2 = create(:payment_transaction, forwarding_transaction_id: nil)
+
+        expect(described_class.debits.to_a).to match_array([tx_1])
+      end
+    end
+
     describe "#payment_depot_total_received_amount" do
       it "is the sum of received transactions of the payment depot" do
         payment_depot = build_stubbed(:payment_depot)

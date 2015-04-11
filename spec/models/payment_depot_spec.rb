@@ -158,21 +158,47 @@ module Bitsy
 
     describe '#total_tax_sent' do
       it 'should return the total amount sent to the tax address' do
-        payment_depot = build_stubbed(:payment_depot)
-        txs = double
-        txs.stub(:sum).with(:amount).and_return(-3.7)
-        payment_depot.stub(:tax_transactions).and_return(txs)
-        payment_depot.total_tax_sent.should == 3.7
+        payment_depot = create(:payment_depot)
+        tx_1 = create(:payment_transaction, {
+          payment_depot: payment_depot,
+          amount: 3.0,
+        })
+        create(:payment_transaction, {
+          payment_depot: payment_depot,
+          amount: 1.2,
+          payment_type: 'tax',
+          forwarding_transaction_id: tx_1.id,
+        })
+        create(:payment_transaction, {
+          payment_depot: payment_depot,
+          amount: 1.8,
+          payment_type: 'something else',
+          forwarding_transaction_id: tx_1.id,
+        })
+        expect(payment_depot.total_tax_sent.to_f).to eq 1.2
       end
     end
 
     describe '#total_owner_sent' do
       it 'should return the total amount sent to the owner address' do
-        payment_depot = build_stubbed(:payment_depot)
-        txs = double
-        txs.stub(:sum).with(:amount).and_return(-5.5)
-        payment_depot.stub(:owner_transactions).and_return(txs)
-        payment_depot.total_owner_sent.should == 5.5
+        payment_depot = create(:payment_depot)
+        tx_1 = create(:payment_transaction, {
+          payment_depot: payment_depot,
+          amount: 3.0,
+        })
+        create(:payment_transaction, {
+          payment_depot: payment_depot,
+          amount: 1.2,
+          payment_type: 'tax',
+          forwarding_transaction_id: tx_1.id,
+        })
+        create(:payment_transaction, {
+          payment_depot: payment_depot,
+          amount: 1.8,
+          payment_type: 'something else',
+          forwarding_transaction_id: tx_1.id,
+        })
+        expect(payment_depot.total_owner_sent.to_f).to eq 1.8
       end
     end
 

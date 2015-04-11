@@ -20,6 +20,10 @@ module Bitsy
     scope :non_tax, lambda { where('payment_type != ?', 'tax') }
     scope :for_forwarding, -> { safely_confirmed.not_forwarded.received }
     scope :credits, -> { received }
+    scope :debits, -> {
+      forwarding_transaction_id = arel_table[:forwarding_transaction_id]
+      where(forwarding_transaction_id.not_eq(nil))
+    }
 
     delegate :min_payment, to: :payment_depot, prefix: true
     delegate :balance, to: :payment_depot, prefix: true

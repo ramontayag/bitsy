@@ -1,9 +1,10 @@
 # TBA
 
 - `/api/v0/payment_depots` endpoint now serializes
-  - `total_tax_sent`
-  - `total_owner_sent`
-  - `forwarding_transaction_fee`
+  - `#total_tax_sent` (method also fixed)
+  - `#total_owner_sent` (method also fixed)
+  - `#forwarding_transaction_fee`
+- Add `PaymentTransaction.debits` scope which returns all forwarding transactions
 
 # 0.8.4
 

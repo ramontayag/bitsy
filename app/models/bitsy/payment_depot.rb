@@ -111,11 +111,11 @@ module Bitsy
     private
 
     def tax_transactions
-      self.transactions.debit.tax
+      self.transactions.debits.tax
     end
 
     def owner_transactions
-      self.transactions.debit.non_tax
+      self.transactions.debits.non_tax
     end
 
     def set_uuid
