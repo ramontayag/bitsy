@@ -1,4 +1,4 @@
-# TBA
+# 0.9.0
 
 - `/api/v0/payment_depots` endpoint now serializes
   - `#total_tax_sent` (method also fixed)
