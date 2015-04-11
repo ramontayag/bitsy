@@ -1,3 +1,10 @@
+# TBA
+
+- `/api/v0/payment_depots` endpoint now serializes
+  - `total_tax_sent`
+  - `total_owner_sent`
+  - `forwarding_transaction_fee`
+
 # 0.8.4
 
 - Fix arguments for `#send_many`
