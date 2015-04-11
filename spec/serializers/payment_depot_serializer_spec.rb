@@ -4,7 +4,7 @@ module Bitsy
   describe PaymentDepotSerializer do
 
     let(:payment_depot) do
-      build_stubbed(:payment_depot, address: "89s8x8")
+      build_stubbed(:payment_depot, address: "89s8x8", min_payment: 2.0)
     end
     let(:serializer) { described_class.new(payment_depot) }
     subject(:json) do
@@ -20,6 +20,7 @@ module Bitsy
     its([:total_received_amount]) { should eq 19.0 }
     its([:min_payment_received]) { should be_true }
     its([:address]) { should eq "89s8x8" }
+    its([:min_payment]) { should eq "2.0" }
 
   end
 end

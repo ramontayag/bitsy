@@ -6,6 +6,7 @@ module Bitsy
       :min_payment_received,
       :total_received_amount,
       :address,
+      :min_payment,
     )
 
     def min_payment_received
