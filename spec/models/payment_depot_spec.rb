@@ -183,5 +183,16 @@ module Bitsy
       end
     end
 
+    describe "#forwarding_transaction_fee" do
+      it "is the amount left after subtracting the total_tax_sent and total_owner_sent from the total_received_amount" do
+        payment_depot = build_stubbed(:payment_depot, {
+          total_received_amount_cache: 5.0,
+        })
+        expect(payment_depot).to receive(:total_tax_sent).and_return(1.0)
+        expect(payment_depot).to receive(:total_owner_sent).and_return(3.8)
+        expect(payment_depot.forwarding_transaction_fee).to eq 0.2
+      end
+    end
+
   end
 end

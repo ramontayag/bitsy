@@ -17,6 +17,12 @@ module Bitsy
 
     before do
       expect(payment_depot).to receive(:min_payment_received?) { true }
+      expect(payment_depot).to receive(:total_tax_sent).
+        and_return("17.0")
+      expect(payment_depot).to receive(:total_owner_sent).
+        and_return("1.0")
+      expect(payment_depot).to receive(:forwarding_transaction_fee).
+        and_return("1.0")
     end
 
     its([:id]) { should eq payment_depot.id }
@@ -24,6 +30,9 @@ module Bitsy
     its([:min_payment_received]) { should be_true }
     its([:address]) { should eq "89s8x8" }
     its([:min_payment]) { should eq "2.0" }
+    its([:total_tax_sent]) { should eq "17.0" }
+    its([:total_owner_sent]) { should eq "1.0" }
+    its([:forwarding_transaction_fee]) { should eq "1.0" }
 
   end
 end

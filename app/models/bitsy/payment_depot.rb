@@ -104,6 +104,10 @@ module Bitsy
       self.uuid
     end
 
+    def forwarding_transaction_fee
+      total_received_amount - total_tax_sent - total_owner_sent
+    end
+
     private
 
     def tax_transactions

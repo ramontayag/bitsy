@@ -7,6 +7,9 @@ module Bitsy
       :total_received_amount,
       :address,
       :min_payment,
+      :total_tax_sent,
+      :total_owner_sent,
+      :forwarding_transaction_fee,
     )
 
     def min_payment_received
