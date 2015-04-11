@@ -7,6 +7,7 @@ require "daemons"
 require "light-service"
 require "uuidtools"
 require "blockchain"
+require "filterer"
 require "bitsy/engine"
 require "bitsy/config"
 
